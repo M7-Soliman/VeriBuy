@@ -12,6 +12,7 @@ import { ShoppingCartIcon as Cartsol} from "react-native-heroicons/solid";
 import { MagnifyingGlassIcon  as Searchout} from "react-native-heroicons/outline";
 
 
+
 import React from 'react'
 
 const Header = () => {
