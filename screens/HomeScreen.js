@@ -44,7 +44,7 @@ const HomeScreen = () => {
           </ScrollView>
 
           {/* Footer */}
-          <View> 
+          <View > 
             <Footer> 
             </Footer>
           </View>

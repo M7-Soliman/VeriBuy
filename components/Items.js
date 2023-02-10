@@ -12,12 +12,12 @@ const Items = () => {
     }} horizontal showsHorizontalScrollIndicator={false}>
 
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1fA5A6g4SezFWmHikravcRryXwfrdaHki" />
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1jTKPmVRijC79z_Dj3ER5VE6HAdkVHfpT" alt="drive image" />
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1wegXM6JsjCZHEBI4mE3SgHIxwpBvP1nM" alt="drive image" />
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1jTKPmVRijC79z_Dj3ER5VE6HAdkVHfpT" alt="drive image" />
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1wegXM6JsjCZHEBI4mE3SgHIxwpBvP1nM" alt="drive image" />
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1jTKPmVRijC79z_Dj3ER5VE6HAdkVHfpT" alt="drive image" />
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1wegXM6JsjCZHEBI4mE3SgHIxwpBvP1nM" alt="drive image" />
+      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1jTKPmVRijC79z_Dj3ER5VE6HAdkVHfpT" />
+      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1wegXM6JsjCZHEBI4mE3SgHIxwpBvP1nM" />
+      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1jTKPmVRijC79z_Dj3ER5VE6HAdkVHfpT" />
+      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1wegXM6JsjCZHEBI4mE3SgHIxwpBvP1nM" />
+      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1jTKPmVRijC79z_Dj3ER5VE6HAdkVHfpT" />
+      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1wegXM6JsjCZHEBI4mE3SgHIxwpBvP1nM" />
 
 
     </ScrollView>
