@@ -10,7 +10,6 @@ const Items = () => {
     <ScrollView contentContainerStyle = {{paddingHorizontal: 20, 
     paddingTop: 10, paddingBottom: 20,
     }} horizontal showsHorizontalScrollIndicator={false}>
-      
 
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1fA5A6g4SezFWmHikravcRryXwfrdaHki" />
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1jTKPmVRijC79z_Dj3ER5VE6HAdkVHfpT" alt="drive image" />

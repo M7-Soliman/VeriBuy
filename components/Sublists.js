@@ -3,20 +3,20 @@ import React from 'react'
 
 const Sublists = ({url1, url2}) => {
   return (
-    <View className= "mt-4">
+    <View className= "mt-3" >
     <View className = "flex-row ">
     <TouchableOpacity className = "flex-row flex-1 relative mr-3"> 
         <Image  source={{
             uri: url1
         }} 
-        className ="h-72 w-36 rounded-2xl "/>
+        className ="h-80 w-44 rounded-2xl"/>
     </TouchableOpacity>
 
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={{
             uri: url2
         }} 
-        className ="h-72 w-36 rounded-xl "/>
+        className ="h-80 w-44 rounded-2xl"/>
     </TouchableOpacity>
     </View>
     </View>

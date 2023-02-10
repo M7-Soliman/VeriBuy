@@ -34,10 +34,11 @@ const HomeScreen = () => {
           </View>
 
           {/* Main */}
-          <Items> 
-          </Items>
 
-          <ScrollView> 
+          <ScrollView > 
+            <Items> 
+            </Items>
+
             <Lists>
             </Lists>
           </ScrollView>
