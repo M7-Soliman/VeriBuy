@@ -36,6 +36,8 @@ const HomeScreen = () => {
           <ScrollView> 
             <Items> 
             </Items>
+
+            
           </ScrollView>
 
           {/* Footer */}
