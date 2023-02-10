@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import Heder from '../components/Heder';
 
 import { Header } from 'react-native/Libraries/NewAppScreen';
+import Lists from '../components/Lists';
 
 // import { searchIcon } from "react-native-heroicons/outline";
 // import { TextInput } from 'react-native-web';
@@ -33,11 +34,12 @@ const HomeScreen = () => {
           </View>
 
           {/* Main */}
-          <ScrollView> 
-            <Items> 
-            </Items>
+          <Items> 
+          </Items>
 
-            
+          <ScrollView> 
+            <Lists>
+            </Lists>
           </ScrollView>
 
           {/* Footer */}
