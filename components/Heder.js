@@ -19,12 +19,12 @@ const Header = () => {
   return (
     <View className = "flex-row pb-3 items-center mx-4 space-x-5">
         <View className="flex-row flex-1 space-x-2">
-              <Searchout size = {32} color = "#39c58f"/>
+              <Searchout size = {32} color = "#808080"/>
               <TextInput placeholder="Start Search" keyboardType="Default"/>
         </View>
               
         <View className="flex-row space-x-6">
-              <Cartout size = {32} color = "#39c58f"></Cartout>
+              <Cartout size = {32} color = "#000000"></Cartout>
               {/* <Uout size = {32} color = "#39c58f"></Uout> */}
         </View>
     </View>
