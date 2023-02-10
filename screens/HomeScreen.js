@@ -3,17 +3,10 @@ import React, { useLayoutEffect, useState} from 'react'
 import { useNavigation } from '@react-navigation/native'
 
 
-import { UserIcon as Uout} from "react-native-heroicons/outline";
-import { UserIcon as Usol} from "react-native-heroicons/solid";
-
-import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
-import { ShoppingCartIcon as Cartsol} from "react-native-heroicons/solid";
-
-import { MagnifyingGlassIcon  as Searchout} from "react-native-heroicons/outline";
-import { MagnifyingGlassIcon as Searchsol} from "react-native-heroicons/solid";
 import Items from '../components/Items';
 import Footer from '../components/Footer';
 import Heder from '../components/Heder';
+
 import { Header } from 'react-native/Libraries/NewAppScreen';
 
 // import { searchIcon } from "react-native-heroicons/outline";
