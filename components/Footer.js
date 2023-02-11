@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   bottomContainer: {
     position: "absolute",
     alignItems: 'center',
-    bottom: 135,
+    bottom: 160,
     height: wp('28'),
     width: "100%",
     borderRadius : 30
