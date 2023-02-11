@@ -46,9 +46,7 @@ const Footer = () => {
 
               <View >
     <TouchableOpacity onPress={()=>{navigation.navigate("AddScreen")}}  style = {styles.thathellofabutton} className="flex-row space-x-100">
-      <Image source={{
-      uri: "https://drive.google.com/uc?export=view&id=11-6TxNadZ9pR99T-KXk5Kfl1MtGinZtp"
-      }} 
+      <Image source={require("../assets/plus.png")}      
       className ="h-20 w-20"/>
       </TouchableOpacity>
               </View>
