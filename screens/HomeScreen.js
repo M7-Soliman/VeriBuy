@@ -63,14 +63,5 @@ const HomeScreen = () => {
 
 
 
-const styles = StyleSheet.create({
-  hs: {
-    alignItems: "center", 
-    alignContent: 'center'
-  },
-
-});
-
-
 
 export default HomeScreen
