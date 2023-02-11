@@ -7,7 +7,7 @@ import ImagesExample from '../assets/cat.jpeg'
 
 const Items = () => {
   return (
-    <ScrollView contentContainerStyle = {{paddingHorizontal: 25, 
+    <ScrollView contentContainerStyle = {{paddingHorizontal: 26, 
     paddingTop: 10, paddingBottom: 5, alignItems :'center'
     }} horizontal showsHorizontalScrollIndicator={false}>
 

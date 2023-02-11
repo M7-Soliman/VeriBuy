@@ -1,9 +1,9 @@
 import { View, Text, SafeAreaView, TextInput, ScrollView, StyleSheet } from 'react-native'
 import React, { useLayoutEffect, useState} from 'react'
 import { useNavigation } from '@react-navigation/native'
+import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
 
-
-import Items from '../components/Items';
+import Items from '../components/Categories';
 import Footer from '../components/Footer';
 import Heder from '../components/Heder';
 
@@ -24,11 +24,14 @@ const HomeScreen = () => {
 
 
   return (
-    <SafeAreaView className="bg-white pt 6">
+    <View className="bg-white pt 6">
         <View>
 
           {/* Header */}
           <View>
+            <View>
+            <Cartout size = {55} color = "#FFFFFF"></Cartout>
+            </View>
           <Heder>
           </Heder>
           </View>
@@ -54,7 +57,7 @@ const HomeScreen = () => {
                   
                   
 
-    </SafeAreaView>
+    </View>
   )
 } 
 
