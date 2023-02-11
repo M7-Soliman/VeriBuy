@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TextInput, ScrollView } from 'react-native'
+import { View, Text, SafeAreaView, TextInput, ScrollView, StyleSheet } from 'react-native'
 import React, { useLayoutEffect, useState} from 'react'
 import { useNavigation } from '@react-navigation/native'
 
@@ -35,7 +35,7 @@ const HomeScreen = () => {
 
           {/* Main */}
 
-          <ScrollView > 
+          <ScrollView> 
             <Items> 
             </Items>
 
@@ -57,5 +57,17 @@ const HomeScreen = () => {
     </SafeAreaView>
   )
 } 
+
+
+
+const styles = StyleSheet.create({
+  hs: {
+    alignItems: "center", 
+    alignContent: 'center'
+  },
+
+});
+
+
 
 export default HomeScreen

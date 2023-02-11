@@ -39,12 +39,12 @@ const Footer = () => {
               </TouchableOpacity>
 
         </View>
-
-          <View className="mx-85 flex-row space-x-10">
+        
+          <View style = {styles.thathellofabutton} className="flex-row space-x-100">
             <Image source={{
-            uri: "https://drive.google.com/uc?export=view&id=1rMwhVZIBcCuakraDCW2lWWpgQ26A5l-1"
+            uri: "https://drive.google.com/uc?export=view&id=1Z8vXLtA8StyR_D4aM8E_iPfTTnCjXhkB"
         }} 
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-xl"/>
           </View>
 
 
@@ -71,6 +71,14 @@ const styles = StyleSheet.create({
     height: 80,
     width: "100%",
     borderRadius : 40
+  },
+  thathellofabutton: {
+    position: "absolute",
+    alignItems: 'center',
+    bottom: 20,
+    height: 80,
+    paddingLeft: 138,
+    width: "100%",
   },
 
 });

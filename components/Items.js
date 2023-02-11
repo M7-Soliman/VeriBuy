@@ -8,7 +8,7 @@ import ImagesExample from '../assets/cat.jpeg'
 const Items = () => {
   return (
     <ScrollView contentContainerStyle = {{paddingHorizontal: 20, 
-    paddingTop: 10, paddingBottom: 20,
+    paddingTop: 10, paddingBottom: 20, alignItems :'center'
     }} horizontal showsHorizontalScrollIndicator={false}>
 
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1fA5A6g4SezFWmHikravcRryXwfrdaHki" />
