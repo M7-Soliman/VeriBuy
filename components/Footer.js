@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TextInput, ScrollView, StyleSheet, TouchableOpacity} from 'react-native'
+import { View, Text, SafeAreaView, TextInput, ScrollView, StyleSheet, TouchableOpacity, Image} from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -40,6 +40,12 @@ const Footer = () => {
 
         </View>
 
+          <View className="mx-85 flex-row space-x-10">
+            <Image source={{
+            uri: "https://drive.google.com/uc?export=view&id=1rMwhVZIBcCuakraDCW2lWWpgQ26A5l-1"
+        }} 
+        className ="h-20 w-20 rounded-xl "/>
+          </View>
 
 
         <View className="mx-8 flex-row space-x-10">
