@@ -24,7 +24,7 @@ const Items = () => {
       
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1dSsETIP6N4W9t7zJ25acaDXkEfiM7XtJ" />
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1ljPI0SviMbY72HWiImOwdqr1v8fJcI07" />
-      
+      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1BApvbNO9VBzGg5jy2iFadjI90r9M5MoZ" />
       
       
 
