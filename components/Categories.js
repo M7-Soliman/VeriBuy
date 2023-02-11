@@ -1,8 +1,9 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView, Image, TouchableOpacity} from 'react-native'
 import React from 'react'
-import CategoryDesign from './CategoryDesign'
+// import CategoryDesign from './CategoryDesign'
 
-import ImagesExample from '../assets/cat.jpeg'
+// import ImagesExample from '../assets/cat.jpeg'
+
 
 
 const Items = () => {
@@ -10,9 +11,71 @@ const Items = () => {
     <ScrollView contentContainerStyle = {{paddingHorizontal: 26, 
     paddingTop: 10, paddingBottom: 5, alignItems :'center'
     }} horizontal showsHorizontalScrollIndicator={false}>
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=14vSWDq5nmyZ3VBpql7Ne8lI2Fx0kY5gf" />
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1t-VYnc-EcGVqCe7zyL83jNJYJNfMv32E" />
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1As7WuYVxa8L9bCW3pJhJisL4eNcXeATy" />
+    
+    
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a1.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity>
+    
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a2.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity> 
+
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a3.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity>    
+
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a4.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity>    
+
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a5.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity>  
+
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a1.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity>
+
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a6.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity>
+    
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a7.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity> 
+
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a8.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity>    
+
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a9.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity>    
+
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a10.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity>  
+      
+    <TouchableOpacity className = "relative mr-3"> 
+        <Image source={require("../assets/a12.png")}
+        className ="h-20 w-20 rounded-xl "/>
+    </TouchableOpacity>
+
+
+    
+          {/* <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1As7WuYVxa8L9bCW3pJhJisL4eNcXeATy" />
       
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1zsg5woBErcTwVRACrlNI-OnFia8lOD0c" />
       
@@ -24,8 +87,7 @@ const Items = () => {
       
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1dSsETIP6N4W9t7zJ25acaDXkEfiM7XtJ" />
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1ljPI0SviMbY72HWiImOwdqr1v8fJcI07" />
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1BApvbNO9VBzGg5jy2iFadjI90r9M5MoZ" />
-      
+      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1BApvbNO9VBzGg5jy2iFadjI90r9M5MoZ" />  */}
       
 
 

@@ -3,7 +3,7 @@ import React from 'react'
 
 const Sublists = ({url1, url2}) => {
   return (
-    <View className= "mt-3" >
+    <View className= "mt-3" showsHorizontalScrollIndicator={false}>
     <View className = "flex-row ">
     <TouchableOpacity className = "flex-row flex-1 relative mr-3"> 
         <Image  source={{
