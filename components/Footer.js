@@ -28,23 +28,24 @@ import { PlusCircleIcon  as Plusol} from "react-native-heroicons/solid";
 import {useState} from 'react'
 
 
-
 const Footer = () => {
+
+  const navigation = useNavigation();
   return (
     <View>
 
     <View style = {styles.bottomContainer} className = "bg-black pt-5 flex-row pb-10 items-center space-x-10">
         <View className="mx-8 flex-row flex-1 space-x-9">
-            <TouchableOpacity >
+            <TouchableOpacity onPress={()=>{navigation.navigate("Home")}} >
               <Homeout size = {33} color = "#FFFFFF"/>
             </TouchableOpacity>
             
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{navigation.navigate("TvScreen")}} >
               <TVout size = {33} color = "#FFFFFF"/>
               </TouchableOpacity>
 
               <View >
-    <TouchableOpacity style = {styles.thathellofabutton} className="flex-row space-x-100">
+    <TouchableOpacity onPress={()=>{navigation.navigate("AddScreen")}}  style = {styles.thathellofabutton} className="flex-row space-x-100">
       <Image source={{
       uri: "https://drive.google.com/uc?export=view&id=11-6TxNadZ9pR99T-KXk5Kfl1MtGinZtp"
       }} 
@@ -52,11 +53,12 @@ const Footer = () => {
       </TouchableOpacity>
               </View>
 
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=>{navigation.navigate("NotificationsScreen")}} 
+              >
               <Notifout size = {33} color = "#FFFFFF"/>
               </TouchableOpacity>
 
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=>{navigation.navigate("ProfileScreen")}} >
               <Uout size = {33} color = "#FFFFFF"/>
               </TouchableOpacity>
 
@@ -68,15 +70,6 @@ const Footer = () => {
         </View>
 
     </View>
-
-    {/* <View>
-    <TouchableOpacity style = {styles.thathellofabutton} className="flex-row space-x-100">
-      <Image source={{
-      uri: "https://drive.google.com/uc?export=view&id=1Z8vXLtA8StyR_D4aM8E_iPfTTnCjXhkB"
-      }} 
-      className ="h-20 w-20 rounded-full"/>
-      </TouchableOpacity>
-      </View> */}
 
       </View>
   )
