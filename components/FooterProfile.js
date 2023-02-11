@@ -58,11 +58,11 @@ const FooterNotifications = () => {
 
               <TouchableOpacity style={{marginRight: wp('10%'), marginLeft: wp('5.5%') }} onPress={()=>{navigation.navigate("NotificationsScreen")}} 
               >
-              <Notifin size = {wp('8')} color = "#26da76"/>
+              <Notifout size = {wp('8')} color = "#FFFFFF"/>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={()=>{navigation.navigate("ProfileScreen")}} >
-              <Uout size = {wp('8')} color = "#FFFFFF"/>
+              <Usol size = {wp('8')} color = "#26da76"/>
               </TouchableOpacity>
 
         </View>
