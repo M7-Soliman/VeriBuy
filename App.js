@@ -16,9 +16,11 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="NotificationsScreen" component={NotificationsScreen} />
+      <Stack.Navigator screenOptions={{ animation: 'none' }}>
+        <Stack.Screen name="Home" component={HomeScreen} options={{
+        animationEnabled: false,
+      }} />
+        <Stack.Screen name="NotificationsScreen" component={NotificationsScreen}/>
         <Stack.Screen name="CartScreen" component={CartScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen name="TvScreen" component={TvScreen} />
@@ -26,6 +28,7 @@ export default function App() {
         
       </Stack.Navigator>
     </NavigationContainer>
+    
   );
 }
 
