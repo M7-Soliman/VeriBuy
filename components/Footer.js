@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TextInput, ScrollView, StyleSheet, TouchableOpacity, Image} from 'react-native'
+import { View, Text, SafeAreaView, TextInput, ScrollView, StyleSheet, Image, TouchableOpacity} from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -22,14 +22,19 @@ import { TvIcon  as TVsol} from "react-native-heroicons/solid";
 import { BellAlertIcon  as Notifout} from "react-native-heroicons/outline";
 import { BellAlertIcon  as Notifin} from "react-native-heroicons/solid";
 
+import { PlusCircleIcon  as Plusout} from "react-native-heroicons/outline";
+import { PlusCircleIcon  as Plusol} from "react-native-heroicons/solid";
+
 import {useState} from 'react'
 
 
 
 const Footer = () => {
   return (
-    <View style = {styles.bottomContainer} className = "bg-black pt-5 flex-row pb-7 items-center space-x-10">
-        <View className="mx-8 flex-row flex-1 space-x-10">
+    <View>
+
+    <View style = {styles.bottomContainer} className = "bg-black pt-5 flex-row pb-10 items-center space-x-10">
+        <View className="mx-8 flex-row flex-1 space-x-9">
             <TouchableOpacity >
               <Homeout size = {33} color = "#FFFFFF"/>
             </TouchableOpacity>
@@ -38,17 +43,15 @@ const Footer = () => {
               <TVout size = {33} color = "#FFFFFF"/>
               </TouchableOpacity>
 
-        </View>
-        
-          <TouchableOpacity style = {styles.thathellofabutton} className="flex-row space-x-100">
-            <Image source={{
-            uri: "https://drive.google.com/uc?export=view&id=1Z8vXLtA8StyR_D4aM8E_iPfTTnCjXhkB"
-        }} 
-        className ="h-20 w-20 rounded-xl"/>
-          </TouchableOpacity>
+              <View >
+    <TouchableOpacity style = {styles.thathellofabutton} className="flex-row space-x-100">
+      <Image source={{
+      uri: "https://drive.google.com/uc?export=view&id=11-6TxNadZ9pR99T-KXk5Kfl1MtGinZtp"
+      }} 
+      className ="h-20 w-20"/>
+      </TouchableOpacity>
+              </View>
 
-
-        <View className="mx-8 flex-row space-x-10">
               <TouchableOpacity>
               <Notifout size = {33} color = "#FFFFFF"/>
               </TouchableOpacity>
@@ -58,7 +61,24 @@ const Footer = () => {
               </TouchableOpacity>
 
         </View>
+        
+        <View className="mx-8 flex-row space-x-10">
+
+
+        </View>
+
     </View>
+
+    {/* <View>
+    <TouchableOpacity style = {styles.thathellofabutton} className="flex-row space-x-100">
+      <Image source={{
+      uri: "https://drive.google.com/uc?export=view&id=1Z8vXLtA8StyR_D4aM8E_iPfTTnCjXhkB"
+      }} 
+      className ="h-20 w-20 rounded-full"/>
+      </TouchableOpacity>
+      </View> */}
+
+      </View>
   )
 }
 
@@ -67,18 +87,16 @@ const styles = StyleSheet.create({
   bottomContainer: {
     position: "absolute",
     alignItems: 'center',
-    bottom: 50,
-    height: 80,
+    bottom: 15,
+    height: 130,
     width: "100%",
-    borderRadius : 40
+    borderRadius : 30
   },
+
   thathellofabutton: {
-    position: "absolute",
-    alignItems: 'center',
-    bottom: 20,
-    height: 80,
-    paddingLeft: 133,
+    position: "relative",
     width: "100%",
+    bottom: 40,
   },
 
 });
