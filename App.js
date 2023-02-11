@@ -7,7 +7,7 @@ import HomeScreen from './screens/HomeScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
 import CartScreen from './screens/CartScreen';
 import ProfileScreen from './screens/ProfileScreen';
-import TvScreen from './screens/TvScreen';
+import TvScreen from './screens/feed/TvScreen';
 import AddScreen from './screens/AddScreen';
 
 const Stack = createNativeStackNavigator();
