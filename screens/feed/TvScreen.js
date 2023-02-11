@@ -3,7 +3,20 @@ import { View, Text, FlatList } from 'react-native'
 import styles from './styles'
 import { Dimensions } from 'react-native'
 import PostSingle from '../../components/post'
+import { useNavigation } from '@react-navigation/native'
+import { useLayoutEffect, useState} from 'react'
+
 export default function TvScreen () {
+
+  const navigation = useNavigation();
+    
+  useLayoutEffect(() => {
+      navigation.setOptions({
+          headerShown: false,
+      });
+  }, [])
+
+
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   const renderItem = ({item, index})=>{
     return (
