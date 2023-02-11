@@ -39,36 +39,31 @@ const Footer = () => {
   return (
     <View>
 
-    <View style = {styles.bottomContainer} className = "bg-black pt-5 flex-row pb-10 items-center space-x-10">
-        <View className="mx-8 flex-row flex-1 space-x-9">
-            <TouchableOpacity onPress={()=>{navigation.navigate("Home")}} >
-              <Homesol size = {33} color = "#26da76"/>
+    <View style = {styles.bottomContainer} className = "bg-black pt-5 flex-row pb-10 items-center">
+        <View className="flex-row flex-1 ">
+            <TouchableOpacity style={{marginLeft: wp('10%'), marginRight: wp('9%')}} onPress={()=>{navigation.navigate("Home")}} >
+              <Homesol size = {wp('8')} color = "#26da76"/>
             </TouchableOpacity>
             
-            <TouchableOpacity onPress={()=>{navigation.navigate("TvScreen")}} >
-              <TVout size = {33} color = "#FFFFFF"/>
+            <TouchableOpacity style={{marginRight: wp('5.5%') }} onPress={()=>{navigation.navigate("TvScreen")}} >
+              <TVout size = {wp('8')} color = "#FFFFFF"/>
               </TouchableOpacity>
 
               <View >
-    <TouchableOpacity onPress={()=>{navigation.navigate("AddScreen")}}  style = {styles.thathellofabutton} className="flex-row space-x-100">
+    <TouchableOpacity onPress={()=>{navigation.navigate("AddScreen")}}  style = {styles.thathellofabutton} className="flex-row">
       <Image source={require("../assets/plus.png")}      
-      className ="h-20 w-20"/>
+      style={{width: wp('17.8') , height: wp('17.8')} }/>
       </TouchableOpacity>
               </View>
 
-              <TouchableOpacity onPress={()=>{navigation.navigate("NotificationsScreen")}} 
+              <TouchableOpacity style={{marginRight: wp('10%'), marginLeft: wp('5.5%') }} onPress={()=>{navigation.navigate("NotificationsScreen")}} 
               >
-              <Notifout size = {33} color = "#FFFFFF"/>
+              <Notifout size = {wp('8')} color = "#FFFFFF"/>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={()=>{navigation.navigate("ProfileScreen")}} >
-              <Uout size = {33} color = "#FFFFFF"/>
+              <Uout size = {wp('8')} color = "#FFFFFF"/>
               </TouchableOpacity>
-
-        </View>
-        
-        <View className="mx-8 flex-row space-x-10">
-
 
         </View>
 
@@ -84,15 +79,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     alignItems: 'center',
     bottom: 135,
-    height: 130,
+    height: wp('28'),
     width: "100%",
     borderRadius : 30
   },
 
   thathellofabutton: {
     position: "relative",
-    width: "100%",
-    bottom: 40,
+    bottom: wp('9'),
   },
 
 });
