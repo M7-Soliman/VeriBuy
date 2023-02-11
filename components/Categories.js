@@ -13,7 +13,7 @@ const Items = () => {
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=14vSWDq5nmyZ3VBpql7Ne8lI2Fx0kY5gf" />
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1t-VYnc-EcGVqCe7zyL83jNJYJNfMv32E" />
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1As7WuYVxa8L9bCW3pJhJisL4eNcXeATy" />
-      <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1UhWaNlzNKfM1dy16JPOJLrgJ4zEABmAL" />
+      
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1zsg5woBErcTwVRACrlNI-OnFia8lOD0c" />
       
       <CategoryDesign imgurl = "https://drive.google.com/uc?export=view&id=1ifxDus0VpmYad0L_C5B33y-lYRtCDCT6" />
