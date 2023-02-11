@@ -5,6 +5,7 @@ import { Dimensions } from 'react-native'
 import PostSingle from '../../components/post'
 import { useNavigation } from '@react-navigation/native'
 import { useLayoutEffect, useState} from 'react'
+import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
 
 export default function TvScreen () {
 
@@ -27,7 +28,13 @@ export default function TvScreen () {
     
   }
   return (
+
+    
     <View style={styles.container}>
+      <View className = "bg-black">
+    <Cartout size = {55} color = "#000000"></Cartout>
+    </View>
+
       <FlatList
       data={array}
       renderItem={renderItem}
