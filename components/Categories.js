@@ -15,32 +15,32 @@ const Items = () => {
     
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a1.png")}
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>
     
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a2.png")}
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity> 
 
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a3.png")}
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>    
 
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a4.png")}
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>    
 
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a5.png")}
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>  
 
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a6.png")}
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>
     
     <TouchableOpacity className = "relative mr-3"> 
@@ -50,22 +50,22 @@ const Items = () => {
 
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a8.png")}
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>    
 
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a9.png")}
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>    
 
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a10.png")}
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>  
       
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a12.png")}
-        className ="h-20 w-20 rounded-xl "/>
+        className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>
 
 
