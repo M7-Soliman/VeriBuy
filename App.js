@@ -9,7 +9,6 @@ import CartScreen from './screens/CartScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import TvScreen from './screens/feed/TvScreen';
 import AddScreen from './screens/AddScreen';
-import { QueryClient, QueryClientProvider } from 'react-query';
 
 const Stack = createNativeStackNavigator();
 
