@@ -13,12 +13,12 @@ import { ShoppingCartIcon as Cartsol} from "react-native-heroicons/solid";
 const SubNotifications = ({url1, url2}) => {
   
   return (
-    <View style={{height: 100, width: "100%"}} className = "bg- bg-gray-300 opacity-90 pt-5 flex-row pb-10 items-center mt-3 rounded-xl" showsHorizontalScrollIndicator={false}>
+    <View style={{height: 90, width: "100%"}} className = "bg- bg-gray-200 opacity-90 pt-5 flex-row pb-10 items-center mt-3 rounded-3xl" showsHorizontalScrollIndicator={false}>
           
             
             <View style = {styles.thathellofabutton} className="flex-row">
             <Image source={{uri: url1}}
-            style={{width: wp('17.8') , height: wp('17.8')} } className="rounded-full"/>
+            style={{width: wp('15') , height: wp('15')} } className="rounded-3xl"/>
             </View>
 
         {/* <View>
