@@ -35,7 +35,7 @@ export default function TvScreen () {
   })
   const renderItem = ({item, index})=>{
     return (
-       <View style={[{ flex: 1, height: 0.9853*(Dimensions.get('window').height)},index % 2 == 0 ? {backgroundColor: 'black'} : {backgroundColor: 'black'}]}>
+       <View style={[{ flex: 1, height: 0.994*(Dimensions.get('window').height)},index % 2 == 0 ? {backgroundColor: 'black'} : {backgroundColor: 'black'}]}>
           <PostSingle ref={PostSingleRef =>(mediaRefs.current[item]= PostSingleRef) }/>
        </View>
     )
@@ -46,7 +46,7 @@ export default function TvScreen () {
     
     <View style={styles.container}>
       <View className = "bg-black opacity-0">
-    <Cartout size = {55} color = "#fffff" opacity={100}></Cartout>
+    <Cartout size = {(0.06)*(Dimensions.get('window').height)} color = "#fffff" opacity={100}></Cartout>
     </View>
 
       <FlatList
