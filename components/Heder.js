@@ -23,6 +23,7 @@ const Header = () => {
               <Searchout size = {32} color = "#808080"/>
               <TextInput placeholder="Start Search" keyboardType="Default"/>
         </View>
+        
               
         <TouchableOpacity onPress={()=>{navigation.navigate("CartScreen")}} 
  className="flex-row space-x-6" >

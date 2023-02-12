@@ -9,12 +9,16 @@ import CartScreen from './screens/CartScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import TvScreen from './screens/feed/TvScreen';
 import AddScreen from './screens/AddScreen';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const Stack = createNativeStackNavigator();
 
-
+const queryClient = new QueryClient({
+  defaultOptions: {queries:{refetchInterval: false, staleTime: Infinity}}
+})
 export default function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ animation: 'none' }}>
         <Stack.Screen name="Home" component={HomeScreen} options={{
@@ -28,6 +32,9 @@ export default function App() {
         
       </Stack.Navigator>
     </NavigationContainer>
+    
+      
+    </QueryClientProvider>
     
   );
 }
