@@ -12,14 +12,12 @@ import AddScreen from './screens/AddScreen';
 
 const Stack = createNativeStackNavigator();
 
-
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ animation: 'none' }}>
         <Stack.Screen name="Home" component={HomeScreen} options={{
-        animationEnabled: false,
-      }} />
+        animationEnabled: false, }} />
         <Stack.Screen name="NotificationsScreen" component={NotificationsScreen}/>
         <Stack.Screen name="CartScreen" component={CartScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />

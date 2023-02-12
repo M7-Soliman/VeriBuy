@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image, TouchableOpacity} from 'react-native'
+import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet} from 'react-native'
 import React from 'react'
 // import CategoryDesign from './CategoryDesign'
 
@@ -37,11 +37,6 @@ const Items = () => {
         <Image source={require("../assets/a5.png")}
         className ="h-20 w-20 rounded-xl "/>
     </TouchableOpacity>  
-
-    <TouchableOpacity className = "relative mr-3"> 
-        <Image source={require("../assets/a1.png")}
-        className ="h-20 w-20 rounded-xl "/>
-    </TouchableOpacity>
 
     <TouchableOpacity className = "relative mr-3"> 
         <Image source={require("../assets/a6.png")}
@@ -93,6 +88,10 @@ const Items = () => {
 
     </ScrollView>
   )
+
 }
 
+
+
+  
 export default Items

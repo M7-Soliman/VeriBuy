@@ -10,6 +10,7 @@ import Heder from '../components/Heder';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import Lists from '../components/Lists';
 import FooterNotifications from '../components/FooterNotifications';
+import NotificationItems from '../components/NotificationItems';
 
 // import { searchIcon } from "react-native-heroicons/outline";
 // import { TextInput } from 'react-native-web';
@@ -36,15 +37,10 @@ const NotificationsScreen = () => {
           <Heder>
           </Heder>
           </View>
-
           {/* Main */}
-
           <ScrollView> 
-            <Items> 
-            </Items>
-
-            <Lists>
-            </Lists>
+            <NotificationItems>
+            </NotificationItems>
           </ScrollView>
 
           {/* Footer */}
