@@ -21,9 +21,11 @@ const SubNotifications = ({url1, url2}) => {
             style={{width: wp('15') , height: wp('15')} } className="rounded-3xl"/>
             </View>
 
-        {/* <View>
-        <Image source={{uri: url1}}  className = "rounded-full" style={{height: wp(16), width: wp("16")}}/>
-        </View> */}
+                        
+            <View style = {styles.thathellofabutton} className="flex-row">
+            <Image source={{uri: url1}}
+            style={{width: wp('15') , height: wp('15')} } className="rounded-3xl"/>
+            </View>
     </View>
   )
 }
