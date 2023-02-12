@@ -13,15 +13,10 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 const Stack = createNativeStackNavigator();
 
-<<<<<<< HEAD
-const queryClient = new QueryClient({
-  defaultOptions: {queries:{refetchInterval: false, staleTime: Infinity}}
-})
-=======
->>>>>>> 40f80468dbc53204775fe3b60b61b19707f9513e
+
 export default function App() {
   return (
-    <QueryClientProvider client={queryClient}>
+    
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ animation: 'none' }}>
         <Stack.Screen name="Home" component={HomeScreen} options={{
@@ -36,7 +31,7 @@ export default function App() {
     </NavigationContainer>
     
       
-    </QueryClientProvider>
+   
     
   );
 }
