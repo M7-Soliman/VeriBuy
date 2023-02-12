@@ -7,6 +7,8 @@ import { useNavigation } from '@react-navigation/native'
 import { useLayoutEffect, useState} from 'react'
 import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
 import {useRef}from 'react'
+import {Platform, StyleSheet} from 'react-native';
+
 
 export default function TvScreen () {
 
@@ -35,7 +37,7 @@ export default function TvScreen () {
   })
   const renderItem = ({item, index})=>{
     return (
-       <View style={[{ flex: 1, height: 0.994*(Dimensions.get('window').height)},index % 2 == 0 ? {backgroundColor: 'black'} : {backgroundColor: 'black'}]}>
+       <View style={styles_specific.container}>
           <PostSingle ref={PostSingleRef =>(mediaRefs.current[item]= PostSingleRef) }/>
        </View>
     )
@@ -46,7 +48,7 @@ export default function TvScreen () {
     
     <View style={styles.container}>
       <View className = "bg-black opacity-0">
-    <Cartout size = {(0.06)*(Dimensions.get('window').height)} color = "#fffff" opacity={100}></Cartout>
+    {/* <Cartout size = {(0.06)*(Dimensions.get('window').height)} color = "#fffff" opacity={100}></Cartout> */}
     </View>
 
       <FlatList
@@ -67,3 +69,24 @@ export default function TvScreen () {
     </View>
   )
 }
+
+const styles_specific = StyleSheet.create({
+  container: {
+   
+    flex: 1,
+    ...Platform.select({
+      ios: {
+        height: 1*(Dimensions.get('window').height),
+        backgroundColor: 'black'
+      },
+      android: {
+        height: 1.053*(Dimensions.get('window').height),
+        backgroundColor: 'black'
+      },
+      default: {
+        // other platforms, web for example
+        height: 1.053*(Dimensions.get('window').height),
+      },
+    }),
+  },
+});
