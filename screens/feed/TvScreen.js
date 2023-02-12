@@ -6,6 +6,7 @@ import PostSingle from '../../components/post'
 import { useNavigation } from '@react-navigation/native'
 import { useLayoutEffect, useState} from 'react'
 import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
+import {useRef}from 'react'
 
 export default function TvScreen () {
 
@@ -17,12 +18,25 @@ export default function TvScreen () {
       });
   }, [])
 
-
+  const mediaRefs= useRef([])
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const onViewableItemsChanged = useRef(({changed}) =>{
+      changed.forEach(element => {
+        const cell= mediaRefs.current[element.key]
+        if(cell){
+          console.log('onViewableItemsChanged',element, element.isViewable)
+          if(element.isViewable){
+            cell.play()
+          }else{
+            cell.stop();
+          }
+        }
+      });
+  })
   const renderItem = ({item, index})=>{
     return (
        <View style={[{ flex: 1, height: Dimensions.get('window').height -56 },index % 2 == 0 ? {backgroundColor: 'blue'} : {backgroundColor: 'black'}]}>
-          <PostSingle />
+          <PostSingle ref={PostSingleRef =>(mediaRefs.current[item]= PostSingleRef) }/>
        </View>
     )
     
@@ -37,10 +51,18 @@ export default function TvScreen () {
 
       <FlatList
       data={array}
+      windowSize={4}//the number of rendered videos
+      initialNumToRender={0}
+      maxToRenderPerBatch={2}
+      removeClippedSubviews
+      viewabilityConfig={{
+        itemVisiblePercentThreshold: 100
+      }}
       renderItem={renderItem}
       pagingEnabled
       keyExtractor={item => item}
       decelerationRate={'fast'}
+      onViewableItemsChanged={onViewableItemsChanged.current}
       />
     </View>
   )
