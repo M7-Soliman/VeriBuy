@@ -20,12 +20,13 @@ const SubNotifications = ({url1, url2}) => {
             <Image source={{uri: url1}}
             style={{width: wp('15') , height: wp('15')} } className="rounded-3xl"/>
             </View>
-
-                        
+            
             <View style = {styles.thathellofabutton} className="flex-row">
             <Image source={{uri: url1}}
             style={{width: wp('15') , height: wp('15')} } className="rounded-3xl"/>
             </View>
+
+
     </View>
   )
 }
