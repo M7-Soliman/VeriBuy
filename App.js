@@ -10,8 +10,24 @@ import ProfileScreen from './screens/ProfileScreen';
 import TvScreen from './screens/feed/TvScreen';
 import AddScreen from './screens/AddScreen';
 
+// import Constants from 'expo-constants';
+import firebase from "firebase/app"
+
 const Stack = createNativeStackNavigator();
 
+if (firebase.apps.length == 0){
+firebase.initializeApp({
+  apiKey: "AIzaSyBn1byyup_Qxv73tUJilx3NSgLxIEZWEpU",
+  authDomain: "veribuy-976c1.firebaseapp.com",
+  databaseURL: "https://veribuy-976c1-default-rtdb.firebaseio.com",
+  projectId: "veribuy-976c1",
+  storageBucket: "veribuy-976c1.appspot.com",
+  messagingSenderId: "858951986854",
+  appId: "1:858951986854:web:3b2a6a24265e9a6a7b8e67",
+  measurementId: "G-XCHHSYNZVK"
+})
+}
+// firebase.initializeApp()
 
 export default function App() {
   return (
