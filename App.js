@@ -10,7 +10,6 @@ import ProfileScreen from './screens/ProfileScreen';
 import TvScreen from './screens/feed/TvScreen';
 import AddScreen from './screens/AddScreen';
 
-// import Constants from 'expo-constants';
 import firebase from "firebase/app"
 
 const Stack = createNativeStackNavigator();
@@ -27,6 +26,7 @@ firebase.initializeApp({
   measurementId: "G-XCHHSYNZVK"
 })
 }
+
 // firebase.initializeApp()
 
 export default function App() {
