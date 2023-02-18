@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './screens/HomeScreen';
+import AuthScreen from './screens/AuthScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
 import CartScreen from './screens/CartScreen';
 import ProfileScreen from './screens/ProfileScreen';
@@ -42,6 +43,7 @@ export default function App() {
     <NavigationContainer>
       <Provider store = {store}>
       <Stack.Navigator screenOptions={{ animation: 'none' }}>
+        <Stack.Screen name="AuthScreen" component={AuthScreen}/>
         <Stack.Screen name="Home" component={HomeScreen} options={{
         animationEnabled: false, }} />
         <Stack.Screen name="NotificationsScreen" component={NotificationsScreen}/>
@@ -59,13 +61,5 @@ export default function App() {
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
 
 
