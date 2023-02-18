@@ -12,6 +12,15 @@ import AddScreen from './screens/AddScreen';
 
 import firebase from "firebase/app"
 
+import {Provider} from 'react-redux';
+import {createStore,applyMiddleware} from "redux"
+import { configureStore } from '@reduxjs/toolkit'
+
+import thunk from 'redux-thunk';
+import rootReducer from './redux/reducers'
+
+const store = createStore( rootReducer, applyMiddleware(thunk))
+
 const Stack = createNativeStackNavigator();
 
 if (firebase.apps.length == 0){
@@ -27,12 +36,11 @@ firebase.initializeApp({
 })
 }
 
-// firebase.initializeApp()
 
 export default function App() {
   return (
-    
     <NavigationContainer>
+      <Provider store = {store}>
       <Stack.Navigator screenOptions={{ animation: 'none' }}>
         <Stack.Screen name="Home" component={HomeScreen} options={{
         animationEnabled: false, }} />
@@ -43,8 +51,8 @@ export default function App() {
         <Stack.Screen name="AddScreen" component={AddScreen} />
         
       </Stack.Navigator>
+      </Provider>
     </NavigationContainer>
-    
       
    
     
