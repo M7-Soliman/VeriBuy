@@ -42,7 +42,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Provider store = {store}>
-      <Stack.Navigator screenOptions={{ animation: 'none' }}>
+      <Stack.Navigator screenOptions={{ animation: 'none'}}>
         <Stack.Screen name="AuthScreen" component={AuthScreen}/>
         <Stack.Screen name="Home" component={HomeScreen} options={{
         animationEnabled: false, }} />
