@@ -4,7 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './screens/HomeScreen';
-import AuthScreen from './screens/AuthScreen';
+import SigninScreen from './screens/SigninScreen';
+import SignupScreen from './screens/SignupScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
 import CartScreen from './screens/CartScreen';
 import ProfileScreen from './screens/ProfileScreen';
@@ -24,7 +25,7 @@ const store = createStore( rootReducer, applyMiddleware(thunk))
 
 const Stack = createNativeStackNavigator();
 
-if (firebase.apps.length == 0){
+if (firebase.apps.length === 0){
 firebase.initializeApp({
   apiKey: "AIzaSyBn1byyup_Qxv73tUJilx3NSgLxIEZWEpU",
   authDomain: "veribuy-976c1.firebaseapp.com",
@@ -43,7 +44,8 @@ export default function App() {
     <NavigationContainer>
       <Provider store = {store}>
       <Stack.Navigator screenOptions={{ animation: 'none'}}>
-        <Stack.Screen name="AuthScreen" component={AuthScreen}/>
+        <Stack.Screen name="SigninScreen" component={SigninScreen}/>
+        <Stack.Screen name="SignupScreen" component={SignupScreen}/>
         <Stack.Screen name="Home" component={HomeScreen} options={{
         animationEnabled: false, }} />
         <Stack.Screen name="NotificationsScreen" component={NotificationsScreen}/>

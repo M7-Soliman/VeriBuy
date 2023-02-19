@@ -1,17 +1,31 @@
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native'
-import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { useLayoutEffect, useState} from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { useDispatch } from 'react-redux';
+import { login } from '../redux/actions';
 
-
-const AuthScreen = () => {
+const SigninScreen = () => {
     const navigation = useNavigation();
     useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: false,
         });
     }, [])
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    
+    const dispatch = useDispatch()
+
+    const handleLogin =() => {
+      dispatch(login(email, password)).then(()=> {
+        console.log('login successful')
+      })
+      .catch(()=>{
+        console.log('login unsuccessful')
+      })
+    }
     return (
 
       <ScrollView style = {styles.maincolor}>
@@ -19,19 +33,21 @@ const AuthScreen = () => {
 
             <Image source={require("../assets/LogoGraybg.jpeg")} style = {styles.vbuylogo} className ="rounded-3xl"/>
 
-            <TextInput style={styles.tinput} placeholder="Email" keyboardType="Default"/>
-            <TextInput style={styles.tinput} placeholder="Password" keyboardType="Default"/>
+            <TextInput style={styles.tinput} placeholder="Email" keyboardType="Default"
+            onChangeText={(text) => setEmail(text)}/>
+            <TextInput style={styles.tinput} placeholder="Password" keyboardType="Default"
+            onChangeText={(text) => setPassword(text)} secureTextEntry={true}/>
 
 
 
-            <TouchableOpacity style = {styles.buttonright} className="flex-row">
+            <TouchableOpacity onPress={()=> handleLogin()} style = {styles.buttonright} className="flex-row">
             <View style={{width: wp('40') , height: wp('12'), backgroundColor:"#26da76"}} className="rounded-3xl">
                 <Text style={ styles.title} className="Bold">Sign In</Text>
             </View>
 
             </TouchableOpacity >
 
-            <TouchableOpacity style = {styles.buttonleft} className="flex-row">
+            <TouchableOpacity onPress={()=>{navigation.navigate("SignupScreen")}} style = {styles.buttonleft} className="flex-row">
             <View style={{width: wp('55') , height: wp('12'), backgroundColor:"#bd31fe"}} className="rounded-3xl">
                 <Text style={ styles.title2} className="Bold">Sign Up</Text>
             </View>
@@ -109,7 +125,7 @@ const styles = StyleSheet.create({
   
   })
 
-export default AuthScreen
+export default SigninScreen
 
 
 
