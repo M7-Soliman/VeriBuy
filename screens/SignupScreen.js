@@ -126,9 +126,9 @@ const styles = StyleSheet.create({
       borderColor: 'black',
       borderWidth: 0.5,
       width: wp('70'), 
-      height: wp('11'),
+      height: hp('6'),
       borderRadius: 13,
-      marginBottom: hp(2),
+      marginBottom: hp(1.5),
       paddingHorizontal: wp(3),
 
       }
