@@ -50,7 +50,7 @@ const SignupScreen = () => {
             onChangeText={(text) => setPassword(text)} secureTextEntry={true}/>
 
             {Success == 1?
-                <Text style={ styles.redtext} > - Use a valid email & password should be greater than 6 charechters</Text>
+                <Text style={ styles.redtext} > Use a valid email & password should be greater than 6 charechters</Text>
                 :
                 <Text style={ styles.redtext}> </Text>
             }

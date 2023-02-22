@@ -26,6 +26,7 @@ const SigninScreen = () => {
       })
       .catch(()=>{
         console.log('login unsuccessful')
+        SetSuccess(1)
       })
     }
     return (
@@ -41,14 +42,14 @@ const SigninScreen = () => {
             onChangeText={(text) => setPassword(text)} secureTextEntry={true}/>
 
 
-            <TouchableOpacity onPressIn={()=> handleLogin()} onPress={()=> SetSuccess(1)} style = {styles.buttonright}  className="flex-row">
+            <TouchableOpacity onPressIn={()=> handleLogin()} style = {styles.buttonright}  className="flex-row">
             <View style={{width: wp('40') , height: wp('12'), backgroundColor:"#26da76"}} className="rounded-3xl">
                 <Text style={ styles.title} className="Bold">Sign In</Text>
             </View>
             </TouchableOpacity >
 
             {Success == 0?
-                <Text> </Text>
+                <Text style={ styles.redtext}> </Text>
                 :
                 <Text style={ styles.redtext} > Check your email and password </Text>
             }
