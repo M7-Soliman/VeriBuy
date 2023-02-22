@@ -5,6 +5,7 @@ import { userAuthStateListener } from '../redux/actions';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ScreenStack } from 'react-native-screens';
+import SavePostScreen from '../screens/savePost';
 
 import SigninScreen from '../screens/SigninScreen';
 import SignupScreen from '../screens/SignupScreen';
@@ -51,6 +52,7 @@ export default function Main() {
                     <>        
                     <Stack.Screen name="Home" component={HomeScreen} options={{
                         animationEnabled: false, }} />
+                    <Stack.Screen name="savePost" component={SavePostScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="NotificationsScreen" component={NotificationsScreen}/>
                     <Stack.Screen name="CartScreen" component={CartScreen} />
                     <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
