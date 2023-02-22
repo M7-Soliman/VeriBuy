@@ -16,6 +16,8 @@ const SigninScreen = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     
+    const [Success, SetSuccess] = useState(0)
+
     const dispatch = useDispatch()
 
     const handleLogin =() => {
@@ -39,15 +41,19 @@ const SigninScreen = () => {
             onChangeText={(text) => setPassword(text)} secureTextEntry={true}/>
 
 
-
-            <TouchableOpacity onPress={()=> handleLogin()} style = {styles.buttonright} className="flex-row">
+            <TouchableOpacity onPressIn={()=> handleLogin()} onPress={()=> SetSuccess(1)} style = {styles.buttonright}  className="flex-row">
             <View style={{width: wp('40') , height: wp('12'), backgroundColor:"#26da76"}} className="rounded-3xl">
                 <Text style={ styles.title} className="Bold">Sign In</Text>
             </View>
-
             </TouchableOpacity >
 
-            <TouchableOpacity onPress={()=>{navigation.navigate("SignupScreen")}} style = {styles.buttonleft} className="flex-row">
+            {Success == 0?
+                <Text> </Text>
+                :
+                <Text style={ styles.redtext} > Check your email and password </Text>
+            }
+
+            <TouchableOpacity onPressIn={()=>{navigation.navigate("SignupScreen")}} onPress={()=> SetSuccess(0)} style = {styles.buttonleft} className="flex-row">
             <View style={{width: wp('55') , height: wp('12'), backgroundColor:"#bd31fe"}} className="rounded-3xl">
                 <Text style={ styles.title2} className="Bold">Sign Up</Text>
             </View>
@@ -68,6 +74,13 @@ const styles = StyleSheet.create({
         bottom: hp('-15'),
         left: wp('50')-(hp('20')/2),
         width: hp('20') , height: hp('20')
+    },
+
+    redtext :{
+      position: 'absolute',
+      color: 'red',
+      bottom: hp('20'),
+      left: wp(50) - 105,
     },
 
     maincolor: {

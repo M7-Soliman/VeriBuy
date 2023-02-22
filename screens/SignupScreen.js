@@ -18,6 +18,7 @@ const SignupScreen = () => {
     const [password, setPassword] = useState('')
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
+    const [Success, SetSuccess] = useState(0)
 
     const dispatch = useDispatch()
 
@@ -27,6 +28,7 @@ const SignupScreen = () => {
       })
       .catch(()=>{
         console.log('signup unsuccessful')
+        SetSuccess(1)
       })
     }
 
@@ -47,7 +49,11 @@ const SignupScreen = () => {
             <TextInput style={styles.tinput} placeholder="Password" keyboardType="Default"
             onChangeText={(text) => setPassword(text)} secureTextEntry={true}/>
 
-
+            {Success == 1?
+                <Text style={ styles.redtext} > - Use a valid email & password should be greater than 6 charechters</Text>
+                :
+                <Text style={ styles.redtext}> </Text>
+            }
 
             <TouchableOpacity onPress={()=> handleRegister()} style = {styles.buttonright} className="flex-row">
             <View style={{width: wp('40') , height: wp('12'), backgroundColor:"#bd31fe"}} className="rounded-3xl">
@@ -91,6 +97,14 @@ const styles = StyleSheet.create({
       marginTop: wp('12')/4,
       fontSize: hp(2.4),
     fontWeight: 'bold' },
+
+    redtext :{
+      position: 'absolute',
+      color: 'red',
+      bottom: hp('16'),
+      fontSize: hp(1.3),
+      left: wp(50) - 190,
+    },
 
     title2: {
         textAlign: 'center',
