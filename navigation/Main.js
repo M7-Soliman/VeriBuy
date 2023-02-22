@@ -13,7 +13,7 @@ import NotificationsScreen from '../screens/NotificationsScreen';
 import CartScreen from '../screens/CartScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import TvScreen from '../screens/feed/TvScreen';
-import AddScreen from '../screens/camera/AddScreen'
+import CameraScreen from '../screens/camera/AddScreen'
 
 
 const Stack = createNativeStackNavigator();
@@ -55,7 +55,7 @@ export default function Main() {
                     <Stack.Screen name="CartScreen" component={CartScreen} />
                     <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
                     <Stack.Screen name="TvScreen" component={TvScreen} />
-                    <Stack.Screen name="AddScreen" component={AddScreen} />
+                    <Stack.Screen name="AddScreen" component={CameraScreen} />
                     </>
                 }
         </Stack.Navigator>
