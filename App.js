@@ -14,15 +14,15 @@ import AddScreen from './screens/AddScreen';
 
 import firebase from "firebase/app"
 
-import {Provider} from 'react-redux';
+import {Provider, useSelector} from 'react-redux';
 import {createStore,applyMiddleware} from "redux"
 import { configureStore } from '@reduxjs/toolkit'
 
 import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers'
+import Main from './navigation/Main';
 
 const store = createStore( rootReducer, applyMiddleware(thunk))
-
 const Stack = createNativeStackNavigator();
 
 if (firebase.apps.length === 0){
@@ -38,12 +38,15 @@ firebase.initializeApp({
 })
 }
 
-
 export default function App() {
+  // const currentUserObj = useSelector(state => state.auth)
+  // console.log(currentUserObj)
+
   return (
-    <NavigationContainer>
+    // <NavigationContainer>
       <Provider store = {store}>
-      <Stack.Navigator screenOptions={{ animation: 'none'}}>
+        <Main/>
+      {/* <Stack.Navigator screenOptions={{ animation: 'none'}}>
         <Stack.Screen name="SigninScreen" component={SigninScreen}/>
         <Stack.Screen name="SignupScreen" component={SignupScreen}/>
         <Stack.Screen name="Home" component={HomeScreen} options={{
@@ -54,9 +57,9 @@ export default function App() {
         <Stack.Screen name="TvScreen" component={TvScreen} />
         <Stack.Screen name="AddScreen" component={AddScreen} />
         
-      </Stack.Navigator>
+      </Stack.Navigator> */}
       </Provider>
-    </NavigationContainer>
+    // </NavigationContainer>
       
    
     
