@@ -10,8 +10,7 @@ import NotificationsScreen from './screens/NotificationsScreen';
 import CartScreen from './screens/CartScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import TvScreen from './screens/feed/TvScreen';
-import AddScreen from './screens/AddScreen';
-
+import AddScreen from './screens/camera/AddScreen'
 import firebase from "firebase/app"
 
 import {Provider, useSelector} from 'react-redux';
