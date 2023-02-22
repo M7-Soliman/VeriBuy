@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect,useEffect, useState } from 'react'
+
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import { Camera } from 'expo-camera'
 import { Audio } from 'expo-av'
@@ -13,12 +14,7 @@ import styles from './styles'
 import { useNavigation } from '@react-navigation/native'
 
 
-/**
- * Function that renders a component responsible showing
- * a view with the camera preview, recording videos, controling the camera and
- * letting the user pick a video from the gallery
- * @returns Functional Component
- */
+
 export default function CameraScreen() {
     const [hasCameraPermissions, setHasCameraPermissions] = useState(false)
     const [hasAudioPermissions, setHasAudioPermissions] = useState(false)
@@ -34,6 +30,12 @@ export default function CameraScreen() {
     const isFocused = useIsFocused()
 
     const navigation = useNavigation()
+    useLayoutEffect(() => {
+      navigation.setOptions({
+          headerShown: false,
+      });
+  }, [])
+    
     useEffect(() => {
         (async () => {
             const cameraStatus = await Camera.requestPermissionsAsync()

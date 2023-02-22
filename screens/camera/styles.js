@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 30
+        marginTop: 45         
     },
     camera: {
         flex: 1,
@@ -21,25 +21,25 @@ const styles = StyleSheet.create({
         marginHorizontal: 30,
     },
     recordButton: {
-        borderWidth: 8,
-        borderColor: '#ff404087',
-        backgroundColor: '#ff4040',
+        borderWidth: 7,
+        borderColor: '#000000',
+        backgroundColor: '#FFFFFF',
         borderRadius: 100,
         height: 80,
         width: 80,
         alignSelf: 'center'
     },
     galleryButton: {
-        borderWidth: 2,
+        borderWidth: 1,
         borderColor: 'white',
-        borderRadius: 10,
+        borderRadius: 5,
         overflow: 'hidden',
-        width: 50,
-        height: 50,
+        width: 65,
+        height: 65,
     },
     galleryButtonImage: {
-        width: 50,
-        height: 50,
+        width: 65,
+        height: 65,
     },
     sideBarContainer: {
         top: 60,
@@ -50,11 +50,12 @@ const styles = StyleSheet.create({
     iconText: {
         color: 'white',
         fontSize: 12,
-        marginTop: 5
+        marginTop: 5,
+
     },
     sideBarButton: {
         alignItems: 'center',
-        marginBottom: 25
+        marginBottom: 50
     }
 });
 
