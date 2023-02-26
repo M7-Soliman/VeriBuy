@@ -31,7 +31,8 @@ export default function CameraScreen() {
     const isFocused = useIsFocused()
 
     const [Recording, SetRecording] = useState(0)
-    
+    const [RecordingClick, SetRecordingClick] = useState(0)
+
     const navigation = useNavigation()
     useLayoutEffect(() => {
       navigation.setOptions({
@@ -80,6 +81,17 @@ export default function CameraScreen() {
         if (cameraRef) {
             SetRecording(0)
             cameraRef.stopRecording()
+        }
+    }
+
+    const sWitcher = () => {
+        if (Recording==0) {
+            SetRecording(1)
+            recordVideo()
+        }
+        else{
+            SetRecording(0)
+            stopVideo()
         }
     }
 
@@ -155,13 +167,15 @@ export default function CameraScreen() {
                 <TouchableOpacity style={styles.recordButtonContainer}
                                     disabled={!isCameraReady}
                                     onLongPress={() => recordVideo()}
-                                    onPressOut={() => stopVideo()}>
+                                    onPressOut={() => stopVideo()}
+                                    onPress={() => sWitcher()}>
                     
                         {Recording == 0?
                     <View style={styles.recordButton}/>
                     :
                     <View style={styles.recordButtonRed}/>
                     }
+
 
                 </TouchableOpacity>
 
