@@ -3,9 +3,8 @@ import firebase from 'firebase'
 import { saveMediaToStorage } from '../services/random'
 require('firebase/firebase-auth')
 require('firebase/firestore')
-import uuid from "react-native-uuid";
+import uuid from "uuid-random";
 import { CURRENT_USER_POSTS_UPDATE } from '../constants'
-
 
 
 export const createPost = (description, video, thumbnail) => dispatch => new Promise((resolve, reject) => {
