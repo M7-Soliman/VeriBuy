@@ -31,7 +31,6 @@ export default function CameraScreen() {
     const isFocused = useIsFocused()
 
     const [Recording, SetRecording] = useState(0)
-    const [RecordingClick, SetRecordingClick] = useState(0)
 
     const navigation = useNavigation()
     useLayoutEffect(() => {
@@ -45,7 +44,7 @@ export default function CameraScreen() {
             const cameraStatus = await Camera.requestCameraPermissionsAsync()
             setHasCameraPermissions(cameraStatus.status == 'granted')
 
-            const audioStatus = await Camera.requestMicrophonePermissionsAsync()
+            const audioStatus = await Audio.requestPermissionsAsync()
             setHasAudioPermissions(audioStatus.status == 'granted')
 
             const galleryStatus = await ImagePicker.requestMediaLibraryPermissionsAsync()
@@ -102,9 +101,9 @@ export default function CameraScreen() {
             aspect: [16, 9],
             quality: 1
         })
-        if (!result.cancelled) {
-            let sourceThumb = await generateThumbnail(result.uri)
-            navigation.navigate('savePost', { source: result.uri, sourceThumb })
+        if (!result.canceled) {
+            let sourceThumb = await generateThumbnail(result.assets[0].uri)
+            navigation.navigate('savePost', { source: result.assets[0].uri, sourceThumb })
         }
     }
 
