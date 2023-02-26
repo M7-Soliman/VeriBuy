@@ -12,6 +12,7 @@ import { Feather } from '@expo/vector-icons'
 
 import styles from './styles'
 import { useNavigation } from '@react-navigation/native'
+import { Recording } from 'expo-av/build/Audio'
 
 
 
@@ -29,6 +30,8 @@ export default function CameraScreen() {
     const [isCameraReady, setIsCameraReady] = useState(false)
     const isFocused = useIsFocused()
 
+    const [Recording, SetRecording] = useState(0)
+    
     const navigation = useNavigation()
     useLayoutEffect(() => {
       navigation.setOptions({
@@ -61,6 +64,7 @@ export default function CameraScreen() {
                 const options = { maxDuration: 60, quality: Camera.Constants.VideoQuality['480'] }
                 const videoRecordPromise = cameraRef.recordAsync(options)
                 if (videoRecordPromise) {
+                    SetRecording(1)
                     const data = await videoRecordPromise;
                     const source = data.uri
                     let sourceThumb = await generateThumbnail(source)
@@ -74,6 +78,7 @@ export default function CameraScreen() {
 
     const stopVideo = async () => {
         if (cameraRef) {
+            SetRecording(0)
             cameraRef.stopRecording()
         }
     }
@@ -145,14 +150,24 @@ export default function CameraScreen() {
 
             <View style={styles.bottomBarContainer}>
                 <View style={{ flex: 1 }}></View>
-                <View style={styles.recordButtonContainer}>
-                    <TouchableOpacity
-                        disabled={!isCameraReady}
-                        onLongPress={() => recordVideo()}
-                        onPressOut={() => stopVideo()}
-                        style={styles.recordButton}
-                    />
-                </View>
+
+
+                <TouchableOpacity style={styles.recordButtonContainer}
+                                    disabled={!isCameraReady}
+                                    onLongPress={() => recordVideo()}
+                                    onPressOut={() => stopVideo()}>
+                    
+                        {Recording == 0?
+                    <View style={styles.recordButton}/>
+                    :
+                    <View style={styles.recordButtonRed}/>
+                    }
+
+                </TouchableOpacity>
+
+
+
+
                 <View style={{ flex: 1 }}>
                     <TouchableOpacity
                         onPress={() => pickFromGallery()}

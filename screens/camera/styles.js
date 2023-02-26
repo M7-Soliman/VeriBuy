@@ -29,6 +29,15 @@ const styles = StyleSheet.create({
         width: 80,
         alignSelf: 'center'
     },
+    recordButtonRed: {
+        borderWidth: 7,
+        borderColor: '#000000',
+        backgroundColor: '#ff0000',
+        borderRadius: 100,
+        height: 80,
+        width: 80,
+        alignSelf: 'center'
+    },
     galleryButton: {
         borderWidth: 1,
         borderColor: 'white',
