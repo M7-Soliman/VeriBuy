@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     },
     formContainer: {
         margin: 20,
-        flexDirection: 'row'
+
     },
     buttonsContainer: {
         flexDirection: 'row',
@@ -41,8 +41,10 @@ const styles = StyleSheet.create({
         marginRight: 20,
         marginLeft: 20,
         flex:2,
-        marginTop: 320,
+        marginTop: 20,
         flexDirection: 'column',
+        borderBottomColor: 'gray',
+        borderBottomWidth: 2,
     },
     
     cancelButton: {

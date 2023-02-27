@@ -7,7 +7,10 @@ import { useDispatch } from 'react-redux'
 import { createPost } from '../../redux/actions/post'
 
 export default function SavePostScreen(props) {
+    const [Name, setName] = useState('')
     const [description, setDescription] = useState('')
+    const [cost, setCost] = useState(0)
+
     const [requestRunning, setRequestRunning] = useState(false)
     const navigation = useNavigation()
 
@@ -28,36 +31,65 @@ export default function SavePostScreen(props) {
         )
     }
     return (
+        <View style={styles.container}>
         <ScrollView style={styles.container}>
             <View style={styles.formContainer}>
+
+                <TextInput
+                    style={styles.inputText}
+                    maxLength={30}
+                    onChangeText={(text) => setName(text)}
+                    placeholder="Product Name / اسم المنتج"
+                />
+
+                <TextInput
+                    style={styles.inputText}
+                    maxLength={12}
+                    onChangeText={(text) => setCost(text)}
+                    placeholder="Price in EGP / السعر بالجنيه"
+                    keyboardType='decimal-pad'
+                />
+                
                 <TextInput
                     style={styles.inputText}
                     maxLength={500}
                     multiline
                     onChangeText={(text) => setDescription(text)}
-                    placeholder="Add describtion to your advertisment (optional)"
+                    placeholder="Description / وصف المنتج"
                 />
-                <Image
+
+                <TextInput
+                    style={styles.inputText}
+                    maxLength={500}
+                    multiline
+                    onChangeText={(text) => setDescription(text)}
+                    placeholder="Description / وصف المنتج"
+                />
+
+
+                {/* <Image
                     style={styles.mediaPreview}
                     source={{ uri: props.route.params.source }}
-                />
+                /> */}
             </View>
-            <View style={styles.spacer} />
-            <View style={styles.buttonsContainer}>
-                <TouchableOpacity
-                    onPress={() => navigation.goBack()}
-                    style={styles.cancelButton}>
-                    <Feather name="x" size={24} color="white" />
-                    <Text style={styles.cancelButtonText}>Fakes</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    onPress={() => handleSavePost()}
-                    style={styles.postButton}>
-                    <Feather name="plus" size={24} color="white" />
-                    <Text style={styles.postButtonText}>Add</Text>
-                </TouchableOpacity>
-            </View>
+            
         </ScrollView>
+            <View style={styles.buttonsContainer}>
+                    <TouchableOpacity
+                        onPress={() => navigation.goBack()}
+                        style={styles.cancelButton}>
+                        <Feather name="x" size={24} color="white" />
+                        <Text style={styles.cancelButtonText}>Fakes</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        onPress={() => handleSavePost()}
+                        style={styles.postButton}>
+                        <Feather name="plus" size={24} color="white" />
+                        <Text style={styles.postButtonText}>Add</Text>
+                    </TouchableOpacity>
+                </View>
+
+        </View>
     )
 }
