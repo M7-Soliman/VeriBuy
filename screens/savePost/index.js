@@ -1,10 +1,12 @@
 import { StackActions, useNavigation} from '@react-navigation/native'
 import React, { useState } from 'react'
-import { ActivityIndicator, Image, Text, TextInput, TouchableOpacity, View, ScrollView} from 'react-native'
+import { ActivityIndicator, Image, Text, TextInput, TouchableOpacity, View, ScrollView, SafeAreaView} from 'react-native'
 import styles from './styles'
 import { Feather } from '@expo/vector-icons'
 import { useDispatch } from 'react-redux'
 import { createPost } from '../../redux/actions/post'
+import DropDownPicker from 'react-native-dropdown-picker';
+
 
 export default function SavePostScreen(props) {
     const [Name, setName] = useState('')
@@ -13,6 +15,15 @@ export default function SavePostScreen(props) {
 
     const [requestRunning, setRequestRunning] = useState(false)
     const navigation = useNavigation()
+
+    const [open, setOpen] = useState(false);
+    const [value, setValue] = useState(null);
+    const [items, setItems] = useState([
+        {label: 'Apple', value: 'apple'},
+        {label: 'Banana', value: 'banana'}
+    ]);
+
+
 
     const dispatch = useDispatch();
     
@@ -32,6 +43,16 @@ export default function SavePostScreen(props) {
     }
     return (
         <View style={styles.container}>
+                <View style={styles.dropdownView}>
+                <DropDownPicker
+                    open={open}
+                    value={value}
+                    items={items}
+                    setOpen={setOpen}
+                    setValue={setValue}
+                    setItems={setItems}
+                    />
+                </View>
         <ScrollView style={styles.container}>
             <View style={styles.formContainer}>
 

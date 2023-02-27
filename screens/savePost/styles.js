@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { widthPercentageToDP } from "react-native-responsive-screen";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -35,6 +36,14 @@ const styles = StyleSheet.create({
         
         
     },
+
+    dropdownView:{
+        marginBottom:100,
+        marginTop:50,
+        marginRight: 30,
+        marginLeft: 30,
+    },
+
     inputText: {
         paddingVertical: 10,
         alignItems: 'center',

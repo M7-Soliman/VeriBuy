@@ -112,7 +112,7 @@ export default function CameraScreen() {
             const { uri } = await VideoThumbnails.getThumbnailAsync(
                 source,
                 {
-                    time: 5000,
+                    time: 5,
                 }
             );
             return uri;
