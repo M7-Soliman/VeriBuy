@@ -1,6 +1,6 @@
-import { StackActions, useNavigation } from '@react-navigation/native'
+import { StackActions, useNavigation} from '@react-navigation/native'
 import React, { useState } from 'react'
-import { ActivityIndicator, Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, Image, Text, TextInput, TouchableOpacity, View, ScrollView} from 'react-native'
 import styles from './styles'
 import { Feather } from '@expo/vector-icons'
 import { useDispatch } from 'react-redux'
@@ -12,6 +12,7 @@ export default function SavePostScreen(props) {
     const navigation = useNavigation()
 
     const dispatch = useDispatch();
+    
     const handleSavePost = () => {
         setRequestRunning(true)
         dispatch(createPost(description, props.route.params.source, props.route.params.sourceThumb))
@@ -27,7 +28,7 @@ export default function SavePostScreen(props) {
         )
     }
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.formContainer}>
                 <TextInput
                     style={styles.inputText}
@@ -57,6 +58,6 @@ export default function SavePostScreen(props) {
                     <Text style={styles.postButtonText}>Add</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </ScrollView>
     )
 }
