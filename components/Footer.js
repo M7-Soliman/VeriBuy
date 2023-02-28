@@ -41,7 +41,7 @@ const Footer = () => {
 
     <View style = {styles.bottomContainer} className = "bg-black pt-5 flex-row pb-10 items-center">
         <View className="flex-row flex-1 ">
-            <TouchableOpacity style={{marginLeft: wp('10%'), marginRight: wp('9%')}} onPress={()=>{navigation.navigate("Home")}} >
+            <TouchableOpacity style={{marginLeft: wp('10%'), marginRight: wp('9%')}} onPress={()=>{navigation.navigate("HomeScreen")}} >
               <Homesol size = {wp('8')} color = "#26da76"/>
             </TouchableOpacity>
             

@@ -50,7 +50,7 @@ const HomeScreen = () => {
           <View > 
             <Footer> 
             </Footer>
-          </View>
+          </View> 
 
 
         </View> 

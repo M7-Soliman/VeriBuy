@@ -13,6 +13,7 @@ import { Feather } from '@expo/vector-icons'
 import styles from './styles'
 import { useNavigation } from '@react-navigation/native'
 import { Recording } from 'expo-av/build/Audio'
+import HomeScreen from '../HomeScreen'
 
 
 
@@ -33,12 +34,16 @@ export default function CameraScreen() {
     const [Recording, SetRecording] = useState(0)
 
     const navigation = useNavigation()
+    
+
+    
     useLayoutEffect(() => {
       navigation.setOptions({
           headerShown: false,
       });
   }, [])
     
+
     useEffect(() => {
         (async () => {
             const cameraStatus = await Camera.requestCameraPermissionsAsync()
@@ -127,7 +132,9 @@ export default function CameraScreen() {
         )
     }
 
+
     return (
+        
         <View style={styles.container}>
             {isFocused ?
                 <Camera

@@ -17,6 +17,7 @@ import TvScreen from '../screens/feed/TvScreen';
 import CameraScreen from '../screens/camera/AddScreen'
 
 
+
 const Stack = createNativeStackNavigator();
 
 
@@ -49,15 +50,16 @@ export default function Main() {
                 <Stack.Screen name="SignupScreen" component={SignupScreen}/>
                 </>
                 :
-                    <>        
-                    <Stack.Screen name="Home" component={HomeScreen} options={{
-                        animationEnabled: false, }} />
+                    <>
+                    <Stack.Screen name="HomeScreen" component={HomeScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="TvScreen" component={TvScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="ProfileScreen" component={ProfileScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="CameraScreen" component={CameraScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="NotificationsScreen" component={NotificationsScreen}  options={{ headerShown: false }} />
+
                     <Stack.Screen name="savePost" component={SavePostScreen}  options={{ headerShown: false }} />
-                    <Stack.Screen name="NotificationsScreen" component={NotificationsScreen}/>
                     <Stack.Screen name="CartScreen" component={CartScreen} />
-                    <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
-                    <Stack.Screen name="TvScreen" component={TvScreen} />
-                    <Stack.Screen name="AddScreen" component={CameraScreen} />
+
                     </>
                 }
         </Stack.Navigator>
