@@ -7,6 +7,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ScreenStack } from 'react-native-screens';
 import SavePostScreen from '../screens/savePost';
 
+
+
 import SigninScreen from '../screens/SigninScreen';
 import SignupScreen from '../screens/SignupScreen';
 import HomeScreen from '../screens/HomeScreen';
@@ -15,6 +17,7 @@ import CartScreen from '../screens/CartScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import TvScreen from '../screens/feed/TvScreen';
 import CameraScreen from '../screens/camera/AddScreen'
+import Tabs from '../screens/Tabs';
 
 
 
@@ -51,12 +54,7 @@ export default function Main() {
                 </>
                 :
                     <>
-                    <Stack.Screen name="HomeScreen" component={HomeScreen}  options={{ headerShown: false }} />
-                    <Stack.Screen name="TvScreen" component={TvScreen}  options={{ headerShown: false }} />
-                    <Stack.Screen name="ProfileScreen" component={ProfileScreen}  options={{ headerShown: false }} />
-                    <Stack.Screen name="CameraScreen" component={CameraScreen}  options={{ headerShown: false }} />
-                    <Stack.Screen name="NotificationsScreen" component={NotificationsScreen}  options={{ headerShown: false }} />
-
+                    <Stack.Screen name="tabs" component={Tabs}  options={{ headerShown: false }} />
                     <Stack.Screen name="savePost" component={SavePostScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="CartScreen" component={CartScreen} />
 

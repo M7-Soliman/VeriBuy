@@ -3,14 +3,15 @@ import { View, Text, SafeAreaView, TextInput, ScrollView, StyleSheet, Image, Tou
 import { useNavigation } from '@react-navigation/native'
 
 
-import { UserIcon as Uout} from "react-native-heroicons/outline";
-import { UserIcon as Usol} from "react-native-heroicons/solid";
-
 import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
 import { ShoppingCartIcon as Cartsol} from "react-native-heroicons/solid";
 
 import { MagnifyingGlassIcon  as Searchout} from "react-native-heroicons/outline";
 import { MagnifyingGlassIcon  as Searchsol} from "react-native-heroicons/solid";
+
+import { UserIcon as Uout} from "react-native-heroicons/outline";
+import { UserIcon as Usol} from "react-native-heroicons/solid";
+
 
 import { HomeIcon  as Homeout} from "react-native-heroicons/outline";
 import { HomeIcon  as Homesol} from "react-native-heroicons/solid";
