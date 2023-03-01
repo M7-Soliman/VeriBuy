@@ -14,45 +14,10 @@ import FooterProfile from '../components/FooterProfile';
 const ProfileScreen = () => {
     const navigation = useNavigation();
     
-    useLayoutEffect(() => {
-        navigation.setOptions({
-            headerShown: false,
-        });
-    }, [])
-
 
   return (
     <View className="bg-white pt 6">
-        <View>
 
-          {/* Header */}
-          <View>
-            <View>
-            <Cartout size = {55} color = "#FFFFFF"></Cartout>
-            </View>
-          <Heder>
-          </Heder>
-          </View>
-
-          {/* Main */}
-
-          <ScrollView> 
-            <Items> 
-            </Items>
-
-            <Lists>
-            </Lists>
-          </ScrollView>
-
-          {/* Footer */}
-          <View > 
-            <FooterProfile>
-            </FooterProfile>
-          </View>
-
-
-        </View> 
-                  
                   
 
     </View>

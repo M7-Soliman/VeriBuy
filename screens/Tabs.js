@@ -8,6 +8,8 @@ import ProfileScreen from './ProfileScreen';
 import TvScreen from './feed/TvScreen';
 import CameraScreen from './camera/AddScreen';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { UserIcon as Uout} from "react-native-heroicons/outline";
 import { UserIcon as Usol} from "react-native-heroicons/solid";
@@ -23,25 +25,31 @@ import { BuildingStorefrontIcon  as TVsol} from "react-native-heroicons/solid";
 import { BellAlertIcon  as Notifout} from "react-native-heroicons/outline";
 import { BellAlertIcon  as Notifin} from "react-native-heroicons/solid";
 
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+// import { StackNavigationProp } from '@react-navigation/stack';
+import { DependencyList, useEffect } from 'react';
+// import { BackHandler } from 'react-native';
+
 const tab = createBottomTabNavigator();
 
+
+
 const Tabs = () => {
+  const navigation = useNavigation();
+
   return (
     <tab.Navigator 
     screenOptions={({ route }) => ({
         headerShown: false,
         tabBarStyle: {
           height: hp(9.5),
-          paddingHorizontal: 5,
           paddingTop: 0,
           backgroundColor: 'black',
-          position: 'absolute',
+          position: 'relative',
           borderTopWidth: 0,
           activeColor:"red",
           inactiveColor:"white",
-          borderRadius: 40,
           paddingHorizontal: 20,
-          bottom: hp(-1)
       },
     })}
     tabBarOptions={{
@@ -50,8 +58,9 @@ const Tabs = () => {
         // showLabel: false
       }} 
      initialRouteName="Home" backBehavior="Home">
-  
-        
+
+
+      
     <tab.Screen name="Home" component={HomeScreen} options={{
         animationEnabled: false, tabBarIcon: ({ color, focused }) => (
           focused?
@@ -60,7 +69,7 @@ const Tabs = () => {
           <Homeout name="home" color={color} size={30}/>
         ),}} />
         
-    <tab.Screen name=" Showcase" component={TvScreen} options={{
+    <tab.Screen name="Showcase" component={TvScreen} options={{
         animationEnabled: false, tabBarIcon: ({ color, focused }) => (
           focused?
           <TVsol name="home" color={color} size={30}/>
@@ -73,7 +82,7 @@ const Tabs = () => {
                 <View
                   style={{
                     position: 'absolute',
-                    bottom: 1,
+                    bottom: 2,
                     width: wp('17.8') , height: wp('17.8'),
                     backgroundColor: 'transparent',
                     justifyContent: 'center',
@@ -91,8 +100,7 @@ const Tabs = () => {
                   <Image
                     source={require('../assets/plus.png')}
                     style={{
-                      width: 75,
-                      height: 75,
+                      width: wp('17.8') , height: wp('17.8'),
                       //tintColor: '#f1f6f9',
                       alignContent: 'center',
                     }}
@@ -103,6 +111,7 @@ const Tabs = () => {
           />
    
     <tab.Screen name="Notifications" component={NotificationsScreen}options={{
+          backBehavior:"Home",
          tabBarIcon: ({ color, focused}) => (
           focused ?
           <Notifin name="Notifications" color={color} size={30}/>
@@ -111,6 +120,7 @@ const Tabs = () => {
         ),}} />
 
     <tab.Screen name="Profile" component={ProfileScreen} options={{
+      backBehavior:"Home",
         animationEnabled: false, tabBarIcon: ({ color, focused }) => (
           focused?
           <Usol name="UserIcon" color={color} size={30}/>
@@ -123,3 +133,4 @@ const Tabs = () => {
 }
 
 export default Tabs
+

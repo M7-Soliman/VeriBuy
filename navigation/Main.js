@@ -54,6 +54,12 @@ export default function Main() {
                 </>
                 :
                     <>
+                    {/* <Stack.Screen name="HomeScreen" component={HomeScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="NotificationsScreen" component={NotificationsScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="ProfileScreen" component={ProfileScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="AddScreen" component={CameraScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="TvScreen" component={TvScreen}  options={{ headerShown: false }} /> */}
+
                     <Stack.Screen name="tabs" component={Tabs}  options={{ headerShown: false }} />
                     <Stack.Screen name="savePost" component={SavePostScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="CartScreen" component={CartScreen} />
