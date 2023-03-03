@@ -11,10 +11,21 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 const UpperPart = ({user}) => {
   return (
         <View>
-             <View className="flex-row"></View>
+             <View className="flex-row" style={{alignSelf:"center"}}>
+                <View style={{marginTop:hp(4)}}>
+             <Text style={styles.follow}>Followers</Text>
+             <Text style={styles.follow}>0</Text>
+                </View>
             <Avatar.Icon style={styles.avatar} color="white" size={88} icon={"account"}/>
+                <View style={{marginTop:hp(4)}}>
+             <Text style={styles.follow}>Following</Text>
+             <Text style={styles.follow}>0</Text>
+                </View>
+            </View>
+
             <Text style={styles.name}>{user.displayName}</Text>
 
+            <Text style={styles.about}>Bio</Text>
 
             <View className="flex-row">
 
@@ -38,7 +49,7 @@ const UpperPart = ({user}) => {
 
 const styles = StyleSheet.create({
     search: {
-      marginTop:hp(3),
+      marginTop:hp(4),
       alignItems: "center",
       alignContent:"center",
       borderWidth:1,
@@ -47,10 +58,12 @@ const styles = StyleSheet.create({
       backgroundColor:"black",
       width:wp(40),
       height:50,
-      marginLeft: wp(7)
+      marginLeft: wp(7),
+      marginBottom: hp(1)
     },
+    
     edit: {
-        marginTop:hp(3),
+        marginTop:hp(4),
         alignItems: "center",
         alignContent:"center",
         borderWidth:1,
@@ -70,10 +83,24 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginTop: 7
     },
+    about: {
+        fontSize: 16,
+        textAlign: "center",
+        marginTop: 7,
+    },
+    follow: {
+        fontSize: 14,
+        textAlign: "center",
+        marginTop: 7,
+        fontWeight:"bold"
+    },
     avatar: {
         alignSelf: "center",
         backgroundColor:"black",
-        marginTop: 15
+        marginTop: 15,
+        marginLeft:wp(10),
+        marginRight:wp(10),
+
     }
 
     
