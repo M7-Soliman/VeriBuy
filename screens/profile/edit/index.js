@@ -59,6 +59,15 @@ export default function EditProfileScreen() {
                         <Feather name='chevron-right' size={20} color='gray' />
                     </View>
                 </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.fieldItemContainer}
+                    onPress={() => navigation.navigate('editProfileField', { title: 'Bio', field: 'Bio', value: auth.currentUser.Bio })}>
+                    <Text>Bio</Text>
+                    <View style={styles.fieldValueContainer}>
+                        <Text>{auth.currentUser.Bio}</Text>
+                        <Feather name='chevron-right' size={20} color='gray' />
+                    </View>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )
