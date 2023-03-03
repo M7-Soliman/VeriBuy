@@ -8,8 +8,7 @@ import { useLayoutEffect, useState} from 'react'
 import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
 import {useRef}from 'react'
 import {Platform, StyleSheet} from 'react-native';
-import { getFeed } from '../../redux/services/posts'
-
+import {getFeed} from '../../components/services/posts'
 
 export default function TvScreen () {
 

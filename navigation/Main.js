@@ -14,11 +14,12 @@ import SignupScreen from '../screens/SignupScreen';
 import HomeScreen from '../screens/HomeScreen';
 import NotificationsScreen from '../screens/NotificationsScreen';
 import CartScreen from '../screens/CartScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import ProfileScreen from '../screens/profile/ProfileScreen';
 import TvScreen from '../screens/feed/TvScreen';
 import CameraScreen from '../screens/camera/AddScreen'
 import Tabs from '../screens/Tabs';
-
+import EditProfileScreen from '../screens/profile/edit';
+import EditProfileFieldScreen from '../screens/profile/edit/field';
 
 
 const Stack = createNativeStackNavigator();
@@ -62,6 +63,8 @@ export default function Main() {
 
                     <Stack.Screen name="tabs" component={Tabs}  options={{ headerShown: false }} />
                     <Stack.Screen name="savePost" component={SavePostScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="editProfile" component={EditProfileScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="editProfileField" component={EditProfileFieldScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="CartScreen" component={CartScreen} />
 
                     </>

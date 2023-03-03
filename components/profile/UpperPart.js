@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { Avatar } from 'react-native-paper';
 
@@ -6,9 +6,14 @@ import { MagnifyingGlassIcon  as Searchin} from "react-native-heroicons/solid";
 import { PencilIcon as Pensol} from "react-native-heroicons/outline";
 
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
 
 
 const UpperPart = ({user}) => {
+  
+  const auth = useSelector(state => state.auth)
+  const navigation = useNavigation()
   return (
         <View style={{borderBottomColor:"gray", borderBottomWidth:1}}>
              <View className="flex-row" style={{alignSelf:"center"}}>
@@ -16,7 +21,8 @@ const UpperPart = ({user}) => {
              <Text style={styles.follow}>Followers</Text>
              <Text style={styles.follow}>0</Text>
                 </View>
-            <Avatar.Icon style={styles.avatar} color="white" size={88} icon={"account"}/>
+                <Avatar.Icon style={styles.avatar} color="white" size={88} icon={"account"} />
+                        
                 <View style={{marginTop:hp(4)}}>
              <Text style={styles.follow}>Following</Text>
              <Text style={styles.follow}>0</Text>
@@ -34,7 +40,9 @@ const UpperPart = ({user}) => {
                   <Text style={{color:"white", fontSize:wp(3.6)}}> Search Users</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.edit} className="flex-row">
+            <TouchableOpacity 
+            onPress={()=> navigation.navigate('editProfile')}
+            style={styles.edit} className="flex-row">
                   <Pensol style={styles.icon} size = {32} color = "white"/>
                   <Text style={{color:"white", fontSize:wp(3.6)}}>  Edit Profile</Text>
             </TouchableOpacity>

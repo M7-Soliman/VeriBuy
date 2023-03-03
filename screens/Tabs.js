@@ -4,7 +4,7 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './HomeScreen';
 import NotificationsScreen from './NotificationsScreen';
-import ProfileScreen from './ProfileScreen';
+import ProfileScreen from '../screens/profile/ProfileScreen';
 import TvScreen from './feed/TvScreen';
 import CameraScreen from './camera/AddScreen';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';

@@ -8,7 +8,7 @@ import SigninScreen from './screens/SigninScreen';
 import SignupScreen from './screens/SignupScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
 import CartScreen from './screens/CartScreen';
-import ProfileScreen from './screens/ProfileScreen';
+import ProfileScreen from './screens/profile/ProfileScreen';
 import TvScreen from './screens/feed/TvScreen';
 import AddScreen from './screens/camera/AddScreen'
 import firebase from "firebase/app"
