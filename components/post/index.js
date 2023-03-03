@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import React, {forwardRef, useEffect, useImperativeHandle, useRef}from 'react'
 import styles from './styles'
 
-export const PostSingle = forwardRef((props, parentRef) =>{
+export const PostSingle = forwardRef(({item}, parentRef) =>{
     const ref = useRef (null);
     useImperativeHandle(parentRef,()=> ({
         play,
@@ -76,7 +76,10 @@ export const PostSingle = forwardRef((props, parentRef) =>{
       resizeMode="cover"
       shouldPlay={true}
       isLooping
-      source={{uri:'https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4' }}/>
+      usePoster
+      posterSource={{uri: item.media[1]}}
+      posterStyle={{resizeMode: 'cover',height:'100%'}}
+      source={{uri: item.media[0]}}/>
     
   )
 })

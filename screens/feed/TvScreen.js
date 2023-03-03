@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, Text, FlatList } from 'react-native'
 import styles from './styles'
 import { Dimensions } from 'react-native'
@@ -8,20 +8,31 @@ import { useLayoutEffect, useState} from 'react'
 import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
 import {useRef}from 'react'
 import {Platform, StyleSheet} from 'react-native';
+import { getFeed } from '../../redux/services/posts'
 
 
 export default function TvScreen () {
 
   const navigation = useNavigation();
-    
+  
   useLayoutEffect(() => {
       navigation.setOptions({
           headerShown: false,
       });
   }, [])
 
+  const [posts, setPosts] = useState([])
   const mediaRefs= useRef([])
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+  useEffect(() => {
+    
+        getFeed().then(setPosts)
+    
+  }, [])
+
+
+
+  
   const onViewableItemsChanged = useRef(({changed}) =>{
       changed.forEach(element => {
         const cell= mediaRefs.current[element.key]
@@ -38,7 +49,7 @@ export default function TvScreen () {
   const renderItem = ({item, index})=>{
     return (
        <View style={styles_specific.container}>
-          <PostSingle ref={PostSingleRef =>(mediaRefs.current[item]= PostSingleRef) }/>
+          <PostSingle item={item} ref={PostSingleRef =>(mediaRefs.current[item.id]= PostSingleRef) }/>
        </View>
     )
     
@@ -52,7 +63,7 @@ export default function TvScreen () {
     </View>
 
       <FlatList
-      data={array}
+      data={posts}
       windowSize={4}//the number of rendered videos
       initialNumToRender={0}
       maxToRenderPerBatch={2}
@@ -62,7 +73,7 @@ export default function TvScreen () {
       }}
       renderItem={renderItem}
       pagingEnabled
-      keyExtractor={item => item}
+      keyExtractor={item => item.id}
       decelerationRate={'fast'}
       onViewableItemsChanged={onViewableItemsChanged.current}
       />
@@ -80,7 +91,7 @@ const styles_specific = StyleSheet.create({
         backgroundColor: 'black'
       },
       android: {
-        height: 1.053*(Dimensions.get('window').height),
+        height: 0.957*(Dimensions.get('window').height),
         backgroundColor: 'black'
       },
       default: {
