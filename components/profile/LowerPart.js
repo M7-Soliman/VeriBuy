@@ -1,10 +1,17 @@
-import { View, Text } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import React from 'react'
+import ProfileItem from './ProfileItem'
 
-const LowerPart = () => {
+const LowerPart = ({posts}) => {
   return (
     <View>
-      <Text>LowerPart</Text>
+        <FlatList 
+        numColumns={2}
+        removeClippedSubviews
+        data = {posts}
+        keyExtractor = {(item) => item.id}
+        renderItem={({item}) => (<ProfileItem item={item}/>)}
+        />
     </View>
   )
 }

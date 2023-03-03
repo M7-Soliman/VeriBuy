@@ -17,7 +17,7 @@ import LowerPart from '../components/profile/LowerPart';
 
 const ProfileScreen = () => {
   const currentUser = useSelector(state => state.auth.currentUser)
-  const currentUserPosts = useSelector(state => state.post.currentUserPosts)
+  const currentUserPosts = useSelector(state => state.posts.currentUserPosts)
 
   const navigation = useNavigation();
     
@@ -44,7 +44,7 @@ const ProfileScreen = () => {
         </View>
 
 
-          {/* <LowerPart user={currentUser}/> */}
+          <LowerPart posts={currentUserPosts}/>
 
 
 
