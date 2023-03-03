@@ -10,7 +10,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 const UpperPart = ({user}) => {
   return (
-        <View>
+        <View style={{borderBottomColor:"gray", borderBottomWidth:1}}>
              <View className="flex-row" style={{alignSelf:"center"}}>
                 <View style={{marginTop:hp(4)}}>
              <Text style={styles.follow}>Followers</Text>
@@ -49,7 +49,7 @@ const UpperPart = ({user}) => {
 
 const styles = StyleSheet.create({
     search: {
-      marginTop:hp(4),
+      marginTop:hp(5),
       alignItems: "center",
       alignContent:"center",
       borderWidth:1,
@@ -59,11 +59,11 @@ const styles = StyleSheet.create({
       width:wp(40),
       height:50,
       marginLeft: wp(7),
-      marginBottom: hp(1)
+      marginBottom: hp(2)
     },
     
     edit: {
-        marginTop:hp(4),
+        marginTop:hp(5),
         alignItems: "center",
         alignContent:"center",
         borderWidth:1,

@@ -12,10 +12,13 @@ import Lists from '../components/Lists';
 import FooterProfile from '../components/FooterProfile';
 import { useSelector } from 'react-redux';
 import UpperPart from '../components/profile/UpperPart';
+import LowerPart from '../components/profile/LowerPart';
 
 
 const ProfileScreen = () => {
   const currentUser = useSelector(state => state.auth.currentUser)
+  // const currentUserPosts = useSelector(state => state.post.currentUserPosts)
+
   const navigation = useNavigation();
     
   useLayoutEffect(() => {
@@ -26,24 +29,26 @@ const ProfileScreen = () => {
 
   return (
     <View className="bg-white pt 6">
-        <View>
 
           {/* Header */}
-          <View>
+          <View >
             <View>
             <Cartout size = {55} color = "#FFFFFF"></Cartout>
             </View>
           <Heder>
           </Heder>
           </View>
-
+        
+        <View>
           <UpperPart user={currentUser}/>
-
-          
-
+        </View>
 
 
-        </View>                 
+          {/* <LowerPart user={currentUser}/> */}
+
+
+
+
     </View>
   )
 } 
