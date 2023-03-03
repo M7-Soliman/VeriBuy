@@ -42,6 +42,7 @@ export const getPostsByUser = (uid = firebase.auth().currentUser.uid) => dispatc
                 const id = doc.id
                 return { id, ...data }
             })
+            console.log(posts)
             dispatch({ type: CURRENT_USER_POSTS_UPDATE, currentUserPosts: posts })
         })
 })

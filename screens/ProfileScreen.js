@@ -17,7 +17,7 @@ import LowerPart from '../components/profile/LowerPart';
 
 const ProfileScreen = () => {
   const currentUser = useSelector(state => state.auth.currentUser)
-  // const currentUserPosts = useSelector(state => state.post.currentUserPosts)
+  const currentUserPosts = useSelector(state => state.post.currentUserPosts)
 
   const navigation = useNavigation();
     

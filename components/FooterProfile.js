@@ -51,7 +51,7 @@ const FooterNotifications = () => {
 
               <View >
     <TouchableOpacity onPress={()=>{navigation.navigate("AddScreen")}}  style = {styles.thathellofabutton} className="flex-row">
-      <Image source={require("../assets/plus.png")}      
+      <Image source={require("../assets/plus.png")} 
       style={{width: wp('17.8') , height: wp('17.8')} }/>
       </TouchableOpacity>
               </View>
