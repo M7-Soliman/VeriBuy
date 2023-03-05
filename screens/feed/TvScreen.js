@@ -9,6 +9,7 @@ import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
 import {useRef}from 'react'
 import {Platform, StyleSheet} from 'react-native';
 import {getFeed} from '../../components/services/posts'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 export default function TvScreen () {
 

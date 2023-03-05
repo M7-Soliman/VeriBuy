@@ -1,10 +1,11 @@
 
 import firebase from 'firebase'
-import { saveMediaToStorage } from '../../components/services/posts'
+import { saveMediaToStorage } from '../../components/services/random'
 require('firebase/firebase-auth')
 require('firebase/firestore')
 import uuid from "uuid-random";
 import { CURRENT_USER_POSTS_UPDATE } from '../constants'
+
 
 
 export const createPost = (description, video, thumbnail) => dispatch => new Promise((resolve, reject) => {
@@ -31,6 +32,7 @@ export const createPost = (description, video, thumbnail) => dispatch => new Pro
         })
         .catch(() => reject())
 })
+
 export const getPostsByUser = (uid = firebase.auth().currentUser.uid) => dispatch => new Promise((resolve, reject) => {
     firebase.firestore()
         .collection('post')

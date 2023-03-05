@@ -75,7 +75,8 @@ const Tabs = () => {
           <TVsol name="home" color={color} size={30}/>
           :
           <TVout name="home" color={color} size={30}/>
-        ),}} />
+        ),}}
+        />
 
     <tab.Screen name=" " component={CameraScreen} options={{
               tabBarIcon: ({  }) => (
