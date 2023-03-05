@@ -21,8 +21,15 @@ const UpperPart = ({user}) => {
              <Text style={styles.follow}>Followers</Text>
              <Text style={styles.follow}>0</Text>
                 </View>
+
+                {user.photoURL != null ?
+                <Avatar.Image style={styles.avatar} size={88} source={{ uri: user.photoURL }} />
+                :
                 <Avatar.Icon style={styles.avatar} color="white" size={88} icon={"account"} />
-                        
+                }
+
+
+
                 <View style={{marginTop:hp(4)}}>
              <Text style={styles.follow}>Following</Text>
              <Text style={styles.follow}>0</Text>
@@ -31,7 +38,7 @@ const UpperPart = ({user}) => {
 
             <Text style={styles.name}>{user.displayName}</Text>
 
-            <Text style={styles.about}>Bio</Text>
+            <Text style={styles.about}>{user.Bio}</Text>
 
             <View className="flex-row">
 
