@@ -20,7 +20,7 @@ import CameraScreen from '../screens/camera/AddScreen'
 import Tabs from '../screens/Tabs';
 import EditProfileScreen from '../screens/profile/edit';
 import EditProfileFieldScreen from '../screens/profile/edit/field';
-
+import SearchUsersScreen from '../screens/profile/search/SearchUsersScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -65,6 +65,7 @@ export default function Main() {
                     <Stack.Screen name="savePost" component={SavePostScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="editProfile" component={EditProfileScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="editProfileField" component={EditProfileFieldScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="SearchUsersScreen" component={SearchUsersScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="CartScreen" component={CartScreen} />
 
                     </>

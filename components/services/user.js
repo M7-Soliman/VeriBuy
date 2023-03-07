@@ -46,6 +46,28 @@ export const queryUsersByEmail = (email) => new Promise((resolve, reject) => {
         .catch(() => reject())
 })
 
+export const queryUsersByDisplayName = (displayName) => new Promise((resolve, reject) => {
+    if (displayName === '') {
+        resolve([])
+    }
+
+    firebase.firestore()
+        .collection('user')
+        .where('displayName', '>=', displayName)
+        .where('displayName', '<=', displayName + '\uf8ff')
+        .get()
+        .then((snapshot) => {
+            let users = snapshot.docs.map(doc => {
+                const data = doc.data();
+                const id = doc.id;
+                return { id, ...data }
+            })
+            resolve(users)
+        })
+        .catch(() => reject())
+})
+
+
 /**
  * fetches the doc corresponding to the id of a user.
  * 

@@ -42,7 +42,7 @@ const UpperPart = ({user}) => {
 
             <View className="flex-row">
 
-            <TouchableOpacity style={styles.search} className="flex-row">
+            <TouchableOpacity onPress={()=> navigation.navigate('SearchUsersScreen')} style={styles.search} className="flex-row">
                   <Searchin style={styles.icon} size = {32} color = "white"/>
                   <Text style={{color:"white", fontSize:wp(3.6)}}> Search Users</Text>
             </TouchableOpacity>

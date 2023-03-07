@@ -21,6 +21,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers'
 import Main from './navigation/Main';
 
+
 const store = createStore( rootReducer, applyMiddleware(thunk))
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,7 @@ firebase.initializeApp({
   measurementId: "G-XCHHSYNZVK"
 })
 }
+
 
 export default function App() {
   // const currentUserObj = useSelector(state => state.auth)
