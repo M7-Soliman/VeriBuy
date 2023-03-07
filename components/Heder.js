@@ -14,15 +14,16 @@ import { MagnifyingGlassIcon  as Searchout} from "react-native-heroicons/outline
 
 
 import React from 'react'
+import { heightPercentageToDP } from 'react-native-responsive-screen';
 
 const Header = () => {
   const navigation = useNavigation();
   return (
     <View className = "flex-row pb-3 items-center mx-4 space-x-5">
-        <View className="flex-row flex-1 space-x-2">
-              <Searchout size = {32} color = "#808080"/>
-              <TextInput placeholder="Start Search" keyboardType="Default"/>
-        </View>
+        <TouchableOpacity style={{alignItems:"center", backgroundColor:"#FFFFFF", borderColor:"#1d1d1d", borderWidth:1, height: heightPercentageToDP(5), paddingLeft:10, borderRadius:20, marginTop:10}} className="flex-row flex-1 space-x-2">
+              <Searchout size = {32} color = "black"/>
+              <Text style={{color:"black"}}> Search Items </Text>
+        </TouchableOpacity>
         
               
         <TouchableOpacity onPress={()=>{navigation.navigate("CartScreen")}} 

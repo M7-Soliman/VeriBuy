@@ -24,7 +24,7 @@ const HomeScreen = () => {
 
 
   return (
-    <View className="bg-white pt 6">
+    <View style = {{backgroundColor:"white"}} className="pt 6">
         <View>
 
           {/* Header */}
