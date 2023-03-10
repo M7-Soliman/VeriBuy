@@ -66,7 +66,7 @@ export default function Main() {
                     <Stack.Screen name="editProfile" component={EditProfileScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="editProfileField" component={EditProfileFieldScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="SearchUsersScreen" component={SearchUsersScreen}  options={{ headerShown: false }} />
-                    <Stack.Screen name="CartScreen" component={CartScreen} />
+                    <Stack.Screen name="CartScreen" component={CartScreen} options={{ headerShown: false }}/>
 
                     </>
                 }

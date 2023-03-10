@@ -1,11 +1,12 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
+import NavBarGeneral from '../components/general/navbar'
 
 const CartScreen = () => {
   return (
-    <View>
-      <Text>CartScreen</Text>
-    </View>
+    <SafeAreaView>
+      <NavBarGeneral title = "Cart"></NavBarGeneral>
+    </SafeAreaView>
   )
 }
 

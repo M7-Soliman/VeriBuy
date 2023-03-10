@@ -38,19 +38,16 @@ const HomeScreen = () => {
 
           {/* Main */}
 
-          <ScrollView> 
+
+          
+
+          {/* <ScrollView> 
             <Items> 
             </Items>
 
             <Lists>
             </Lists>
-          </ScrollView>
-
-          {/* Footer */}
-          {/* <View > 
-            <Footer> 
-            </Footer>
-          </View>  */}
+          </ScrollView> */}
 
 
         </View> 
