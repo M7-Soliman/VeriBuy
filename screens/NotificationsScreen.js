@@ -8,7 +8,6 @@ import Footer from '../components/Footer';
 import Heder from '../components/Heder';
 
 import { Header } from 'react-native/Libraries/NewAppScreen';
-import Lists from '../components/Lists';
 import FooterNotifications from '../components/FooterNotifications';
 import NotificationItems from '../components/NotificationItems';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
@@ -30,8 +29,6 @@ const NotificationsScreen = () => {
   return (
     <ScrollView className="bg-white pt 6">
 
-        {/* <View>
-
           <View>
             <View>
             <Cartout size = {55} color = "#FFFFFF"></Cartout>
@@ -39,6 +36,9 @@ const NotificationsScreen = () => {
           <Heder>
           </Heder>
           </View>
+
+        {/* <View>
+
 
           <ScrollView> 
             <NotificationItems>
@@ -54,7 +54,7 @@ const NotificationsScreen = () => {
         </View>  
         */}
                   
-          <Image source={require("../assets/comingsoon.png")} style={{marginTop:heightPercentageToDP(46),alignSelf:"center"}}/>
+          <Image source={require("../assets/comingsoon.png")} style={{marginTop:heightPercentageToDP(35),alignSelf:"center"}}/>
 
     </ScrollView>
   )

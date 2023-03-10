@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, TextInput, ScrollView, StyleSheet } from 'react-native'
-import React, { useLayoutEffect, useState} from 'react'
+import React, { useLayoutEffect, useRef, useState} from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
 
@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 import Heder from '../components/Heder';
 
 import { Header } from 'react-native/Libraries/NewAppScreen';
-import Lists from '../components/Lists';
+import Feed from '../components/feed/Feed';
 
 // import { searchIcon } from "react-native-heroicons/outline";
 // import { TextInput } from 'react-native-web';
@@ -22,6 +22,7 @@ const HomeScreen = () => {
         });
     }, [])
 
+  
 
   return (
     <View style = {{backgroundColor:"white"}} className="pt 6">
@@ -37,18 +38,14 @@ const HomeScreen = () => {
           </View>
 
           {/* Main */}
-
-
+          <Feed>
           
+          </Feed>
 
-          {/* <ScrollView> 
-            <Items> 
-            </Items>
 
-            <Lists>
-            </Lists>
-          </ScrollView> */}
+        
 
+    
 
         </View> 
                   
