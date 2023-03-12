@@ -25,12 +25,12 @@ const ProfileScreen = () => {
   }, [])
 
   return (
-    <View className="bg-white pt 6">
+    <View className="bg-black pt 6">
 
           {/* Header */}
           <View >
             <View>
-            <Cartout size = {55} color = "#FFFFFF"></Cartout>
+            <Cartout size = {55} color = "black"></Cartout>
             </View>
           <Heder>
           </Heder>
@@ -41,7 +41,7 @@ const ProfileScreen = () => {
         </View>
 
 
-          <LowerPart posts={currentUserPosts}/>
+        <LowerPart posts={currentUserPosts}/>
 
 
 

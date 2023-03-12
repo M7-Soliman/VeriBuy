@@ -50,6 +50,7 @@ const Tabs = () => {
           activeColor:"red",
           inactiveColor:"white",
           paddingHorizontal: 20,
+
       },
     })}
     tabBarOptions={{

@@ -15,7 +15,7 @@ const UpperPart = ({user}) => {
   const auth = useSelector(state => state.auth)
   const navigation = useNavigation()
   return (
-        <View style={{borderBottomColor:"gray", borderBottomWidth:1}}>
+        <View style={{borderBottomColor:"#1d1d1d", borderBottomWidth:4}}>
              <View className="flex-row" style={{alignSelf:"center"}}>
                 <View style={{marginTop:hp(4)}}>
              <Text style={styles.follow}>Followers</Text>
@@ -68,9 +68,9 @@ const styles = StyleSheet.create({
       alignItems: "center",
       alignContent:"center",
       borderWidth:1,
-      borderColor:'black',
+      borderColor:'#1d1d1d',
       borderRadius:22,
-      backgroundColor:"black",
+      backgroundColor:"#1d1d1d",
       width:wp(40),
       height:50,
       marginLeft: wp(7),
@@ -96,18 +96,22 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: "center",
-        marginTop: 7
+        marginTop: 7, 
+        color: "white"
     },
     about: {
         fontSize: 16,
         textAlign: "center",
         marginTop: 7,
+        color: "white"
     },
     follow: {
         fontSize: 14,
         textAlign: "center",
         marginTop: 7,
-        fontWeight:"bold"
+        fontWeight:"bold", 
+        color: "white"
+
     },
     avatar: {
         alignSelf: "center",

@@ -77,7 +77,7 @@ const navigation = useNavigation();
 }
 const styles_specific = StyleSheet.create({
     container: {
-      flex:1/2, height:(((wp(100)/2)-20)*16/9), backgroundColor:"#1d1d1d", marginTop: 20, marginLeft: 10, marginRight: 10, overflow: 'hidden', borderRadius:10, 
+      flex:1/2, height:(((wp(100)/2)-20)*16/9), backgroundColor:"#1d1d1d", marginTop: 20, marginLeft: 10, marginRight: 10, overflow: 'hidden', borderRadius:15, 
         },
     },
   );
