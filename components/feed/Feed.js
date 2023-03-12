@@ -51,7 +51,7 @@ const navigation = useNavigation();
   }
 
   return (
-    <View style={{backgroundColor:"white"}}>
+    <View style={{backgroundColor:"black"}}>
       <View className = "bg-black opacity-0">
     {/* <Cartout size = {(0.06)*(Dimensions.get('window').height)} color = "#fffff" opacity={100}></Cartout> */}
     </View>
@@ -77,7 +77,7 @@ const navigation = useNavigation();
 }
 const styles_specific = StyleSheet.create({
     container: {
-      flex:1/2, height:(((wp(100)/2)-14)*16/9), backgroundColor:"black", marginTop: 10, marginLeft: 7, marginRight: 7, overflow: 'hidden', borderRadius:10,
+      flex:1/2, height:(((wp(100)/2)-20)*16/9), backgroundColor:"#1d1d1d", marginTop: 20, marginLeft: 10, marginRight: 10, overflow: 'hidden', borderRadius:10, 
         },
     },
   );

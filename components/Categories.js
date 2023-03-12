@@ -8,28 +8,28 @@ import React from 'react'
 
 const Items = () => {
   return (
-    <ScrollView contentContainerStyle = {{paddingHorizontal: 26, 
-    paddingTop: 10, paddingBottom: 5, alignItems :'center'
+    <ScrollView contentContainerStyle = {{paddingHorizontal: 10, 
+    paddingTop: 10, paddingBottom: 15, alignItems :'center', backgroundColor:"black"
     }} horizontal showsHorizontalScrollIndicator={false}>
     
     
     <TouchableOpacity className = "relative mr-3"> 
-        <Image source={require("../assets/a1.png")}
+        <Image source={require("../assets/apurple.png")}
         className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>
     
     <TouchableOpacity className = "relative mr-3"> 
-        <Image source={require("../assets/a2.png")}
+        <Image source={require("../assets/1d.png")}
         className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity> 
 
     <TouchableOpacity className = "relative mr-3"> 
-        <Image source={require("../assets/a3.png")}
+        <Image source={require("../assets/1d.png")}
         className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>    
 
     <TouchableOpacity className = "relative mr-3"> 
-        <Image source={require("../assets/a4.png")}
+        <Image source={require("../assets/1d.png")}
         className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>    
 
@@ -39,12 +39,12 @@ const Items = () => {
     </TouchableOpacity>  
 
     <TouchableOpacity className = "relative mr-3"> 
-        <Image source={require("../assets/a6.png")}
+        <Image source={require("../assets/1d.png")}
         className ="h-20 w-20 rounded-2xl "/>
     </TouchableOpacity>
     
     <TouchableOpacity className = "relative mr-3"> 
-        <Image source={require("../assets/a7.png")}
+        <Image source={require("../assets/1d.png")}
         className ="h-20 w-20 rounded-xl "/>
     </TouchableOpacity> 
 

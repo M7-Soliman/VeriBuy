@@ -54,7 +54,7 @@ const Tabs = () => {
     })}
     tabBarOptions={{
         activeTintColor: '#26da76',
-        inactiveTintColor: '#ffffff',
+        inactiveTintColor: 'white',
         // showLabel: false
       }} 
      initialRouteName="Home" backBehavior="Home">
@@ -99,9 +99,9 @@ const Tabs = () => {
                   }}>
                     
                   <Image
-                    source={require('../assets/plus.png')}
+                    source={require('../assets/blus.png')}
                     style={{
-                      width: wp('17.8') , height: wp('17.8'),
+                      width: wp('17.5') , height: wp('17.5'),
                       //tintColor: '#f1f6f9',
                       alignContent: 'center',
                     }}

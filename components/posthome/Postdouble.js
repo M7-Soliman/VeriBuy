@@ -72,7 +72,7 @@ export const Postdouble = forwardRef(({item}, parentRef) =>{
 
       <Video
       ref={ref} 
-      style={{flex:1, borderWidth:1, borderColor:"white", borderRadius:30}}
+      style={{flex:1, borderRadius:10}}
       resizeMode="cover"
       shouldPlay={true}
       isLooping = {false}

@@ -25,13 +25,13 @@ const HomeScreen = () => {
   
 
   return (
-    <View style = {{backgroundColor:"white"}} className="pt 6">
+    <View style = {{backgroundColor:"black"}} className="pt 6">
         <View>
 
           {/* Header */}
-          <View>
+          <View style = {{backgroundColor:"black"}}>
             <View>
-            <Cartout size = {55} color = "#FFFFFF"></Cartout>
+            <Cartout size = {55} color = "black"></Cartout>
             </View>
           <Heder>
           </Heder>
