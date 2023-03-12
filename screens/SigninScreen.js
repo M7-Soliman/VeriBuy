@@ -39,7 +39,7 @@ const SigninScreen = () => {
             <Text style={ styles.toptext} >WELCOME! </Text>
             <Text style={ styles.toptext2} >Hi there! How are you? it's been </Text>
             <Text style={ styles.downtext} >Not registered yet? </Text>
-            <Image source={require("../assets/LogoGraybg.jpeg")} style = {styles.vbuylogo} className ="rounded-3xl"/>
+            <Image source={require("../assets/logo.jpg")} style = {styles.vbuylogo} className ="rounded-3xl"/>
             <TextInput style={styles.tinput} placeholderTextColor='white' underlineColorAndroid='white'placeholder="Email" keyboardType="Default"
             onChangeText={(text) => setEmail(text)}/>
             <TextInput style={styles.tinput} placeholderTextColor='white' underlineColorAndroid='white' placeholder="Password" keyboardType="Default"
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     photo:{
         bottom: hp('-5'),
         left: wp('0')-(hp('20')/2),
-        width: hp('100') , height: hp('25')
+        width: hp('100') , height: hp('22')
     },
     vbuylogo:{
       bottom: hp('25'),
@@ -99,9 +99,9 @@ const styles = StyleSheet.create({
         
     position: "relative",
     color:'white',
-    fontSize: hp(4.8),
+    fontSize: hp(5),
     bottom: hp('-14'),
-    left: wp('25')-(wp('40')/2),
+    left: wp('42')-(wp('40')/2),
     fontFamily: "Roboto", 
     fontWeight: "bold"
     
@@ -111,8 +111,8 @@ const styles = StyleSheet.create({
     position: "relative",
     color:'white',
     fontSize: hp(2),
-    bottom: hp('-14'),
-    left: wp('25')-(wp('40')/2),
+    bottom: hp('-15'),
+    left: wp('40')-(wp('40')/2),
     fontFamily: "Roboto", 
     fontWeight: "normal"
     
@@ -123,14 +123,14 @@ const styles = StyleSheet.create({
     color:'white',
     fontSize: hp(2),
     bottom: hp('-55'),
-    left: wp('27')-(wp('40')/2),
+    left: wp('52')-(wp('40')/2),
     fontFamily: "Roboto", 
     fontWeight: "normal"
     
   },
   mainbox:{
     width: wp('100') ,
-     height: hp('82'), 
+     height: hp('85'), 
      backgroundColor:"black",
     //  bottom: hp('21')
     
@@ -140,8 +140,8 @@ const styles = StyleSheet.create({
     redtext :{
       position: 'absolute',
       color: 'red',
-      bottom: hp('36'),
-      left: wp(31) - 105,
+      bottom: hp('38'),
+      left: wp(54) - 105,
     },
 
     maincolor: {
@@ -173,20 +173,20 @@ const styles = StyleSheet.create({
       buttonright: {
       position: "relative",
       bottom: hp('2'),
-      left: wp('25')-(wp('40')/2),
+      left: wp('50')-(wp('40')/2),
         marginBottom: hp(62) }, 
 
       buttonleft: {
         position: "relative",
-        bottom: hp('50'),
-        left: wp('26')-(wp('40')/2)
+        bottom: hp('48'),
+        left: wp('60')-(wp('40')/2)
       },
 
       tinput:{
         position: "relative",
         
       bottom: hp('6'),
-      left: wp('39')-(wp('70')/2), 
+      left: wp('49')-(wp('70')/2), 
       
       borderWidth: 0.5,
       width: wp('70'), 
