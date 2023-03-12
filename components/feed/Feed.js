@@ -5,6 +5,7 @@ import { getFeed } from '../services/posts';
 import { Dimensions } from 'react-native'
 import Postdouble from '../posthome/Postdouble';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import Items from '../Categories';
 
 const Feed = () => {
 
@@ -17,12 +18,14 @@ const navigation = useNavigation();
   }, [])
 
   const [posts, setPosts] = useState([])
+
   const mediaRefs= useRef([])
 
   useEffect(() => {
     
         getFeed().then(setPosts)
-    
+
+        
   }, [])
 
   const onViewableItemsChanged = useRef(({changed}) =>{
@@ -52,29 +55,29 @@ const navigation = useNavigation();
       <View className = "bg-black opacity-0">
     {/* <Cartout size = {(0.06)*(Dimensions.get('window').height)} color = "#fffff" opacity={100}></Cartout> */}
     </View>
+    <Items>
 
-      <FlatList
+    </Items>
+
+      <FlatList 
       data={posts}
       windowSize={4}//the number of rendered videos
-      initialNumToRender={0}
+      initialNumToRender={4}
       numColumns={2}
       maxToRenderPerBatch={2}
       removeClippedSubviews
-      viewabilityConfig={{
-        itemVisiblePercentThreshold: 100
-      }}
       renderItem={renderItem}
       pagingEnabled
       keyExtractor={item => item.id}
-      decelerationRate={'fast'}
       onViewableItemsChanged={onViewableItemsChanged.current}
+
       />
     </View>
   )
 }
 const styles_specific = StyleSheet.create({
     container: {
-      flex:1/2, height:(((wp(100)/2)-20)*16/9), backgroundColor:"black", marginTop: 10, marginLeft: 10, marginRight: 10, borderRadius:30, overflow: 'hidden'
+      flex:1/2, height:(((wp(100)/2)-20)*16/9), backgroundColor:"black", marginTop: 10, marginLeft: 10, marginRight: 10, overflow: 'hidden', borderRadius:30,
         },
     },
   );

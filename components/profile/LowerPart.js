@@ -5,12 +5,13 @@ import ProfileItem from './ProfileItem'
 const LowerPart = ({posts}) => {
   return (
     <View>
-        <FlatList 
+        <FlatList  
         numColumns={2}
         removeClippedSubviews
         data = {posts}
         keyExtractor = {(item) => item.id}
         renderItem={({item}) => (<ProfileItem item={item}/>)}
+        
         />
     </View>
   )

@@ -4,6 +4,8 @@ import React, {forwardRef, useEffect, useImperativeHandle, useRef}from 'react'
 
 export const Postdouble = forwardRef(({item}, parentRef) =>{
     const ref = useRef (null);
+    const seconds = 3
+
     useImperativeHandle(parentRef,()=> ({
         play,
         unload, 
@@ -68,19 +70,20 @@ export const Postdouble = forwardRef(({item}, parentRef) =>{
     }
   return (
 
-    
       <Video
       ref={ref} 
-      style={{flex:1}}
+      style={{flex:1, borderWidth:1, borderColor:"white", borderRadius:30}}
       resizeMode="cover"
       shouldPlay={true}
-      isLooping
+      isLooping = {false}
       usePoster
       posterSource={{uri: item.media[1]}}
       posterStyle={{resizeMode: 'cover',height:'100%'}}
       source={{uri: item.media[0]}}
-      isMuted={true}/>
-    
+      isMuted={true}
+      
+      />
+
   )
 })
 
