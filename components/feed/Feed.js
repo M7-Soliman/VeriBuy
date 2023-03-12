@@ -67,7 +67,7 @@ const navigation = useNavigation();
       maxToRenderPerBatch={2}
       removeClippedSubviews
       renderItem={renderItem}
-      pagingEnabled
+      // pagingEnabled
       keyExtractor={item => item.id}
       onViewableItemsChanged={onViewableItemsChanged.current}
 
