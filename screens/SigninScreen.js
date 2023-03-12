@@ -140,8 +140,8 @@ const styles = StyleSheet.create({
     redtext :{
       position: 'absolute',
       color: 'red',
-      bottom: hp('38'),
-      left: wp(54) - 105,
+      bottom: hp('30'),
+      left: wp(54) - 99,
     },
 
     maincolor: {
@@ -163,7 +163,6 @@ const styles = StyleSheet.create({
           color:'white',
           marginTop: wp('6')/4,
           fontSize: hp(2),
-        fontWeight: 'bold', 
         fontFamily: "Roboto", 
        },
 
@@ -186,7 +185,7 @@ const styles = StyleSheet.create({
         position: "relative",
         bottom: hp('6'),
         left: wp('49')-(wp('70')/2), 
-        borderWidth: 0.5,
+        borderWidth: 1,
         width: wp('70'), 
         height: wp('10'),
         marginBottom: hp(1),
