@@ -28,7 +28,7 @@ const Header = () => {
               
         <TouchableOpacity onPress={()=>{navigation.navigate("CartScreen")}} 
  className="flex-row space-x-6" >
-              <Cartout size = {32} color = "#000000"></Cartout>
+              <Cartout size = {32} color = "white"></Cartout>
               {/* <Uout size = {32} color = "#39c58f"></Uout> */}
         </TouchableOpacity>
     </View>
