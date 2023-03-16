@@ -10,6 +10,7 @@ import Items from '../Categories';
 const Feed = () => {
 
 const navigation = useNavigation();
+const [currentPage, setCurrentPage] = useState(1)
   
   useLayoutEffect(() => {
       navigation.setOptions({
@@ -22,11 +23,9 @@ const navigation = useNavigation();
   const mediaRefs= useRef([])
 
   useEffect(() => {
-    
-        getFeed().then(setPosts)
+    getFeed().then(res => {setPosts([...posts, ...res])})
+  }, [currentPage])
 
-        
-  }, [])
 
   const onViewableItemsChanged = useRef(({changed}) =>{
     changed.forEach(element => {
@@ -44,10 +43,14 @@ const navigation = useNavigation();
   const renderItem = ({item, index})=>{
     return (
       <View style={styles_specific.container}>
-          <Postdouble item={item} ref={PostSingleRef =>(mediaRefs.current[item.id]= PostSingleRef) }/>
+          <Postdouble item={item} key={`${item.id}-${index}`} ref={PostSingleRef =>(mediaRefs.current[item.id]= PostSingleRef) }/>
       </View>
     )
     
+  }
+
+  const loadMore = () => {
+    setCurrentPage(currentPage + 1)
   }
 
   return (
@@ -68,8 +71,12 @@ const navigation = useNavigation();
       removeClippedSubviews
       renderItem={renderItem}
       // pagingEnabled
-      keyExtractor={item => item.id}
+      keyExtractor={(item, index) => `${item.id}-${index}`}
       onViewableItemsChanged={onViewableItemsChanged.current}
+      onEndReached={loadMore}
+      onEndReachedThreshold={0.1}
+
+      
 
       />
     </View>

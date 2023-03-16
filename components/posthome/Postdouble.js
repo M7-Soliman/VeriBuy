@@ -75,7 +75,7 @@ export const Postdouble = forwardRef(({item}, parentRef) =>{
       style={{flex:1, borderRadius:10}}
       resizeMode="cover"
       shouldPlay={true}
-      isLooping = {false}
+      isLooping = {true}
       usePoster
       posterSource={{uri: item.media[1]}}
       posterStyle={{resizeMode: 'cover',height:'100%'}}
