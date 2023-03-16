@@ -51,15 +51,15 @@ const navigation = useNavigation();
   }
 
   return (
-    <View style={{backgroundColor:"black"}}>
+    <View style={{backgroundColor:"#112024"}}>
       <View className = "bg-black opacity-0">
     {/* <Cartout size = {(0.06)*(Dimensions.get('window').height)} color = "#fffff" opacity={100}></Cartout> */}
     </View>
-    <Items>
+    {/* <Items>
 
-    </Items>
+    </Items> */}
 
-      <FlatList 
+      <FlatList
       data={posts}
       windowSize={4}//the number of rendered videos
       initialNumToRender={4}
@@ -77,7 +77,7 @@ const navigation = useNavigation();
 }
 const styles_specific = StyleSheet.create({
     container: {
-      flex:1/2, height:(((wp(100)/2)-20)*16/9), backgroundColor:"#1d1d1d", marginTop: 20, marginLeft: 10, marginRight: 10, overflow: 'hidden', borderRadius:15, 
+      flex:1/2, height:(((wp(100)/2)-20)*16/9), backgroundColor:"#1e3135", marginTop: 20, marginLeft: 10, marginRight: 10, overflow: 'hidden', borderRadius:15, 
         },
     },
   );

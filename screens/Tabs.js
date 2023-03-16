@@ -44,7 +44,7 @@ const Tabs = () => {
         tabBarStyle: {
           height: hp(9.5),
           paddingTop: 0,
-          backgroundColor: '#1d1d1d',
+          backgroundColor: '#1e3135',
           position: 'relative',
           borderTopWidth: 0,
           activeColor:"red",

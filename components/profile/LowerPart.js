@@ -5,7 +5,7 @@ import ProfileItem from './ProfileItem'
 const LowerPart = ({posts}) => {
   return (
     <View>
-        <FlatList  style={{paddingBottom: 20}}
+        <FlatList  
         numColumns={2}
         removeClippedSubviews
         data = {posts}
