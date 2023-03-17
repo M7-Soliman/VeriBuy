@@ -1,5 +1,5 @@
 import { Video } from 'expo-av'
-import { View, Text } from 'react-native'
+import { View, Text, ImageBackground, StyleSheet} from 'react-native'
 import React, {forwardRef, useEffect, useImperativeHandle, useRef}from 'react'
 import styles from './styles'
 
@@ -69,7 +69,7 @@ export const PostSingle = forwardRef(({item}, parentRef) =>{
     }
   return (
 
-    
+
       <Video
       ref={ref} 
       style={styles.container}
@@ -80,7 +80,6 @@ export const PostSingle = forwardRef(({item}, parentRef) =>{
       posterSource={{uri: item.media[1]}}
       posterStyle={{resizeMode: 'cover',height:'100%'}}
       source={{uri: item.media[0]}}/>
-    
   )
 })
 

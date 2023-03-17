@@ -10,6 +10,7 @@ import {useRef}from 'react'
 import {Platform, StyleSheet} from 'react-native';
 import {getFeed} from '../../components/services/posts'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import _ from 'lodash';
 
 export default function TvScreen () {
 
@@ -30,9 +31,10 @@ export default function TvScreen () {
   }, [currentPage])
 
 
-  const loadMore = () => {
-    setCurrentPage(currentPage + 1)
-  }
+  const loadMore = _.debounce(() => {
+      setCurrentPage(currentPage + 1);
+    }, 500); 
+  
 
   
   const onViewableItemsChanged = useRef(({changed}) =>{
@@ -67,7 +69,7 @@ export default function TvScreen () {
       <FlatList
       data={posts}
       windowSize={4}//the number of rendered videos
-      initialNumToRender={0}
+      initialNumToRender={2}
       maxToRenderPerBatch={2}
       removeClippedSubviews
       viewabilityConfig={{
@@ -92,11 +94,11 @@ const styles_specific = StyleSheet.create({
     ...Platform.select({
       ios: {
         height: 1*(Dimensions.get('window').height - hp(9.5)),
-        backgroundColor: 'black',
+        backgroundColor: '#1e3135',
       },
       android: {
         height: 0.957*(Dimensions.get('window').height),
-        backgroundColor: 'black'
+        backgroundColor: '#1e3135'
       },
       default: {
         // other platforms, web for example

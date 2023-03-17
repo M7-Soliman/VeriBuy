@@ -24,7 +24,7 @@ const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     getFeed().then(res => {setPosts([...posts, ...res])})
-  }, [currentPage])
+  }, [])
 
 
   const onViewableItemsChanged = useRef(({changed}) =>{
@@ -73,7 +73,7 @@ const [currentPage, setCurrentPage] = useState(1)
       // pagingEnabled
       keyExtractor={(item, index) => `${item.id}-${index}`}
       onViewableItemsChanged={onViewableItemsChanged.current}
-      onEndReached={loadMore}
+      // onEndReached={loadMore}
       onEndReachedThreshold={0.1}
 
       
