@@ -27,7 +27,10 @@ export default function TvScreen () {
   const mediaRefs= useRef([])
 
   useEffect(() => {
-    getFeed().then(res => {setPosts([...posts, ...res])})
+    getFeed().then(res => {
+      const shuffledNewData = _.shuffle(res);
+      const newDataWithId = shuffledNewData.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
+      setPosts([...posts, ...newDataWithId])})
   }, [currentPage])
 
 
@@ -35,7 +38,6 @@ export default function TvScreen () {
       setCurrentPage(currentPage + 1);
     }, 500); 
   
-
   
   const onViewableItemsChanged = useRef(({changed}) =>{
       changed.forEach(element => {
