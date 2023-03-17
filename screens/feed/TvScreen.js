@@ -14,7 +14,8 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 export default function TvScreen () {
 
   const navigation = useNavigation();
-  
+  const [currentPage, setCurrentPage] = useState(1)
+
   useLayoutEffect(() => {
       navigation.setOptions({
           headerShown: false,
@@ -25,12 +26,13 @@ export default function TvScreen () {
   const mediaRefs= useRef([])
 
   useEffect(() => {
-    
-        getFeed().then(setPosts)
-    
-  }, [])
+    getFeed().then(res => {setPosts([...posts, ...res])})
+  }, [currentPage])
 
 
+  const loadMore = () => {
+    setCurrentPage(currentPage + 1)
+  }
 
   
   const onViewableItemsChanged = useRef(({changed}) =>{
@@ -49,7 +51,7 @@ export default function TvScreen () {
   const renderItem = ({item, index})=>{
     return (
        <View style={styles_specific.container}>
-          <PostSingle item={item} ref={PostSingleRef =>(mediaRefs.current[item.id]= PostSingleRef) }/>
+          <PostSingle item={item} key={`${item.id}-${index}`} ref={PostSingleRef =>(mediaRefs.current[item.id]= PostSingleRef) }/>
        </View>
     )
     
@@ -73,9 +75,11 @@ export default function TvScreen () {
       }}
       renderItem={renderItem}
       pagingEnabled
-      keyExtractor={item => item.id}
+      keyExtractor={(item, index) => `${item.id}-${index}`}
       decelerationRate={'fast'}
       onViewableItemsChanged={onViewableItemsChanged.current}
+      onEndReached={loadMore}
+      onEndReachedThreshold={0.1}
       />
     </View>
   )
