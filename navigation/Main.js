@@ -62,11 +62,13 @@ export default function Main() {
                     <Stack.Screen name="TvScreen" component={TvScreen}  options={{ headerShown: false }} /> */}
 
                     <Stack.Screen name="tabs" component={Tabs}  options={{ headerShown: false }} />
+                    <Stack.Screen name="TvScreen" component={TvScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="savePost" component={SavePostScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="editProfile" component={EditProfileScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="editProfileField" component={EditProfileFieldScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="SearchUsersScreen" component={SearchUsersScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="CartScreen" component={CartScreen} options={{ headerShown: false }}/>
+                    
 
                     </>
                 }

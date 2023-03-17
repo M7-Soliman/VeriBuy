@@ -95,7 +95,7 @@ const styles_specific = StyleSheet.create({
     flex: 1,
     ...Platform.select({
       ios: {
-        height: 1*(Dimensions.get('window').height - hp(9.5)),
+        height: 1*(Dimensions.get('window').height),
         backgroundColor: '#1e3135',
       },
       android: {

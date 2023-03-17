@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -42,7 +42,7 @@ const Tabs = () => {
     screenOptions={({ route }) => ({
         headerShown: false,
         tabBarStyle: {
-          height: hp(9.5),
+          height: hp(9),
           paddingTop: 0,
           backgroundColor: '#1e3135',
           position: 'relative',
@@ -70,18 +70,18 @@ const Tabs = () => {
           <Homeout name="home" color={color} size={30}/>
         ),}} />
         
-    <tab.Screen name="Showcase" component={TvScreen} options={{
+    <tab.Screen name="Showcase" component={HomeScreen} options={{
         animationEnabled: false, tabBarIcon: ({ color, focused }) => (
-          focused?
-          <TVsol name="home" color={color} size={30}/>
-          :
-          <TVout name="home" color={color} size={30}/>
+          <TouchableOpacity onPress={()=>{navigation.navigate("TvScreen")}}>
+          <TVout name="home" color="white" size={30}/>
+          </TouchableOpacity>
+          
         ),}}
         />
 
     <tab.Screen name=" " component={CameraScreen} options={{
               tabBarIcon: ({  }) => (
-                <View
+                <View onPress={()=>{navigation.navigate("TvScreen")}} 
                   style={{
                     position: 'absolute',
                     bottom: 2,
@@ -98,7 +98,6 @@ const Tabs = () => {
                     // shadowRadius: 1.65,
                     // elevation: 0,
                   }}>
-                    
                   <Image
                     source={require('../assets/blus.png')}
                     style={{
