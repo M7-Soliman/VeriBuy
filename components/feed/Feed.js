@@ -54,7 +54,7 @@ const [currentPage, setCurrentPage] = useState(1)
   }
 
   return (
-    <View style={{backgroundColor:"#112024"}}>
+    <View style={{backgroundColor:"black"}}>
       <View className = "bg-black opacity-0">
     {/* <Cartout size = {(0.06)*(Dimensions.get('window').height)} color = "#fffff" opacity={100}></Cartout> */}
     </View>
@@ -84,7 +84,7 @@ const [currentPage, setCurrentPage] = useState(1)
 }
 const styles_specific = StyleSheet.create({
     container: {
-      flex:1/2, height:(((wp(100)/2)-20)*16/9), backgroundColor:"#1e3135", marginTop: 20, marginLeft: 10, marginRight: 10, overflow: 'hidden', borderRadius:15, 
+      flex:1/2, height:(((wp(100)/2)-20)*16/9), backgroundColor:"#1d1d1d", marginTop: 20, marginLeft: 10, marginRight: 10, overflow: 'hidden', borderRadius:15, 
         },
     },
   );

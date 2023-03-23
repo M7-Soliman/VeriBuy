@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
       borderWidth:1,
       borderColor:'#1d1d1d',
       borderRadius:22,
-      backgroundColor:"#1e3135",
+      backgroundColor:"#1d1d1d",
       width:wp(40),
       height:50,
       marginLeft: wp(7),
