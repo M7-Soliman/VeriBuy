@@ -36,13 +36,12 @@ const ProfileScreen = () => {
           </Heder>
           </View>
         
+
         <View>
           <UpperPart user={currentUser}/>
         </View>
 
-
         <LowerPart posts={currentUserPosts}/>
-
 
 
 
