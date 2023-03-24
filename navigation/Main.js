@@ -21,6 +21,7 @@ import Tabs from '../screens/Tabs';
 import EditProfileScreen from '../screens/profile/edit';
 import EditProfileFieldScreen from '../screens/profile/edit/field';
 import SearchUsersScreen from '../screens/profile/search/SearchUsersScreen';
+import NewFeed from '../screens/newfeed/NewFeed';
 
 const Stack = createNativeStackNavigator();
 
@@ -63,6 +64,7 @@ export default function Main() {
 
                     <Stack.Screen name="tabs" component={Tabs}  options={{ headerShown: false }} />
                     <Stack.Screen name="TvScreen" component={TvScreen}  options={{ headerShown: false }} />
+                    <Stack.Screen name="NewFeed" component={NewFeed}  options={{ headerShown: false }} />
                     <Stack.Screen name="savePost" component={SavePostScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="editProfile" component={EditProfileScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="editProfileField" component={EditProfileFieldScreen}  options={{ headerShown: false }} />

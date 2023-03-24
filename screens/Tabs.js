@@ -6,6 +6,8 @@ import HomeScreen from './HomeScreen';
 import NotificationsScreen from './NotificationsScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
 import TvScreen from './feed/TvScreen';
+import NewFeed from './newfeed/NewFeed';
+
 import CameraScreen from './camera/AddScreen';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
@@ -72,19 +74,22 @@ const Tabs = () => {
         
     <tab.Screen name="Showcase" component={HomeScreen} options={{
         animationEnabled: false, tabBarIcon: ({ color, focused }) => (
-          <TouchableOpacity onPress={()=>{navigation.navigate("TvScreen")}}>
+          <TouchableOpacity onPress={()=>{navigation.navigate("NewFeed")}}>
           <TVout name="home" color="white" size={31}/>
           </TouchableOpacity>
           
         ),   tabBarLabel: ({focused, color, size}) => (
+          <TouchableOpacity onPress={()=>{navigation.navigate("NewFeed")}}>
           <Text style={{fontSize:10,color: focused ? 'white' : color}}>Showcase</Text>
+          </TouchableOpacity>
+
         ),
       }}
         />
 
     <tab.Screen name=" " component={CameraScreen} options={{
               tabBarIcon: ({  }) => (
-                <View onPress={()=>{navigation.navigate("TvScreen")}} 
+                <View
                   style={{
                     position: 'absolute',
                     bottom: 2,
