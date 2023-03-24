@@ -70,9 +70,9 @@ export default function TvScreen () {
 
       <FlatList
       data={posts}
-      windowSize={2}//the number of rendered videos
-      initialNumToRender={1}
-      maxToRenderPerBatch={2}
+      windowSize={4}//the number of rendered videos
+      initialNumToRender={0}
+      maxToRenderPerBatch={4}
       removeClippedSubviews
       viewabilityConfig={{
         itemVisiblePercentThreshold: 100

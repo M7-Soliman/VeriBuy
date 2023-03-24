@@ -74,7 +74,7 @@ export const PostSingle = forwardRef(({item}, parentRef) =>{
       ref={ref} 
       style={styles.container}
       resizeMode="cover"
-      shouldPlay={true}
+    //   shouldPlay={true}
       isLooping
       usePoster
       posterSource={{uri: item.media[1]}}

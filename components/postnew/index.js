@@ -3,7 +3,7 @@ import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react
 import { Video } from 'expo-av'
 import styles from '../post/styles'
 
-export const PostSingleNew = forwardRef((props, parentRef) => {
+export const PostSingleNew = forwardRef(({item}, parentRef) => {
     const ref = useRef(null);
     useImperativeHandle(parentRef, ()=>({
         play,
@@ -60,8 +60,9 @@ export const PostSingleNew = forwardRef((props, parentRef) => {
         <Video style = {styles.container}
         ref = {ref}
         resizeMode="cover" // use cover to make it scale
-        shouldPlay={true}
-        source ={{uri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"}}/>
+        // shouldPlay={true}
+        isLooping = {true}
+        source ={{uri: item.media[0]}}/>
   )
 })
 
