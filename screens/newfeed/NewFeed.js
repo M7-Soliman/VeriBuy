@@ -25,13 +25,13 @@ const NewFeed = () => {
                 }else{
                     cell.stop();
                 }
-            }
+            }  
         });
     })
 
     const renderItem = ({item, index}) => {
         return (
-        <View style={[{flex:1, height: 1*(Dimensions.get('window').height)}, index % 2 == 0 ? {backgroundColor:"blue"}:{backgroundColor:"pink"} ]}>
+        <View style={styles_specific.container}>
             <PostSingleNew item={item} ref ={PostSingleRef => (mediaRefs.current[item.id] = PostSingleRef)} />
         </View>
         )
