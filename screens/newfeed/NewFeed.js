@@ -4,16 +4,21 @@ import styles from './styles'
 import { Dimensions } from 'react-native'
 import PostSingleNew from '../../components/postnew'
 import { getFeed } from '../../components/services/posts'
+import _ from 'lodash';
 
 const NewFeed = () => {
     const [posts, setPosts] = useState([])
     const mediaRefs = useRef([])
 
+    const [currentPage, setCurrentPage] = useState(1)
 
 
-    useEffect(() => {
-        getFeed().then(setPosts)
-    }, [])
+  useEffect(() => {
+    getFeed().then(res => {
+      const shuffledNewData = _.shuffle(res);
+      const newDataWithId = shuffledNewData.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
+      setPosts([...posts, ...newDataWithId])})
+  }, [currentPage])
     
 
     const onViewableItemsChanged = useRef(({changed}) =>{
@@ -32,10 +37,15 @@ const NewFeed = () => {
     const renderItem = ({item, index}) => {
         return (
         <View style={styles_specific.container}>
-            <PostSingleNew item={item} ref ={PostSingleRef => (mediaRefs.current[item.id] = PostSingleRef)} />
+            <PostSingleNew item={item} key={`${item.id}-${index}`} ref ={PostSingleRef => (mediaRefs.current[item.id] = PostSingleRef)} />
         </View>
         )
     }
+
+  const loadMore = _.debounce(() => {
+    setCurrentPage(currentPage + 1);
+  }, 500); 
+
 
   return (
     <View style={styles.container}>
@@ -53,6 +63,8 @@ const NewFeed = () => {
             pagingEnabled
             keyExtractor={item => item.id}
             onViewableItemsChanged ={onViewableItemsChanged.current}
+            onEndReached={loadMore}
+            onEndReachedThreshold={0.1}
         
         />
     </View>
