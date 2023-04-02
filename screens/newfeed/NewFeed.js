@@ -39,7 +39,7 @@ const NewFeed = () => {
 
   return (
     <View style={styles.container}>
-        <FlatList style ={{backgroundColor:"#1d1d1d"}}
+        <FlatList style ={{backgroundColor:"black"}}
             windowSize = {4}
             initialNumToRender = {0}
             maxToRenderPerBatch = {4}
@@ -48,6 +48,7 @@ const NewFeed = () => {
                 itemVisiblePercentThreshold: 100
             }}
             data = {posts}
+            
             renderItem={renderItem}
             pagingEnabled
             keyExtractor={item => item.id}
@@ -64,11 +65,11 @@ const styles_specific = StyleSheet.create({
       ...Platform.select({
         ios: {
           height: 1*(Dimensions.get('window').height),
-          backgroundColor: '#1e3135',
+          backgroundColor: 'black',
         },
         android: {
           height: 0.957*(Dimensions.get('window').height),
-          backgroundColor: '#1e3135'
+          backgroundColor: 'black'
         },
         default: {
           // other platforms, web for example
