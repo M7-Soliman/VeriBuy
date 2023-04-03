@@ -20,6 +20,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers'
 import Main from './navigation/Main';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 
 const store = createStore( rootReducer, applyMiddleware(thunk))
@@ -38,6 +39,9 @@ firebase.initializeApp({
 })
 }
 
+const queryclient = new QueryClient({
+  defaultOptions: { queries: {refetchInterval: false, staleTime: Infinity}}
+})
 
 export default function App() {
   // const currentUserObj = useSelector(state => state.auth)
@@ -46,6 +50,7 @@ export default function App() {
   return (
     // <NavigationContainer>
       <Provider store = {store}>
+        <QueryClientProvider client={queryclient}>
         <Main/>
       {/* <Stack.Navigator screenOptions={{ animation: 'none'}}>
         <Stack.Screen name="SigninScreen" component={SigninScreen}/>
@@ -59,7 +64,9 @@ export default function App() {
         <Stack.Screen name="AddScreen" component={AddScreen} />
         
       </Stack.Navigator> */}
+      </QueryClientProvider>
       </Provider>
+      
     // </NavigationContainer>
       
    

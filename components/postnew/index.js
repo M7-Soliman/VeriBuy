@@ -3,9 +3,16 @@ import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react
 import { Video } from 'expo-av'
 import styles from '../post/styles'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { useUser } from '../../hooks/useUser';
+import PostSingleOverlay from './overlay';
+
 
 export const PostSingleNew = forwardRef(({item}, parentRef) => {
     const ref = useRef(null);
+    const user = useUser(item.creator).data
+    // console.log("#################################")
+    // console.log(user)
+
     useImperativeHandle(parentRef, ()=>({
         play,
         unload, 
@@ -57,7 +64,10 @@ export const PostSingleNew = forwardRef(({item}, parentRef) => {
     } 
 
   return (
-
+    <>
+        <View>
+            <PostSingleOverlay user={user} post={item}/>
+        </View>
         <Video style = {styles.container}
         ref = {ref}
         resizeMode="cover" // use cover to make it scale
@@ -68,6 +78,7 @@ export const PostSingleNew = forwardRef(({item}, parentRef) => {
         usePoster
         posterSource = {require('../../assets/loadtrans.gif')}
         posterStyle = {{resizeMode:"cover", height:hp(6), width:hp(6), marginTop:hp(50) - hp(3), marginLeft: wp(50) - hp(3)}}/>
+  </>
   )
 })
 
