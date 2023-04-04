@@ -3,10 +3,18 @@ import React from 'react'
 import styles from './styles'
 
 export default function PostSingleOverlay({user, post}) {
-    console.log(user.displayName)
+    // console.log(user.displayName)
   return (
     <View style={styles.container}>
-      <Text>{user.displayName}</Text>
+      {user ? (
+        <View>
+          <Text>{user.displayName}</Text>
+        </View>
+      ) : (
+        <View>
+          <Text>Loading user data...</Text>
+        </View>
+      )}
     </View>
   )
 }

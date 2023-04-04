@@ -9,9 +9,18 @@ import PostSingleOverlay from './overlay';
 
 export const PostSingleNew = forwardRef(({item}, parentRef) => {
     const ref = useRef(null);
-    const user = useUser(item.creator).data
-    // console.log("#################################")
-    // console.log(user)
+    // const user = useUser(item.creator)
+    const { data: user, isLoading } = useUser(item.creator);
+    console.log("#################################")
+    console.log(user)
+
+    const LoadingIndicator = () => {
+        return (
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>Loading...</Text>
+          </View>
+        );
+      };
 
     useImperativeHandle(parentRef, ()=>({
         play,
@@ -65,9 +74,14 @@ export const PostSingleNew = forwardRef(({item}, parentRef) => {
 
   return (
     <>
-        <View>
-            <PostSingleOverlay user={user} post={item}/>
-        </View>
+        {isLoading ? (
+          <LoadingIndicator />
+        ) : (
+          <View>
+              <PostSingleOverlay user={user} post={item}/>
+          </View>
+        )}
+        
         <Video style = {styles.container}
         ref = {ref}
         resizeMode="cover" // use cover to make it scale
