@@ -27,11 +27,11 @@ const NotificationsScreen = () => {
 
 
   return (
-    <ScrollView className="bg-white pt 6">
+    <ScrollView className="bg-black pt 6">
 
           <View>
             <View>
-            <Cartout size = {55} color = "#FFFFFF"></Cartout>
+            <Cartout size = {55} color = "#000000"></Cartout>
             </View>
           <Heder>
           </Heder>
@@ -54,8 +54,7 @@ const NotificationsScreen = () => {
         </View>  
         */}
                   
-          <Image source={require("../assets/comingsoon.png")} style={{marginTop:heightPercentageToDP(35),alignSelf:"center"}}/>
-
+          <Text style={{marginTop:heightPercentageToDP(35),alignSelf:"center", color:"white", fontSize:19, fontWeight:"bold"}}>Coming Soon!</Text>
     </ScrollView>
   )
 } 

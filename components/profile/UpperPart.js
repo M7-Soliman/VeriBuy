@@ -18,8 +18,8 @@ const UpperPart = ({user}) => {
         <View style={{borderBottomColor:"#1d1d1d", borderBottomWidth:4}}>
              <View className="flex-row" style={{alignSelf:"center"}}>
                 <View style={{marginTop:hp(4)}}>
-             <Text style={styles.follow}>Followers</Text>
-             <Text style={styles.follow}>0</Text>
+             {/* <Text style={styles.follow}>Followers</Text>
+             <Text style={styles.follow}>0</Text> */}
                 </View>
 
                 {user.photoURL != null ?
@@ -31,8 +31,8 @@ const UpperPart = ({user}) => {
 
 
                 <View style={{marginTop:hp(4)}}>
-             <Text style={styles.follow}>Following</Text>
-             <Text style={styles.follow}>0</Text>
+             {/* <Text style={styles.follow}>Following</Text>
+             <Text style={styles.follow}>0</Text> */}
                 </View>
             </View>
 

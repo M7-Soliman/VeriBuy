@@ -8,6 +8,19 @@ const styles = StyleSheet.create({
         bottom: 0,
         padding: 30
     },
+    container2:{
+        position: "absolute",
+        zIndex: 999,
+        bottom: 0,
+        padding: 30,
+        left:wp(80),
+        marginBottom: 150
+
+    },
+    icons:{
+        marginTop: 30
+
+    },
     displayNAME:{
         color:"white", 
         fontWeight:"bold",
