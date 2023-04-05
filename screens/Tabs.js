@@ -88,7 +88,11 @@ const Tabs = () => {
         />
 
     <tab.Screen name=" " component={CameraScreen} options={{
-              tabBarIcon: ({  }) => (
+              tabBarIcon: ({ focused }) => (
+                focused ?
+    
+                <View></View>
+                :
                 <View
                   style={{
                     position: 'absolute',
@@ -114,7 +118,7 @@ const Tabs = () => {
                       alignContent: 'center',
                     }}
                   />
-                </View> 
+                </View>
               ),
             }}
           />
