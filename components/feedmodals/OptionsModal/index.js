@@ -1,18 +1,33 @@
 import { View, Text, Touchable, TouchableOpacity, StyleSheet, TextInput } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { buyAction } from '../../services/posts';
+import { buyAction, reportAction } from '../../services/posts';
 import { useSelector } from 'react-redux';
 
 
-const Options = () => {
+const Options = ({post, user}) => {
     const [report, setReport] = useState(false);
+    const [issue, setIssue] = useState("");
+    const currentUser = useSelector((state) => state.auth.currentUser)
 
   return (
     <View>
+        { !report? 
+        <>
         <TouchableOpacity  onPress={()=>setReport(true)} style={{alignItems:"center", backgroundColor:"#1d1d1d", borderColor:"#1d1d1d", borderWidth:0, height: hp(5), borderRadius:20, paddingTop: 10, width: wp(80), alignSelf:"center", bottom:hp(-25)}}>
               <Text style={{color:"white"}}> Report </Text>
         </TouchableOpacity>
+        </>
+        :
+        <>
+        <TextInput style={styles.tinput} placeholderTextColor='Black' underlineColorAndroid='white'placeholder="Report Issue" keyboardType="Default"
+            onChangeText={(text) => setIssue(text)}/>
+
+        <TouchableOpacity onPressIn={()=> reportAction(currentUser.uid, issue, post.id, user.uid)} onPress={()=>setReport(false)} style={{alignItems:"center", backgroundColor:"#1d1d1d", borderColor:"#1d1d1d", borderWidth:0, height: hp(5), borderRadius:20, paddingTop: 10, width: wp(80), alignSelf:"center", bottom:hp(-50)}}>
+              <Text style={{color:"white"}}> Send Report </Text>
+        </TouchableOpacity>
+        </>
+        }
     </View>
   )
 }

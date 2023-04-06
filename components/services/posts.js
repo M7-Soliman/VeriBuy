@@ -32,15 +32,14 @@ export const buyAction = (uid, name, address, number, postId, postmedia, seller,
   })
 }
 
-export const reportAction = (uid, reason, postId, postmedia, seller) =>{
+export const reportAction = (uid, reason, postId, seller) =>{
   firebase
   .firestore()
-  .collection("orders")
+  .collection("reports")
   .doc(postId)
   .collection(uid)
   .add({
     uid, 
-    postmedia,
     seller,
     creation: firebase.firestore.FieldValue.serverTimestamp(),
   })
