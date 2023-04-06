@@ -1,5 +1,5 @@
 import { View, Text, Touchable, TouchableOpacity, StyleSheet, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { buyAction } from '../../services/posts';
 import { useSelector } from 'react-redux';
@@ -9,9 +9,29 @@ const BuyNow = ({post, user}) => {
     const [address, setAddress] = useState("")
     const [phone, setPhone] = useState("")
     const [price, setPrice] = useState("-1")
+    const [showView, setShowView] = useState(false);
+
     const [confirmed, setConfirmed] = useState(false)
     const currentUser = useSelector((state) => state.auth.currentUser)
+    
 
+    useEffect(() => {
+        let timeoutId;
+    
+        if (confirmed) {
+          // Set showView to true after 2 seconds
+          timeoutId = setTimeout(() => {
+            setShowView(true);
+          }, 2000);
+        } else {
+          setShowView(false);
+        }
+    
+        // Clear timeout on component unmount
+        return () => clearTimeout(timeoutId);
+      }, [confirmed]);
+    
+    
 return (
     <View>
         <TextInput style={styles.tinput} placeholderTextColor='Black' underlineColorAndroid='white'placeholder="Name/الاسم" keyboardType="Default"
@@ -23,7 +43,7 @@ return (
         
 
 
-            {confirmed == false?
+            {confirmed == showView?
             <>
             <TouchableOpacity style={{alignSelf:"center", bottom:hp(-20)}} onPress={()=>setConfirmed(true)} onPressIn={()=> buyAction(currentUser.uid, name, address, phone, post.id, post.media, user.uid, price)}>
             <View style={{width: wp('50') , height: wp('12'), backgroundColor:"#26da76"}} className="rounded-3xl">
