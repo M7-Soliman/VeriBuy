@@ -29,4 +29,6 @@ export const buyAction = (uid, name, address, number , postId, seller, price) =>
     price,
     creation: firebase.firestore.FieldValue.serverTimestamp(),
   })
+  .then(() => resolve())
+  .catch(() => reject())
 })
