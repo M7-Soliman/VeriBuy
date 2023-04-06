@@ -25,7 +25,7 @@ return (
 
             {confirmed == false?
             <>
-            <TouchableOpacity style={{alignSelf:"center", bottom:hp(-20)}} onPress={()=>setConfirmed(true)} onPressIn={()=> buyAction(currentUser.uid, name, address, phone, post.media, user.uid, price)}>
+            <TouchableOpacity style={{alignSelf:"center", bottom:hp(-20)}} onPress={()=>setConfirmed(true)} onPressIn={()=> buyAction(currentUser.uid, name, address, phone, post.id, post.media, user.uid, price)}>
             <View style={{width: wp('50') , height: wp('12'), backgroundColor:"#26da76"}} className="rounded-3xl">
                 <Text style={ styles.title} className="Bold">Confirm Order!</Text>
             </View>

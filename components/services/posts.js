@@ -15,12 +15,13 @@ export const getFeed = () =>
       });
   });
 
-export const buyAction = (uid, name, address, number , postmedia, seller, price) =>{
+export const buyAction = (uid, name, address, number, postId, postmedia, seller, price) =>{
   firebase
   .firestore()
   .collection("orders")
   .doc(uid)
-  .set({
+  .collection(postId)
+  .add({
     name, 
     address,
     number, 
