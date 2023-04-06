@@ -8,6 +8,7 @@ import { DocumentTextIcon as Info } from 'react-native-heroicons/outline'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 import { useNavigation } from '@react-navigation/native'
+import BuyModal from '../../feedmodals/BuyModal'
 
 export default function PostSingleOverlay({user, post}) {
     // console.log(user.displayName)
