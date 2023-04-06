@@ -12,8 +12,6 @@ const BuyNow = ({post, user}) => {
     const [confirmed, setConfirmed] = useState(false)
     const currentUser = useSelector((state) => state.auth.currentUser)
 
-
-
 return (
     <View>
         <TextInput style={styles.tinput} placeholderTextColor='Black' underlineColorAndroid='white'placeholder="Name/الاسم" keyboardType="Default"
@@ -22,10 +20,12 @@ return (
             onChangeText={(text) => setAddress(text)}/>
         <TextInput style={styles.tinput} placeholderTextColor='Black' underlineColorAndroid='white'placeholder="Phone/الهاتف" keyboardType="Default"
             onChangeText={(text) => setPhone(text)}/>
+        
+
 
             {confirmed == false?
             <>
-            <TouchableOpacity style={{alignSelf:"center", bottom:hp(-20)}} onPress={()=>setConfirmed(true)} onPressIn={()=> buyAction(currentUser.uid, name, address, phone, post.id, user.uid, price)}>
+            <TouchableOpacity style={{alignSelf:"center", bottom:hp(-20)}} onPress={()=>setConfirmed(true)} onPressIn={()=> buyAction(currentUser.uid, name, address, phone, post.media, user.uid, price)}>
             <View style={{width: wp('50') , height: wp('12'), backgroundColor:"#26da76"}} className="rounded-3xl">
                 <Text style={ styles.title} className="Bold">Confirm Order!</Text>
             </View>

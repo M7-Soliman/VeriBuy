@@ -15,20 +15,18 @@ export const getFeed = () =>
       });
   });
 
-export const buyAction = (uid, name, address, number , postId, seller, price) => new Promise((resolve, reject) =>{
+export const buyAction = (uid, name, address, number , postmedia, seller, price) =>{
   firebase
   .firestore()
   .collection("orders")
   .doc(uid)
-  .add({
+  .set({
     name, 
     address,
     number, 
-    postId,
+    postmedia,
     seller,
     price,
     creation: firebase.firestore.FieldValue.serverTimestamp(),
   })
-  .then(() => resolve())
-  .catch(() => reject())
-})
+}
