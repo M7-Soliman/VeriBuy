@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Details = () => {
+const Details = ({post, user}) => {
   return (
-    <View>
-      <Text>Details</Text>
+    <View style={{ flex: 1, alignItems: 'center' }}>
+      <Text>{post.description}</Text>
     </View>
   )
 }

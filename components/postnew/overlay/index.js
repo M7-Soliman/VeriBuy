@@ -23,7 +23,9 @@ export default function PostSingleOverlay({user, post}) {
         <>
         <View style={styles.container}>
           <Image style={styles.avatar} source={{uri: user.photoURL}}/>
-          <Text style={styles.displayNAME}>{user.displayName}</Text>
+          <Text style={styles.displayNAME}>{post.name} </Text>
+          <Text style={styles.displayNAME}>{post.price} EGP</Text>
+
         </View>
         <View style={styles.container2}>
 

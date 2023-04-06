@@ -15,8 +15,8 @@ const NewFeed = () => {
 
   useEffect(() => {
     getFeed().then(res => {
-      const shuffledNewData = _.shuffle(res);
-      const newDataWithId = shuffledNewData.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
+      // const shuffledNewData = _.shuffle(res);
+      const newDataWithId = res.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
       setPosts([...posts, ...newDataWithId])})
   }, [currentPage])
     

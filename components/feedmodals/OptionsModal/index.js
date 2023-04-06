@@ -23,7 +23,7 @@ const Options = ({post, user}) => {
         <TextInput style={styles.tinput} placeholderTextColor='Black' underlineColorAndroid='white'placeholder="Report Issue" keyboardType="Default"
             onChangeText={(text) => setIssue(text)}/>
 
-        <TouchableOpacity onPressIn={()=> reportAction(currentUser.uid, issue, post.id, user.uid)} onPress={()=>setReport(false)} style={{alignItems:"center", backgroundColor:"#1d1d1d", borderColor:"#1d1d1d", borderWidth:0, height: hp(5), borderRadius:20, paddingTop: 10, width: wp(80), alignSelf:"center", bottom:hp(-50)}}>
+        <TouchableOpacity onPressIn={()=> reportAction(currentUser.uid, issue, post.pid, user.uid)} onPress={()=>setReport(false)} style={{alignItems:"center", backgroundColor:"#1d1d1d", borderColor:"#1d1d1d", borderWidth:0, height: hp(5), borderRadius:20, paddingTop: 10, width: wp(80), alignSelf:"center", bottom:hp(-50)}}>
               <Text style={{color:"white"}}> Send Report </Text>
         </TouchableOpacity>
         </>
