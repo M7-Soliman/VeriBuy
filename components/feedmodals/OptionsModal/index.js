@@ -9,7 +9,7 @@ const Options = ({post, user}) => {
     const [report, setReport] = useState(false);
     const [issue, setIssue] = useState("");
     const currentUser = useSelector((state) => state.auth.currentUser)
-
+    console.log(post)
   return (
     <View>
         { !report? 

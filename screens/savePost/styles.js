@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
-import { widthPercentageToDP } from "react-native-responsive-screen";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 30,
-        backgroundColor: 'white'
+        backgroundColor: 'black'
     },
     uploadingContainer: {
         flex: 1,
@@ -36,7 +36,14 @@ const styles = StyleSheet.create({
         
         
     },
-
+    title: {
+        textAlign: 'center',
+          position: "relative",
+          color:'white',
+          marginTop: wp('12')/4,
+          fontSize: hp(2.4),
+        fontWeight: 'bold', },
+    
     dropdownView:{
         marginBottom:100,
         marginTop:50,
@@ -54,6 +61,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         borderBottomColor: 'gray',
         borderBottomWidth: 2,
+        color:"white"
     },
     
     cancelButton: {
@@ -78,7 +86,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         justifyContent: 'center',
         borderRadius: 4,
-        marginRight: 10
+        marginRight: 10,
+        borderRadius: 20,
     },
     cancelButtonText: {
         marginLeft: 5,

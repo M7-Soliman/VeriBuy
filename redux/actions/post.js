@@ -8,7 +8,7 @@ import { CURRENT_USER_POSTS_UPDATE } from '../constants'
 
 
 
-export const createPost = (description, video, thumbnail) => dispatch => new Promise((resolve, reject) => {
+export const createPost = (description, price, name, category,video, thumbnail) => dispatch => new Promise((resolve, reject) => {
     let storagePostId = uuid()
     let allSavePromises = Promise.all([
         saveMediaToStorage(video, `post/${firebase.auth().currentUser.uid}/${storagePostId}/video`),
@@ -26,7 +26,10 @@ export const createPost = (description, video, thumbnail) => dispatch => new Pro
                     description,
                     likesCount: 0,
                     commentsCount: 0,
-                    id: storagePostId,
+                    pid: storagePostId,
+                    price,
+                    name,
+                    category,
                     creation: firebase.firestore.FieldValue.serverTimestamp()
                 })
                 .then(() => resolve())

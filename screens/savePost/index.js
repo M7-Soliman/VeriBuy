@@ -6,6 +6,7 @@ import { Feather } from '@expo/vector-icons'
 import { useDispatch } from 'react-redux'
 import { createPost } from '../../redux/actions/post'
 import DropDownPicker from 'react-native-dropdown-picker';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
 export default function SavePostScreen(props) {
@@ -17,20 +18,32 @@ export default function SavePostScreen(props) {
     const navigation = useNavigation()
 
     const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
-    
+    const [value, setValue] = useState("null");
+    const [chosencategory, setchosencategory] = useState(false);
+
     const [items, setItems] = useState([
-        {label: 'Apple', value: 'apple'},
-        {label: 'Banana', value: 'banana'}
+        {label: 'Fashion & Beauty', value: 'Fashion & Beauty'},
+        {label: 'Sports & Hobbies', value: 'Sports & Hobbies'},
+        {label: 'Properties', value: 'Properties'},
+        {label: 'Vehichles', value: 'Vehichles'},
+        {label: 'Electronic Devices', value: 'Electronic Devices'},
+        {label: 'Home Appliances', value: 'Home Appliances'},
+        {label: 'Furniture', value: 'Furniture'},
+        {label: 'Pets', value: 'Pets'},
+        {label: 'Kids Items', value: 'Kids Items'},
+        {label: 'Service Products', value: 'Service Products'},
+        {label: 'Other', value: 'Other'},
     ]);
 
 
 
     const dispatch = useDispatch();
+    DropDownPicker.setTheme("DARK");
+
     
     const handleSavePost = () => {
         setRequestRunning(true)
-        dispatch(createPost(description, props.route.params.source, props.route.params.sourceThumb))
+        dispatch(createPost(description,cost, Name, value, props.route.params.source, props.route.params.sourceThumb))
             .then(() => navigation.dispatch(StackActions.popToTop()))
             .catch(() => setRequestRunning(false))
     }
@@ -38,30 +51,48 @@ export default function SavePostScreen(props) {
     if (requestRunning) {
         return (
             <View style={styles.uploadingContainer}>
-                <ActivityIndicator color='red' size='large' />
+                <ActivityIndicator color='black' size='large' />
             </View>
         )
     }
     return (
         <View style={styles.container}>
+            {!chosencategory?
                 <View style={styles.dropdownView}>
                 <DropDownPicker
                     open={open}
                     value={value}
                     items={items}
                     setOpen={setOpen}
-                    setValue={setValue}
+                    setValue={setValue} //basically the category
                     setItems={setItems}
+                    placeholder="Select Category"
+                    style = {{backgroundColor: "#1d1d1d" }}
+                    dropDownContainerStyle={{
+                        backgroundColor: "#1d1d1d"
+                      }}
+                    maxHeight = {hp(50)}
+                      
                     />
+                
+                <TouchableOpacity style={{alignSelf:"center", bottom:hp(-60)}} onPress={()=>setchosencategory(true)}>
+                <View style={{width: wp('50') , height: wp('12'), backgroundColor:"#26da76"}} className="rounded-3xl">
+                    <Text style={ styles.title} className="Bold">Continue</Text>
                 </View>
-        <ScrollView style={styles.container}>
+                </TouchableOpacity>
+
+                </View>
+                :
+                <>
+                        <ScrollView style={styles.container}>
             <View style={styles.formContainer}>
 
                 <TextInput
                     style={styles.inputText}
-                    maxLength={30}
+                    maxLength={20}
                     onChangeText={(text) => setName(text)}
                     placeholder="Product Name / اسم المنتج"
+                    placeholderTextColor={"white"}
                 />
 
                 <TextInput
@@ -70,6 +101,8 @@ export default function SavePostScreen(props) {
                     onChangeText={(text) => setCost(text)}
                     placeholder="Price in EGP / السعر بالجنيه"
                     keyboardType='decimal-pad'
+                    placeholderTextColor={"white"}
+
                 />
                 
                 <TextInput
@@ -78,15 +111,10 @@ export default function SavePostScreen(props) {
                     multiline
                     onChangeText={(text) => setDescription(text)}
                     placeholder="Description / وصف المنتج"
+                    placeholderTextColor={"white"}
+
                 />
 
-                <TextInput
-                    style={styles.inputText}
-                    maxLength={500}
-                    multiline
-                    onChangeText={(text) => setDescription(text)}
-                    placeholder="Description / وصف المنتج"
-                />
 
 
                 {/* <Image
@@ -97,12 +125,6 @@ export default function SavePostScreen(props) {
             
         </ScrollView>
             <View style={styles.buttonsContainer}>
-                    <TouchableOpacity
-                        onPress={() => navigation.goBack()}
-                        style={styles.cancelButton}>
-                        <Feather name="x" size={24} color="white" />
-                        <Text style={styles.cancelButtonText}>Fakes</Text>
-                    </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => handleSavePost()}
@@ -111,6 +133,8 @@ export default function SavePostScreen(props) {
                         <Text style={styles.postButtonText}>Add</Text>
                     </TouchableOpacity>
                 </View>
+                </>
+            }
 
         </View>
     )
