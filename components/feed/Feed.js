@@ -23,62 +23,34 @@ const [currentPage, setCurrentPage] = useState(1)
   const mediaRefs= useRef([])
 
   useEffect(() => {
-    getFeed().then(res => {setPosts([...posts, ...res])})
-  }, [])
+    getFeed().then(res => {
+      const modifiedRes = res.map((item, index) => ({
+        ...item,
+        id: `${item.id}_${index}`,
+      }));
+      setPosts([...posts, ...modifiedRes]);
+    })
+  }, [currentPage])
 
 
-  const onViewableItemsChanged = useRef(({changed}) =>{
-    changed.forEach(element => {
-      const cell= mediaRefs.current[element.key]
-      if(cell){
-        console.log('onViewableItemsChanged',element, element.isViewable)
-        if(element.isViewable){
-          cell.play()
-        }else{
-          cell.stop();
-        }
-      }
-    });
-})
-  const renderItem = ({item, index})=>{
-    return (
-      <View style={styles_specific.container}>
-          <Postdouble item={item} key={`${item.id}-${index}`} ref={PostSingleRef =>(mediaRefs.current[item.id]= PostSingleRef) }/>
-      </View>
-    )
-    
-  }
+
 
   const loadMore = () => {
     setCurrentPage(currentPage + 1)
   }
 
   return (
-    <View style={{backgroundColor:"black"}}>
-      <View className = "bg-black opacity-0">
-    {/* <Cartout size = {(0.06)*(Dimensions.get('window').height)} color = "#fffff" opacity={100}></Cartout> */}
-    </View>
-    {/* <Items>
-
-    </Items> */}
-
-      <FlatList
-      data={posts}
-      windowSize={4}//the number of rendered videos
-      initialNumToRender={4}
-      numColumns={2}
-      maxToRenderPerBatch={2}
-      removeClippedSubviews
-      renderItem={renderItem}
-      // pagingEnabled
-      keyExtractor={(item, index) => `${item.id}-${index}`}
-      onViewableItemsChanged={onViewableItemsChanged.current}
-      // onEndReached={loadMore}
-      onEndReachedThreshold={0.1}
-
-      
-
-      />
+    <View style={{height:900}}>
+        <FlatList  
+        numColumns={2}
+        removeClippedSubviews
+        data = {posts}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({item}) => (<Postdouble item={item}/>)}
+        onEndReached={loadMore}
+        
+        
+        />
     </View>
   )
 }

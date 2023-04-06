@@ -1,88 +1,19 @@
-import { Video } from 'expo-av'
-import { View, Text } from 'react-native'
+import { Video} from 'expo-av'
+import { View, Text, Image } from 'react-native'
 import React, {forwardRef, useEffect, useImperativeHandle, useRef}from 'react'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 export const Postdouble = forwardRef(({item}, parentRef) =>{
     const ref = useRef (null);
     const seconds = 3
 
-    useImperativeHandle(parentRef,()=> ({
-        play,
-        unload, 
-        stop
-    }))
-
-    useEffect(()=>{
-        
-        return() => unload();
-        
-    }, [])
-
-
-    const play = async () =>{
-        if(ref.current == null){
-            return;
-        }
-        const status = await ref.current.getStatusAsync();
-        if(status?.isPlaying){
-            return;
-        }
-        try{
-            await ref.current.playAsync();
-
-        }catch(e){
-            console.log(e)
-        }
-
-        
-    }
-    const stop = async () =>{
-        if(ref.current == null){
-            return;
-        }
-        const status = await ref.current.getStatusAsync();
-        if(!status?.isPlaying){
-            return;
-        }
-        try{
-            await ref.current.stopAsync();
-
-        }catch(e){
-            console.log(e)
-        }
-
-        
-    }
-    const unload = async () =>{
-        if(ref.current == null){
-            return;
-        }
-        
-        
-        try{
-            await ref.current.unloadAsync();
-
-        }catch(e){
-            console.log(e)
-        }
-
-        
-    }
   return (
 
-      <Video
-      ref={ref} 
-      style={{flex:1, borderRadius:10}}
-      resizeMode="cover"
-      shouldPlay={true}
-      isLooping = {true}
-      usePoster
-      posterSource={{uri: item.media[1]}}
-      posterStyle={{resizeMode: 'cover',height:'100%'}}
-      source={{uri: item.media[0]}}
-      isMuted={true}
-      
-      />
+    <View style={{flex:1/2, height:(((wp(100)/2)-20)*16/9), backgroundColor:"#1d1d1d", marginTop: 20, marginLeft: 10, marginRight: 10, overflow: 'hidden', borderRadius:15, }}>
+        <Image style={{flex:1}} source={{uri: item.media[1]}}/>
+        <Text style = {{color:"white", alignSelf:"center"}}>{item.name}</Text>
+        <Text style = {{color:"white", alignSelf:"center"}}>{item.price} EGP</Text>
+    </View>
 
   )
 })
