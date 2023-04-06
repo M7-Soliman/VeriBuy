@@ -22,6 +22,8 @@ import EditProfileScreen from '../screens/profile/edit';
 import EditProfileFieldScreen from '../screens/profile/edit/field';
 import SearchUsersScreen from '../screens/profile/search/SearchUsersScreen';
 import NewFeed from '../screens/newfeed/NewFeed';
+import Checkout from '../screens/Checkout';
+import Options from '../screens/Options';
 
 const Stack = createNativeStackNavigator();
 
@@ -70,7 +72,9 @@ export default function Main() {
                     <Stack.Screen name="editProfileField" component={EditProfileFieldScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="SearchUsersScreen" component={SearchUsersScreen}  options={{ headerShown: false }} />
                     <Stack.Screen name="CartScreen" component={CartScreen} options={{ headerShown: false }}/>
-                    
+                    <Stack.Screen name="Checkout" component={Checkout} options={{ headerShown: false }}/>
+                    <Stack.Screen name="Options" component={Options} options={{ headerShown: false }}/>
+
 
                     </>
                 }

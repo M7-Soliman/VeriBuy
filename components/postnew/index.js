@@ -11,8 +11,8 @@ export const PostSingleNew = forwardRef(({item}, parentRef) => {
     const ref = useRef(null);
     // const user = useUser(item.creator)
     const { data: user, isLoading } = useUser(item.creator);
-    console.log("#################################")
-    console.log(user)
+    // console.log("#################################")
+    // console.log(user)
 
     const LoadingIndicator = () => {
         return (

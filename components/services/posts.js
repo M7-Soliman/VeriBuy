@@ -14,3 +14,11 @@ export const getFeed = () =>
         resolve(posts);
       });
   });
+
+export const buyAction = (postId, uid) => new Promise((resolve, reject) =>{
+  firebase
+  .firestore()
+  .collection("orders")
+  .doc(uid)
+  .set({})
+})

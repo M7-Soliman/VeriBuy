@@ -14,8 +14,7 @@ const styles = StyleSheet.create({
         bottom: 0,
         padding: 30,
         left:wp(80),
-        marginBottom: 150
-
+        marginBottom: 100
     },
     icons:{
         marginTop: 30
