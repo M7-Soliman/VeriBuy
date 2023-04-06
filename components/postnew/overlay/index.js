@@ -38,10 +38,10 @@ export default function PostSingleOverlay({user, post}) {
             <Text style={{fontSize: 10, color:"white",left:wp(-.2)}}>Details</Text>
           </TouchableOpacity>
               
-          <TouchableOpacity onPress={()=>dispatch(openQAmodal(true, post, user))}>
+          {/* <TouchableOpacity onPress={()=>dispatch(openQAmodal(true, post, user))}>
             <QA style={styles.icons} color="white" size={31}/>
             <Text style={{fontSize: 10, color:"white",left:wp(1.5)}}>Q&A</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
                     
           <TouchableOpacity onPress={()=>dispatch(openOptionsmodal(true, post, user))}>
             <Dots style={styles.icons} color="white" size={31}/>
