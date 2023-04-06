@@ -19,12 +19,14 @@ export const createPost = (description, video, thumbnail) => dispatch => new Pro
         .then((media) => {
             firebase.firestore()
                 .collection('post')
-                .add({
+                .doc(storagePostId)
+                .set({
                     creator: firebase.auth().currentUser.uid,
                     media,
                     description,
                     likesCount: 0,
                     commentsCount: 0,
+                    id: storagePostId,
                     creation: firebase.firestore.FieldValue.serverTimestamp()
                 })
                 .then(() => resolve())
