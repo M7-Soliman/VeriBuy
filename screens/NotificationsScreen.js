@@ -4,11 +4,9 @@ import { useNavigation } from '@react-navigation/native'
 import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
 
 import Items from '../components/Categories';
-import Footer from '../components/Footer';
 import Heder from '../components/Heder';
 
 import { Header } from 'react-native/Libraries/NewAppScreen';
-import FooterNotifications from '../components/FooterNotifications';
 import NotificationItems from '../components/NotificationItems';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
 import { roundToNearestPixel } from 'nativewind';

@@ -4,7 +4,6 @@ import { useNavigation } from '@react-navigation/native'
 import { ShoppingCartIcon as Cartout} from "react-native-heroicons/outline";
 
 import Items from '../../components/Categories';
-import Footer from '../../components/Footer';
 import Heder from '../../components/Heder';
 
 import { useSelector } from 'react-redux';

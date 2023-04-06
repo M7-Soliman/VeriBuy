@@ -21,11 +21,7 @@ export default function PostSingleOverlay({user, post}) {
           <Text style={styles.displayNAME}>{user.displayName}</Text>
         </View>
         <View style={styles.container2}>
-          
-          <TouchableOpacity onPress={()=>{navigation.navigate("Options")}}>
-            <Dots style={styles.icons} color="white" size={31}/>
-            <Text style={{fontSize: 10, color:"white",left:wp(-1)}}>Options</Text>
-          </TouchableOpacity>
+
 
           <TouchableOpacity onPress={()=>{navigation.navigate("Checkout")}}>
             <Bag style={styles.icons} color="white" size={31}/>
@@ -40,6 +36,11 @@ export default function PostSingleOverlay({user, post}) {
           <TouchableOpacity onPress={()=>{navigation.navigate("Checkout")}}>
             <QA style={styles.icons} color="white" size={31}/>
             <Text style={{fontSize: 10, color:"white",left:wp(1.5)}}>Q&A</Text>
+          </TouchableOpacity>
+                    
+          <TouchableOpacity onPress={()=>{navigation.navigate("Options")}}>
+            <Dots style={styles.icons} color="white" size={31}/>
+            <Text style={{fontSize: 10, color:"white",left:wp(-1)}}>Options</Text>
           </TouchableOpacity>
 
         </View>
