@@ -1,4 +1,4 @@
-import { MODAL_OPEN_BUYNOW, MODAL_OPEN_DESCRIPTION, MODAL_OPEN_OPTIONS, MODAL_OPEN_QA } from "../constants"
+import { CLEAR_MODAL, MODAL_OPEN_BUYNOW, MODAL_OPEN_DESCRIPTION, MODAL_OPEN_OPTIONS, MODAL_OPEN_QA } from "../constants"
 
 export const openQAmodal = (open, data1, data2) => (dispatch) => {
     return dispatch({
@@ -36,5 +36,11 @@ export const openOptionsmodal = (open, data1, data2) => (dispatch) => {
         open, 
         modalType: 3,
         type: MODAL_OPEN_OPTIONS
+    })
+}
+
+export const clearModal = () => (dispatch) => {
+    return dispatch({
+        type: CLEAR_MODAL
     })
 }

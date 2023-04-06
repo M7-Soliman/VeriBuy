@@ -1,20 +1,20 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import BottomSheet from '@gorhom/bottom-sheet'
-import { useSelector } from 'react-redux'
+import { View, Text, Touchable, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
 
-const BuyModal = () => {
-    const modalState = useSelector(state => state.modal)
-    console.log(modalState)
-  return (
+const BuyNow = ({post, user}) => {
+    const [name, setName] = useState("")
+    const [address, setAddress] = useState("")
+    const [phone, setPhone] = useState("")
+    const [confirmed, setConfirmed] = useState(false)
 
-    <BottomSheet
-    snapPoints={["50%"]}
-    index = {-1}
-    handleHeight={40}
-    enablePanDownToClose>
-    </BottomSheet>
+return (
+    <View>
+      <Text>BuyNowWW</Text>
+    
+      <TouchableOpacity>
+      </TouchableOpacity>
+    </View>
   )
 }
 
-export default BuyModal
+export default BuyNow

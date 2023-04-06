@@ -1,17 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import BottomSheet from '@gorhom/bottom-sheet'
 
-const QaModal = () => {
+const QA = () => {
   return (
-    <BottomSheet
-    snapPoints={["50%"]}
-    index = {-1}
-    handleHeight={40}
-    enablePanDownToClose>
-
-    </BottomSheet>
+    <View>
+      <Text>QA</Text>
+    </View>
   )
 }
 
-export default QaModal
+export default QA

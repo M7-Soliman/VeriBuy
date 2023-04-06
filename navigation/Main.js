@@ -24,10 +24,7 @@ import SearchUsersScreen from '../screens/profile/search/SearchUsersScreen';
 import NewFeed from '../screens/newfeed/NewFeed';
 import Checkout from '../screens/Checkout';
 import Options from '../screens/Options';
-import QaModal from '../components/feedmodals/QAModal';
-import OptionsModal from '../components/feedmodals/OptionsModal';
-import BuyModal from '../components/feedmodals/BuyModal';
-import DetailsModal from '../components/feedmodals/DetailsModal';
+import Modal from '../components/feedmodals';
 
 const Stack = createNativeStackNavigator();
 
@@ -83,10 +80,7 @@ export default function Main() {
                     </>
                 }
         </Stack.Navigator>
-        <QaModal/>
-        <OptionsModal/>
-        <BuyModal/>
-        <DetailsModal/>
+        <Modal/>
     </NavigationContainer>
   )
 }
