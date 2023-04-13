@@ -192,7 +192,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: wp(3.5),
         color: "white",
         fontFamily: "Roboto", 
-        fontWeight: "normal", 
+        fontWeight: "normal",
+        borderBottomColor: "white"
         
 
       }
