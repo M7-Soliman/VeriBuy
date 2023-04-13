@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     fontSize: hp(5),
     bottom: hp('-14'),
     left: wp('42')-(wp('40')/2),
-    fontFamily: "Roboto", 
+      
     fontWeight: "bold"
     
   },
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     fontSize: hp(2),
     bottom: hp('-15'),
     left: wp('40')-(wp('40')/2),
-    fontFamily: "Roboto", 
+      
     fontWeight: "normal"
     
   },
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     fontSize: hp(2),
     bottom: hp('-55'),
     left: wp('52')-(wp('40')/2),
-    fontFamily: "Roboto", 
+      
     fontWeight: "normal"
     
   },
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
       marginTop: wp('12')/4,
       fontSize: hp(2.4),
     fontWeight: 'bold', 
-    fontFamily: "Roboto", },
+      },
 
     title2: {
         textAlign: 'center',
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
           color:'white',
           marginTop: wp('6')/4,
           fontSize: hp(2),
-        fontFamily: "Roboto", 
+          
        },
 
     
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
         marginBottom: hp(1),
         paddingHorizontal: wp(3.5),
         color: "white",
-        fontFamily: "Roboto", 
+          
         fontWeight: "normal",
         borderBottomColor: "white"
         
