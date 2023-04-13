@@ -5,6 +5,8 @@ import { Dimensions } from 'react-native'
 import PostSingleNew from '../../components/postnew'
 import { getFeed } from '../../components/services/posts'
 import _ from 'lodash';
+import { NativeViewGestureHandler } from 'react-native-gesture-handler';
+
 
 const NewFeed = () => {
     const [posts, setPosts] = useState([])
@@ -47,6 +49,7 @@ const NewFeed = () => {
 
   return (
     <View style={styles.container}>
+      <NativeViewGestureHandler disallowInterruption={true}>
         <FlatList style ={{backgroundColor:"black"}}
             windowSize = {4}
             initialNumToRender = {0}
@@ -65,6 +68,7 @@ const NewFeed = () => {
             onEndReachedThreshold={0.1}
         
         />
+        </NativeViewGestureHandler>
     </View>
   )
 }

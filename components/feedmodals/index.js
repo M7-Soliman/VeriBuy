@@ -49,7 +49,8 @@ const Modal = () => {
     index = {-1}
     handleHeight={40}
     onClose={onClose}
-    enablePanDownToClose>
+    enablePanDownToClose
+    enableOverDrag>
     {renderContent()}
     </BottomSheet>
   )
