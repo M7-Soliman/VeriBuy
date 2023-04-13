@@ -21,6 +21,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers'
 import Main from './navigation/Main';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { NativeViewGestureHandler } from 'react-native-gesture-handler';
 
 
 const store = createStore( rootReducer, applyMiddleware(thunk))
@@ -51,7 +52,12 @@ export default function App() {
     // <NavigationContainer>
       <Provider store = {store}>
         <QueryClientProvider client={queryclient}>
+        
+        
+        <NativeViewGestureHandler disallowInterruption={true}>
+
         <Main/>
+        </NativeViewGestureHandler>
       {/* <Stack.Navigator screenOptions={{ animation: 'none'}}>
         <Stack.Screen name="SigninScreen" component={SigninScreen}/>
         <Stack.Screen name="SignupScreen" component={SignupScreen}/>
