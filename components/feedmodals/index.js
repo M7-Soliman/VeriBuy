@@ -42,7 +42,8 @@ const Modal = () => {
         dispatch(clearModal())
     }
   return (
-    <BottomSheet
+    <BottomSheet enabledGestureInteraction
+    enabledBottomInitialAnimation
     ref = {bottomSheetRef}
     snapPoints={["70%"]}
     index = {-1}

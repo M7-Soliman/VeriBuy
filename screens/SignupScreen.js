@@ -133,6 +133,21 @@ const styles = StyleSheet.create({
         bottom: hp('-34'),
         left: wp('50')-(wp('55')/2)},
 
+      // tinput:{
+      //   position: "relative",
+      //   bottom: hp('6'),
+      //   left: wp('49')-(wp('70')/2), 
+      //   borderWidth: 1,
+      //   width: wp('70'), 
+      //   height: wp('10'),
+      //   marginBottom: hp(1),
+      //   paddingHorizontal: wp(3.5),
+      //   color: "white",
+          
+      //   fontWeight: "normal",
+      //   borderBottomColor: "white"
+      // },
+
       tinput:{
       position: "relative",
       bottom: hp('-15'),
