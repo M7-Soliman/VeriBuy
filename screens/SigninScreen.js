@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
         position: "relative",
         bottom: hp('6'),
         left: wp('49')-(wp('70')/2), 
-        borderWidth: 1,
+        
         width: wp('70'), 
         height: wp('10'),
         marginBottom: hp(1),
