@@ -40,9 +40,9 @@ const SigninScreen = () => {
             <Text style={ styles.toptext2} >Hi there! How are you? it's been </Text>
             <Text style={ styles.downtext} >Not registered yet? </Text>
             <Image source={require("../assets/logo.jpg")} style = {styles.vbuylogo} className ="rounded-3xl"/>
-            <TextInput style={styles.tinput} placeholderTextColor='white' underlineColorAndroid='white'placeholder="Email" keyboardType="Default"
+            <TextInput style={styles.tinput} placeholderTextColor='white' placeholder="Email" keyboardType="Default"
             onChangeText={(text) => setEmail(text)}/>
-            <TextInput style={styles.tinput} placeholderTextColor='white' underlineColorAndroid='white' placeholder="Password" keyboardType="Default"
+            <TextInput style={styles.tinput} placeholderTextColor='white' placeholder="Password" keyboardType="Default"
             onChangeText={(text) => setPassword(text)} secureTextEntry={true}/>
 
 
@@ -192,7 +192,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: wp(3.5),
         color: "white",
         fontFamily: "Roboto", 
-        fontWeight: "normal", 
+        fontWeight: "normal",
+        borderBottomColor: "white"
         
 
       }

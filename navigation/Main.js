@@ -8,7 +8,6 @@ import { ScreenStack } from 'react-native-screens';
 import SavePostScreen from '../screens/savePost';
 
 
-
 import SigninScreen from '../screens/SigninScreen';
 import SignupScreen from '../screens/SignupScreen';
 import HomeScreen from '../screens/HomeScreen';
