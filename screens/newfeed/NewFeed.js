@@ -12,14 +12,12 @@ const NewFeed = () => {
 
     const [currentPage, setCurrentPage] = useState(1)
 
-
   useEffect(() => {
     getFeed().then(res => {
       // const shuffledNewData = _.shuffle(res);
       const newDataWithId = res.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
       setPosts([...posts, ...newDataWithId])})
   }, [currentPage])
-    
 
     const onViewableItemsChanged = useRef(({changed}) =>{
         changed.forEach(element => {
