@@ -7,6 +7,8 @@ import BuyNow from './BuyModal'
 import QA from './QAModal'
 import Options from './OptionsModal'
 import Details from './DetailsModal'
+import { NativeViewGestureHandler } from 'react-native-gesture-handler';
+
 
 const Modal = () => {
     const modalState = useSelector(state => state.modal)

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { buyAction } from '../../services/posts';
 import { useSelector } from 'react-redux';
+import { NativeViewGestureHandler } from 'react-native-gesture-handler';
 
 const BuyNow = ({post, user}) => {
     const [name, setName] = useState("")
@@ -32,6 +33,7 @@ const BuyNow = ({post, user}) => {
     
     
 return (
+  <NativeViewGestureHandler disallowInterruption={true}>
     <View>
         <TextInput style={styles.tinput} placeholderTextColor='Black' underlineColorAndroid='white'placeholder="Name/الاسم" keyboardType="Default"
             onChangeText={(text) => setName(text)}/>
@@ -62,6 +64,7 @@ return (
 
 
     </View>
+    </NativeViewGestureHandler>
   )
 }
 const styles = StyleSheet.create({
