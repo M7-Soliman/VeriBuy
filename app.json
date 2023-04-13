@@ -18,18 +18,20 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": false 
+      "supportsTablet": false
     },
     "android": {
+      "package": "com.veribuy.veribuy",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png", 
+      "favicon": "./assets/favicon.png",
       "config": {
-        "firebase":{
+        "firebase": {
           "apiKey": "AIzaSyBn1byyup_Qxv73tUJilx3NSgLxIEZWEpU",
           "authDomain": "veribuy-976c1.firebaseapp.com",
           "databaseURL": "https://veribuy-976c1-default-rtdb.firebaseio.com",
@@ -39,6 +41,11 @@
           "appId": "1:858951986854:web:3b2a6a24265e9a6a7b8e67",
           "measurementId": "G-XCHHSYNZVK"
         }
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9aa36583-b436-43c8-ba40-dbaadb1ca98d"
       }
     }
   }
