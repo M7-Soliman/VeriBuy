@@ -24,6 +24,7 @@ import NewFeed from '../screens/newfeed/NewFeed';
 import Checkout from '../screens/Checkout';
 import Options from '../screens/Options';
 import Modal from '../components/feedmodals';
+import { NativeViewGestureHandler } from 'react-native-gesture-handler';
 
 const Stack = createNativeStackNavigator();
 
@@ -79,7 +80,11 @@ export default function Main() {
                     </>
                 }
         </Stack.Navigator>
+
+        <NativeViewGestureHandler disallowInterruption={true}>
         <Modal/>
+        </NativeViewGestureHandler>
+
     </NavigationContainer>
   )
 }
