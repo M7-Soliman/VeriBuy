@@ -1,11 +1,10 @@
-import { View, Text, FlatList, StyleSheet} from 'react-native'
+import { View, Text, FlatList, StyleSheet, StatusBar, Platform} from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './styles'
 import { Dimensions } from 'react-native'
 import PostSingleNew from '../../components/postnew'
 import { getFeed } from '../../components/services/posts'
 import _ from 'lodash';
-
 
 const NewFeed = () => {
     const [posts, setPosts] = useState([])
@@ -70,24 +69,23 @@ const NewFeed = () => {
   )
 }
 const styles_specific = StyleSheet.create({
-    container: {
-     
-      flex: 1,
-      ...Platform.select({
-        ios: {
-          height: 1*(Dimensions.get('window').height),
-          backgroundColor: 'black',
-        },
-        android: {
-          height: 0.957*(Dimensions.get('window').height),
-          backgroundColor: 'black'
-        },
-        default: {
-          // other platforms, web for example
-          height: 1.053*(Dimensions.get('window').height),
-        },
-      }),
-    },
-  });
+  container: {
+    flex: 1,
+    ...Platform.select({
+      ios: {
+        height: Dimensions.get('window').height,
+        backgroundColor: 'black',
+      },
+      android: {
+        height: Dimensions.get('window').height + StatusBar.currentHeight,
+        backgroundColor: 'black',
+      },
+      default: {
+        // other platforms, web for example
+        height: Dimensions.get('window').height,
+      },
+    }),
+  },
+});
 
 export default NewFeed

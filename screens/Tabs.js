@@ -67,15 +67,15 @@ const Tabs = () => {
     <tab.Screen name="Home" component={HomeScreen} options={{
         animationEnabled: false, tabBarIcon: ({ color, focused }) => (
           focused?
-          <Homesol name="home" color={color} size={31}/>
+          <Homesol name="home" color={color} size={30}/>
           :
-          <Homeout name="home" color={color} size={31}/>
+          <Homeout name="home" color={color} size={30}/>
         ),}} />
         
     <tab.Screen name="Showcase" component={HomeScreen} options={{
         animationEnabled: false, tabBarIcon: ({ color, focused }) => (
           <TouchableOpacity onPress={()=>{navigation.navigate("NewFeed")}}>
-          <TVout name="home" color="white" size={31}/>
+          <TVout name="home" color="white" size={30}/>
           </TouchableOpacity>
           
         ),   tabBarLabel: ({focused, color, size}) => (
@@ -127,18 +127,18 @@ const Tabs = () => {
           backBehavior:"Home",
          tabBarIcon: ({ color, focused}) => (
           focused ?
-          <Notifin name="Notifications" color={color} size={31}/>
+          <Notifin name="Notifications" color={color} size={30}/>
           :
-          <Notifout name="Notifications" color={color} size={31}/>
+          <Notifout name="Notifications" color={color} size={30}/>
         ),}} />
 
     <tab.Screen name="Profile" component={ProfileScreen} options={{
       backBehavior:"Home",
         animationEnabled: false, tabBarIcon: ({ color, focused }) => (
           focused?
-          <Usol name="UserIcon" color={color} size={31}/>
+          <Usol name="UserIcon" color={color} size={30}/>
           :
-          <Uout name="UserIcon" color={color} size={31}/>
+          <Uout name="UserIcon" color={color} size={30}/>
         ),}} />
 
     </tab.Navigator>
