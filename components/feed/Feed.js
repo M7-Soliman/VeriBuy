@@ -40,7 +40,7 @@ const [currentPage, setCurrentPage] = useState(1)
   }
 
   return (
-    <View style={{height:900}}>
+    <View style={{height:950}}>
         <FlatList  
         numColumns={2}
         removeClippedSubviews
@@ -48,8 +48,7 @@ const [currentPage, setCurrentPage] = useState(1)
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item}) => (<Postdouble item={item}/>)}
         onEndReached={loadMore}
-        
-        
+        contentContainerStyle={{ paddingBottom: 50 }} // Add this line
         />
     </View>
   )
