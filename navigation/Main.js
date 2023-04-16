@@ -81,9 +81,7 @@ export default function Main() {
                 }
         </Stack.Navigator>
 
-        <NativeViewGestureHandler disallowInterruption={true}>
         <Modal/>
-        </NativeViewGestureHandler>
 
     </NavigationContainer>
   )

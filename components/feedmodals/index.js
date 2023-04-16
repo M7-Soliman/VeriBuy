@@ -7,7 +7,8 @@ import BuyNow from './BuyModal'
 import QA from './QAModal'
 import Options from './OptionsModal'
 import Details from './DetailsModal'
-import { NativeViewGestureHandler } from 'react-native-gesture-handler';
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
+
 
 
 const Modal = () => {
@@ -29,7 +30,8 @@ const Modal = () => {
             case 0:
                 return (<QA post = {modalState.data1} user={modalState.data2}/>)
             case 1:
-                return (<BuyNow post = {modalState.data1} user={modalState.data2}/>)
+                const BuyNowWithGestureHandling = gestureHandlerRootHOC(BuyNow);
+                return (<BuyNowWithGestureHandling post = {modalState.data1} user={modalState.data2}/>)
             case 2:
                 return (<Details post = {modalState.data1} user={modalState.data2}/>)
             case 3:

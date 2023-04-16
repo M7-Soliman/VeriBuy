@@ -21,7 +21,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers'
 import Main from './navigation/Main';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { NativeViewGestureHandler } from 'react-native-gesture-handler';
+import { GestureHandlerRootView, NativeViewGestureHandler } from 'react-native-gesture-handler';
 
 
 const store = createStore( rootReducer, applyMiddleware(thunk))
@@ -49,7 +49,8 @@ export default function App() {
   // console.log(currentUserObj)
 
   return (
-    // <NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+    {/* // <NavigationContainer> */}
       <Provider store = {store}>
         <QueryClientProvider client={queryclient}>
 
@@ -69,7 +70,8 @@ export default function App() {
       </QueryClientProvider>
       </Provider>
       
-    // </NavigationContainer>
+    {/* // </NavigationContainer> */}
+    </GestureHandlerRootView>
       
    
     

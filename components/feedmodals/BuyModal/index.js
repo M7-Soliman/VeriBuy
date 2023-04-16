@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { buyAction } from '../../services/posts';
 import { useSelector } from 'react-redux';
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
+
 
 const BuyNow = ({post, user}) => {
     const [name, setName] = useState("")
@@ -179,4 +181,4 @@ const styles = StyleSheet.create({
   
   })
 
-export default BuyNow
+export default gestureHandlerRootHOC(BuyNow)
