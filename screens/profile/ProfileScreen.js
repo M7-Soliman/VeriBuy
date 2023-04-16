@@ -9,6 +9,7 @@ import Heder from '../../components/Heder';
 import { useSelector } from 'react-redux';
 import UpperPart from '../../components/profile/UpperPart';
 import LowerPart from '../../components/profile/LowerPart';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
 const ProfileScreen = () => {
@@ -29,7 +30,7 @@ const ProfileScreen = () => {
           {/* Header */}
           <View >
             <View>
-            <Cartout size = {55} color = "black"></Cartout>
+            <Cartout size = {hp(6)} color = "black"></Cartout>
             </View>
           <Heder>
           </Heder>

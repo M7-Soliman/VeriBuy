@@ -44,14 +44,15 @@ const Tabs = () => {
     screenOptions={({ route }) => ({
         headerShown: false,
         tabBarStyle: {
-          height: hp(9),
+          height: hp(10),
           paddingTop: 0,
           backgroundColor: '#1d1d1d',
-          position: 'relative',
+          position: 'absolute',
           borderTopWidth: 0,
           activeColor:"red",
           inactiveColor:"white",
           paddingHorizontal: 20,
+          // bottom:-hp(10/4),
 
       },
     })}

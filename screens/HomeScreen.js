@@ -8,6 +8,7 @@ import Heder from '../components/Heder';
 
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import Feed from '../components/feed/Feed';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 // import { searchIcon } from "react-native-heroicons/outline";
 // import { TextInput } from 'react-native-web';
@@ -30,7 +31,7 @@ const HomeScreen = () => {
           {/* Header */}
           <View style = {{backgroundColor:"black"}}>
             <View>
-            <Cartout size = {55} color = "black"></Cartout>
+            <Cartout size = {hp(6)} color = "black"></Cartout>
             </View>
           <Heder>
           </Heder>
