@@ -23,7 +23,7 @@ const BuyNow = ({post, user}) => {
           // Set showView to true after 2 seconds
           timeoutId = setTimeout(() => {
             setShowView(true);
-          }, 2000);
+          }, 20000);
         } else {
           setShowView(false);
         }
