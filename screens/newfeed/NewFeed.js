@@ -5,19 +5,34 @@ import { Dimensions } from 'react-native'
 import PostSingleNew from '../../components/postnew'
 import { getFeed } from '../../components/services/posts'
 import _ from 'lodash';
+import { useRoute } from '@react-navigation/native';
 
 const NewFeed = () => {
     const [posts, setPosts] = useState([])
     const mediaRefs = useRef([])
 
     const [currentPage, setCurrentPage] = useState(1)
+    
+    const route = useRoute();
+    const { item } = route.params || {};
+    
 
+  // useEffect(() => {
+  //   getFeed().then(res => {
+  //     // const shuffledNewData = _.shuffle(res);
+  //     const newDataWithId = res.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
+  //     setPosts([...posts, ...newDataWithId])})
+  // }, [currentPage])
   useEffect(() => {
     getFeed().then(res => {
-      // const shuffledNewData = _.shuffle(res);
       const newDataWithId = res.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
-      setPosts([...posts, ...newDataWithId])})
-  }, [currentPage])
+      if (item) {
+        setPosts([item, ...newDataWithId, ...posts]);
+      } else {
+        setPosts([...posts, ...newDataWithId]);
+      }
+    });
+  }, [currentPage, item, posts]);
 
     const onViewableItemsChanged = useRef(({changed}) =>{
         changed.forEach(element => {

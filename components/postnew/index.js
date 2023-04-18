@@ -13,9 +13,13 @@ import {
 } from "react-native-responsive-screen";
 import { useUser } from "../../hooks/useUser";
 import PostSingleOverlay from "./overlay";
+import { useRoute } from '@react-navigation/native';
+
 
 export const PostSingleNew = forwardRef(({ item }, parentRef) => {
   const ref = useRef(null);
+
+
   // const user = useUser(item.creator)
   const { data: user, isLoading } = useUser(item.creator);
   // console.log("#################################")
