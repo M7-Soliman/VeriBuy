@@ -11,11 +11,28 @@ const NewFeed = () => {
     const [posts, setPosts] = useState([])
     const mediaRefs = useRef([])
 
-    const [currentPage, setCurrentPage] = useState(1)
+    // const [currentPage, setCurrentPage] = useState(1)
     
     const route = useRoute();
     const { item } = route.params || {};
     
+    const currentPageRef = useRef(1)
+    const initialDataRef = useRef([])
+
+    useEffect(() => {
+      getFeed().then(res => {
+        const shuffledData = _.shuffle(res);
+        initialDataRef.current = shuffledData.map((item, index) => ({ ...item, id: `0-${index}` }));
+        if (item) {
+          setPosts([item, ...initialDataRef.current]);
+        } else {
+          setPosts(initialDataRef.current);
+        }
+      });
+    }, [item]);
+    
+    
+  
 
   // useEffect(() => {
   //   getFeed().then(res => {
@@ -23,16 +40,55 @@ const NewFeed = () => {
   //     const newDataWithId = res.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
   //     setPosts([...posts, ...newDataWithId])})
   // }, [currentPage])
-  useEffect(() => {
-    getFeed().then(res => {
-      const newDataWithId = res.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
-      if (item) {
-        setPosts([item, ...newDataWithId, ...posts]);
-      } else {
-        setPosts([...posts, ...newDataWithId]);
-      }
-    });
-  }, [currentPage, item, posts]);
+
+  
+// useEffect(() => {
+//   getFeed().then(res => {
+//     const shuffledData = _.shuffle(res);
+//     const newDataWithId = shuffledData.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
+//     if (item) {
+//       setPosts([item, ...newDataWithId, ...posts]);
+//     } else {
+//       setPosts([...posts, ...newDataWithId]);
+//     }
+//   });
+// }, [currentPage, item, posts]);
+
+// useEffect(() => {
+//   getFeed().then((res) => {
+//     const shuffledData = _.shuffle(res);
+//     const newDataWithId = shuffledData.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
+//     if (item) {
+//       setPosts([item, ...newDataWithId]);
+//     } else {
+//       setPosts([...newDataWithId]);
+//     }
+//   });
+// }, [currentPage, item]);
+
+// useEffect(() => {
+//   getFeed().then(res => {
+//     const shuffledData = _.shuffle(res);
+//     const newDataWithId = shuffledData.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
+//     if (item) {
+//       setPosts([item, ...newDataWithId, ...posts]);
+//     } else {
+//       setPosts([...posts, ...newDataWithId]);
+//     }
+//   });
+// }, [currentPage, item, posts]);
+
+// useEffect(() => {
+//   if(currentPage > 1) {  // <-- added this condition to prevent initial load more call
+//     getFeed().then(res => {
+//       const shuffledData = _.shuffle(res);
+//       const newDataWithId = shuffledData.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
+//       setPosts([...posts, ...newDataWithId]);
+//     });
+//   }
+// }, [currentPage]);
+
+
 
     const onViewableItemsChanged = useRef(({changed}) =>{
         changed.forEach(element => {
@@ -55,9 +111,15 @@ const NewFeed = () => {
         )
     }
 
+  // const loadMore = _.debounce(() => {
+  //   setCurrentPage(currentPage + 1);
+  // }, 500); 
+
   const loadMore = _.debounce(() => {
-    setCurrentPage(currentPage + 1);
-  }, 500); 
+    currentPageRef.current++;
+    const newDataWithId = initialDataRef.current.map((item, index) => ({ ...item, id: `${currentPageRef.current}-${index}` }));
+    setPosts([...posts, ...newDataWithId]);
+  }, 500);
 
 
   return (

@@ -1,4 +1,7 @@
 import firebase from "firebase";
+import _ from 'lodash';
+
+
 export const getFeed = () =>
   new Promise((resolve, reject) => {
     firebase
