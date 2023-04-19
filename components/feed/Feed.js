@@ -6,6 +6,7 @@ import { Dimensions } from 'react-native'
 import Postdouble from '../posthome/Postdouble';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Items from '../Categories';
+import _ from 'lodash';
 
 const Feed = () => {
 
@@ -24,7 +25,8 @@ const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     getFeed().then(res => {
-      const modifiedRes = res.map((item, index) => ({
+      const shuffledNewData = _.shuffle(res);
+      const modifiedRes = shuffledNewData.map((item, index) => ({
         ...item,
         id: `${item.id}_${index}`,
       }));
@@ -32,6 +34,13 @@ const [currentPage, setCurrentPage] = useState(1)
     })
   }, [currentPage])
 
+
+  //   useEffect(() => {
+  //   getFeed().then(res => {
+  //     const shuffledNewData = _.shuffle(res);
+  //     const newDataWithId = shuffledNewData.map((item, index) => ({ ...item, id: `${currentPage}-${index}` }));
+  //     setPosts([...posts, ...newDataWithId])})
+  // }, [currentPage])
 
 
 
