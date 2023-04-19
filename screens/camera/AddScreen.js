@@ -66,7 +66,7 @@ export default function CameraScreen() {
     const recordVideo = async () => {
         if (cameraRef) {
             try {
-                const options = { maxDuration: 60, quality: Camera.Constants.VideoQuality['480'] }
+                const options = { maxDuration: 60, quality: Camera.Constants.VideoQuality['240'] }
                 const videoRecordPromise = cameraRef.recordAsync(options)
                 if (videoRecordPromise) {
                     SetRecording(1)
@@ -189,7 +189,7 @@ export default function CameraScreen() {
 
 
                 <View style={{ flex: 1 }}>
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         onPress={() => pickFromGallery()}
                         style={styles.galleryButton}>
                         {galleryItems[0] == undefined ?
@@ -199,7 +199,7 @@ export default function CameraScreen() {
                                 style={styles.galleryButtonImage}
                                 source={{ uri: galleryItems[0].uri }}
                             />}
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </View>
             </View>
         </View>
