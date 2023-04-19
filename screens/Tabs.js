@@ -47,7 +47,7 @@ const Tabs = () => {
           height: hp(10),
           paddingTop: 0,
           backgroundColor: '#1d1d1d',
-          position: 'absolute',
+          position: 'relative',
           borderTopWidth: 0,
           activeColor:"red",
           inactiveColor:"white",
