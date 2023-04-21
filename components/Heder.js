@@ -20,10 +20,10 @@ const Header = () => {
   const navigation = useNavigation();
   return (
     <View className = "flex-row pb-3 items-center mx-4 space-x-5">
-        <TouchableOpacity style={{alignItems:"center", backgroundColor:"#1d1d1d", borderColor:"#1d1d1d", borderWidth:0, height: heightPercentageToDP(5), paddingLeft:10, borderRadius:20, marginTop:10}} className="flex-row flex-1 space-x-2">
+        {/* <TouchableOpacity style={{alignItems:"center", backgroundColor:"#1d1d1d", borderColor:"#1d1d1d", borderWidth:0, height: heightPercentageToDP(5), paddingLeft:10, borderRadius:20, marginTop:10}} className="flex-row flex-1 space-x-2">
               <Searchout size = {32} color = "white"/>
               <Text style={{color:"white"}}> Search Items </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         
               
         {/* <TouchableOpacity onPress={()=>{navigation.navigate("CartScreen")}} 
