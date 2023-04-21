@@ -37,7 +37,7 @@ const SigninScreen = () => {
             
             <View style={styles.mainbox} className="rounded-3xl">
             <Text style={ styles.toptext} >WELCOME! </Text>
-            <Text style={ styles.toptext2} >Hi there! How are you? it's been </Text>
+            <Text style={ styles.toptext2} >Connect, Sell, and Buy Verified Products </Text>
             <Text style={ styles.downtext} >Not registered yet? </Text>
             <Image source={require("../assets/logo.jpg")} style = {styles.vbuylogo} className ="rounded-3xl"/>
             <TextInput style={styles.tinput} placeholderTextColor='white' placeholder="Email" keyboardType="Default"
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
         
     position: "relative",
     color:'white',
-    fontSize: hp(2),
+    fontSize: hp(1.5),
     bottom: hp('-15'),
     left: wp('40')-(wp('40')/2),
       

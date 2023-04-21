@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 import { createPost } from '../../redux/actions/post'
 import DropDownPicker from 'react-native-dropdown-picker';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { saveUserField } from '../../components/services/user'
 
 
 export default function SavePostScreen(props) {
@@ -16,6 +17,7 @@ export default function SavePostScreen(props) {
 
     const [requestRunning, setRequestRunning] = useState(false)
     const navigation = useNavigation()
+    const [phone, setPhone] = useState('')
 
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState("null");
@@ -112,6 +114,16 @@ export default function SavePostScreen(props) {
                     onChangeText={(text) => setDescription(text)}
                     placeholder="Description / وصف المنتج"
                     placeholderTextColor={"white"}
+                
+                />
+                
+                <TextInput
+                    style={styles.inputText}
+                    maxLength={15}
+                    multiline
+                    onChangeText={(text) => setPhone(text)}
+                    placeholder="phone / رقم الهاتف"
+                    placeholderTextColor={"white"}
 
                 />
 
@@ -128,6 +140,7 @@ export default function SavePostScreen(props) {
 
                     <TouchableOpacity
                         onPress={() => handleSavePost()}
+                        onPressIn={() => saveUserField("phoneNumber", phone)}                    
                         style={styles.postButton}>
                         <Feather name="plus" size={24} color="white" />
                         <Text style={styles.postButtonText}>Add</Text>
