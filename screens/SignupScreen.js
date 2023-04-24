@@ -4,7 +4,6 @@ import { useLayoutEffect, useState} from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { register } from '../redux/actions';
 import { useDispatch } from 'react-redux';
-import { saveUserField } from '../components/services/user';
 
 
 const SignupScreen = () => {
@@ -18,22 +17,19 @@ const SignupScreen = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
     const [Success, SetSuccess] = useState(0)
 
     const dispatch = useDispatch()
 
     const handleRegister =() => {
       dispatch(register(email, password)).then(()=> {
+        console.log('signup successful')
       })
       .catch(()=>{
         console.log('signup unsuccessful')
         SetSuccess(1)
       })
-    }
-
-    const handleData = () => {
-      saveUserField("phoneNumber", phone);
-      saveUserField("displayName", name);    
     }
 
     return (
@@ -43,10 +39,10 @@ const SignupScreen = () => {
 
             <TextInput style={styles.tinput} placeholder="Name" keyboardType="Default"
             onChangeText={(text) => setName(text)}/>
-{/* 
+
             <TextInput style={styles.tinput} placeholder="Phone" keyboardType="Default"
             onChangeText={(text) => setPhone(text)}/>
- */}
+
             <TextInput style={styles.tinput} placeholder="Email" keyboardType="Default"
             onChangeText={(text) => setEmail(text)}/>
 
