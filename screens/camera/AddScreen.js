@@ -63,23 +63,46 @@ export default function CameraScreen() {
     }, [])
 
 
+    // const recordVideo = async () => {
+    //     if (cameraRef) {
+    //         try {
+    //             const options = { maxDuration: 60, quality: Camera.Constants.VideoQuality['240'] }
+    //             const videoRecordPromise = cameraRef.recordAsync(options)
+    //             if (videoRecordPromise) {
+    //                 SetRecording(1)
+    //                 const data = await videoRecordPromise;
+    //                 const source = data.uri
+    //                 let sourceThumb = await generateThumbnail(source)
+    //                 navigation.navigate('savePost', { source, sourceThumb })
+    //             }
+    //         } catch (error) {
+    //             console.warn(error)
+    //         }
+    //     }
+    // }
     const recordVideo = async () => {
         if (cameraRef) {
-            try {
-                const options = { maxDuration: 60, quality: Camera.Constants.VideoQuality['240'] }
-                const videoRecordPromise = cameraRef.recordAsync(options)
-                if (videoRecordPromise) {
-                    SetRecording(1)
-                    const data = await videoRecordPromise;
-                    const source = data.uri
-                    let sourceThumb = await generateThumbnail(source)
-                    navigation.navigate('savePost', { source, sourceThumb })
-                }
-            } catch (error) {
-                console.warn(error)
+          try {
+            const options = {
+              maxDuration: 60,
+              quality: Camera.Constants.VideoQuality['480p'],
+              videoBitrate: 400000, // set the video bitrate
+              videoResolution: '320x240' // set the video resolution
+            };
+            const videoRecordPromise = cameraRef.recordAsync(options);
+            if (videoRecordPromise) {
+              SetRecording(1);
+              const data = await videoRecordPromise;
+              const source = data.uri;
+              let sourceThumb = await generateThumbnail(source);
+              navigation.navigate('savePost', { source, sourceThumb });
             }
+          } catch (error) {
+            console.warn(error);
+          }
         }
-    }
+      };
+      
 
     const stopVideo = async () => {
         if (cameraRef) {
