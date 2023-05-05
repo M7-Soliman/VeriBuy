@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -23,6 +23,12 @@ import Main from './navigation/Main';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { GestureHandlerRootView, NativeViewGestureHandler } from 'react-native-gesture-handler';
 
+StatusBar.setBarStyle('dark-content');
+
+if (Platform.OS === 'android') {
+  StatusBar.setTranslucent(true);
+  StatusBar.setBackgroundColor('transparent');
+}
 
 const store = createStore( rootReducer, applyMiddleware(thunk))
 const Stack = createNativeStackNavigator();
