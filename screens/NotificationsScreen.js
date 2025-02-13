@@ -16,9 +16,6 @@ const handleLinkClick = () => {
 }
 
 
-// import { searchIcon } from "react-native-heroicons/outline";
-// import { TextInput } from 'react-native-web';
-
 const NotificationsScreen = () => {
     const navigation = useNavigation();
     

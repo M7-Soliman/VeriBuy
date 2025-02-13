@@ -1,28 +1,15 @@
-import { StatusBar } from 'react-native';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import HomeScreen from './screens/HomeScreen';
-import SigninScreen from './screens/SigninScreen';
-import SignupScreen from './screens/SignupScreen';
-import NotificationsScreen from './screens/NotificationsScreen';
-import CartScreen from './screens/CartScreen';
-import ProfileScreen from './screens/profile/ProfileScreen';
-import TvScreen from './screens/feed/TvScreen';
-import AddScreen from './screens/camera/AddScreen'
-import firebase from "firebase/app"
-
-import {Provider, useSelector} from 'react-redux';
-import {createStore,applyMiddleware} from "redux"
-import { configureStore } from '@reduxjs/toolkit'
-
+import { StatusBar, Platform, StyleSheet } from 'react-native';
+import { View } from 'react-native';
+import firebase from "firebase/app";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
-import rootReducer from './redux/reducers'
+import rootReducer from './redux/reducers';
 import Main from './navigation/Main';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { GestureHandlerRootView, NativeViewGestureHandler } from 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
+// Configure status bar
 StatusBar.setBarStyle('dark-content');
 
 if (Platform.OS === 'android') {
@@ -30,59 +17,50 @@ if (Platform.OS === 'android') {
   StatusBar.setBackgroundColor('transparent');
 }
 
-const store = createStore( rootReducer, applyMiddleware(thunk))
-const Stack = createNativeStackNavigator();
+// Initialize Redux store
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
-if (firebase.apps.length === 0){
-firebase.initializeApp({
-  apiKey: "AIzaSyBn1byyup_Qxv73tUJilx3NSgLxIEZWEpU",
-  authDomain: "veribuy-976c1.firebaseapp.com",
-  databaseURL: "https://veribuy-976c1-default-rtdb.firebaseio.com",
-  projectId: "veribuy-976c1",
-  storageBucket: "veribuy-976c1.appspot.com",
-  messagingSenderId: "858951986854",
-  appId: "1:858951986854:web:3b2a6a24265e9a6a7b8e67",
-  measurementId: "G-XCHHSYNZVK"
-})
+// Initialize Firebase
+if (firebase.apps.length === 0) {
+  firebase.initializeApp({
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.FIREBASE_DATABASE_URL,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.FIREBASE_APP_ID,
+    measurementId: process.env.FIREBASE_MEASUREMENT_ID
+  });
 }
 
-const queryclient = new QueryClient({
-  defaultOptions: { queries: {refetchInterval: false, staleTime: Infinity}}
-})
+// Configure React Query
+const queryClient = new QueryClient({
+  defaultOptions: { 
+    queries: {
+      refetchInterval: false, 
+      staleTime: Infinity
+    }
+  }
+});
 
 export default function App() {
-  // const currentUserObj = useSelector(state => state.auth)
-  // console.log(currentUserObj)
-
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-    {/* // <NavigationContainer> */}
-      <Provider store = {store}>
-        <QueryClientProvider client={queryclient}>
-
-        <Main/>
-      {/* <Stack.Navigator screenOptions={{ animation: 'none'}}>
-        <Stack.Screen name="SigninScreen" component={SigninScreen}/>
-        <Stack.Screen name="SignupScreen" component={SignupScreen}/>
-        <Stack.Screen name="Home" component={HomeScreen} options={{
-        animationEnabled: false, }} />
-        <Stack.Screen name="NotificationsScreen" component={NotificationsScreen}/>
-        <Stack.Screen name="CartScreen" component={CartScreen} />
-        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
-        <Stack.Screen name="TvScreen" component={TvScreen} />
-        <Stack.Screen name="AddScreen" component={AddScreen} />
-        
-      </Stack.Navigator> */}
-      </QueryClientProvider>
+    <GestureHandlerRootView style={styles.container}>
+      <Provider store={store}>
+        <QueryClientProvider client={queryClient}>
+          <Main />
+        </QueryClientProvider>
       </Provider>
-      
-    {/* // </NavigationContainer> */}
     </GestureHandlerRootView>
-      
-   
-    
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});
 
 
 
